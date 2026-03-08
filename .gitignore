@@ -1,0 +1,4 @@
+# Credentials — NE JAMAIS COMMITTER
+*.env
+credentials.txt
+secrets.txt
