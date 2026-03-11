@@ -97,7 +97,6 @@ body.wp-child-theme-atelier-child {
 .lf2 > div.lf2-marquee-wrap,
 .lf2 > div.lf2-narrative,
 .lf2 > div.lf2-split {
-  display: block;
   width: 100vw !important;
   max-width: 100vw !important;
   position: relative;
@@ -107,6 +106,9 @@ body.wp-child-theme-atelier-child {
   margin-right: -50vw !important;
   box-sizing: border-box;
 }
+.lf2 > div.lf2-marquee-wrap { display: block; }
+.lf2 > div.lf2-narrative { display: grid !important; }
+.lf2 > div.lf2-split { display: grid !important; }
 
 /* ===== HERO ===== */
 .lf2-hero {
@@ -148,8 +150,8 @@ body.wp-child-theme-atelier-child {
   font-weight: 500;
 }
 .lf2-hero-title {
-  font-size: clamp(5rem, 14vw, 13rem);
-  font-weight: 900;
+  font-size: clamp(4rem, 11.2vw, 10.4rem);
+  font-weight: 300;
   line-height: .88;
   letter-spacing: -.03em;
   margin: 0 0 2rem;
@@ -159,7 +161,7 @@ body.wp-child-theme-atelier-child {
 .lf2-hero-title .accent { color: #36B7B2; }
 .lf2-hero-title .dim { color: rgba(255,255,255,.22); }
 .lf2-hero-sub {
-  font-size: 1.2rem;
+  font-size: 1.375rem;
   font-weight: 400;
   opacity: .9;
   margin-bottom: 2.5rem;
@@ -250,6 +252,16 @@ body.wp-child-theme-atelier-child {
   align-items: center;
   padding: 80px 70px;
 }
+.lf2-narrative.light .lf2-narrative-text {
+  background: #fff;
+  color: #111;
+}
+.lf2-narrative.light .lf2-narrative-text h2 {
+  color: #111;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  text-transform: none;
+}
+.lf2-narrative.light .lf2-narrative-text p { color: #555; }
 .lf2-narrative-inner { max-width: 460px; }
 .lf2-eyebrow {
   font-size: .68rem;
@@ -268,7 +280,7 @@ body.wp-child-theme-atelier-child {
   color: #fff;
 }
 .lf2-narrative-text p {
-  font-size: 1rem;
+  font-size: 1.375rem;
   line-height: 1.9;
   color: #aaa;
   font-weight: 300;
@@ -346,7 +358,7 @@ body.wp-child-theme-atelier-child {
   font-weight: 700;
 }
 .lf2-product-name { font-size: 1.3rem; font-weight: 800; margin: 0 0 6px; color: #111; }
-.lf2-product-tagline { font-size: .88rem; color: #777; font-weight: 300; margin: 0 0 16px; }
+.lf2-product-tagline { font-size: 1.375rem; color: #777; font-weight: 300; margin: 0 0 16px; }
 .lf2-product-price { font-size: 1.05rem; font-weight: 700; color: #111; }
 .lf2-product-cta {
   display: inline-block;
@@ -405,7 +417,7 @@ body.wp-child-theme-atelier-child {
   text-shadow: 0 2px 20px rgba(0,0,0,.5);
 }
 .lf2-split-content p {
-  font-size: .95rem;
+  font-size: 1.375rem;
   color: rgba(255,255,255,.85);
   margin: 0 0 1.8rem;
   font-weight: 300;
@@ -449,7 +461,7 @@ body.wp-child-theme-atelier-child {
 }
 .lf2-liftx-text h2 .x { color: #36B7B2; }
 .lf2-liftx-text p {
-  font-size: 1rem;
+  font-size: 1.375rem;
   line-height: 1.85;
   color: #555;
   margin-bottom: 2rem;
@@ -519,7 +531,7 @@ body.wp-child-theme-atelier-child {
   color: #888;
   font-weight: 600;
 }
-.lf2-spec-desc { font-size: .82rem; color: #555; margin-top: 2px; font-weight: 300; }
+.lf2-spec-desc { font-size: 1.375rem; color: #555; margin-top: 2px; font-weight: 300; }
 .lf2-specs-img { text-align: center; padding: 0 20px; }
 .lf2-specs-img img {
   width: 100%;
@@ -569,7 +581,7 @@ body.wp-child-theme-atelier-child {
   text-transform: uppercase;
   color: #111;
 }
-.lf2-feat p { font-size: .88rem; color: #777; font-weight: 300; line-height: 1.7; }
+.lf2-feat p { font-size: 1.375rem; color: #777; font-weight: 300; line-height: 1.7; }
 
 /* ===== LIFESTYLE GRID ===== */
 .lf2-lifestyle-section {
@@ -822,6 +834,21 @@ body.wp-child-theme-atelier-child {
 <div class="lf2-marquee-wrap">
 <div class="lf2-marquee-track">
 <span>eFoil</span><span>Lift Foils France</span><span>C&#244;te d&#8217;Azur</span><span>Essai gratuit</span><span>Foil &#233;lectrique</span><span>LIFT5 Pro</span><span>LIFT5 Sport</span><span>LIFT5 Cruiser</span><span>LiftX Hybride</span><span>100% carbone</span><span>Silencieux</span><span>64 km/h</span><span>eFoil</span><span>Lift Foils France</span><span>C&#244;te d&#8217;Azur</span><span>Essai gratuit</span><span>Foil &#233;lectrique</span><span>LIFT5 Pro</span><span>LIFT5 Sport</span><span>LIFT5 Cruiser</span><span>LiftX Hybride</span><span>100% carbone</span><span>Silencieux</span><span>64 km/h</span>
+</div>
+</div>
+
+<!-- === DECOUVREZ LIFT5 & LIFTX === -->
+<div class="lf2-narrative light">
+<div class="lf2-narrative-img">
+<img src="https://liftfoils.com/cdn/shop/files/Introducing_LIFT5_LIFTX_Hero.jpg?v=1747178360&width=1500" alt="Découvrez le LIFT5 et le LiftX" loading="lazy">
+</div>
+<div class="lf2-narrative-text">
+<div class="lf2-narrative-inner">
+<span class="lf2-eyebrow">eFoils</span>
+<h2>Découvrez le LIFT5 et le LiftX</h2>
+<p>Nés de la glisse, construits pour l'avenir. Trois ans de perfectionnement, d'innombrables vagues et un seul objectif — créer l'expérience de foil la plus puissante, intuitive et silencieuse qui soit.</p>
+<a href="/efoil-lift-foils/" class="lf2-btn-dark">Découvrir la gamme</a>
+</div>
 </div>
 </div>
 
