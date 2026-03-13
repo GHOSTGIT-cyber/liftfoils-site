@@ -94,7 +94,6 @@ body.wp-child-theme-atelier-child {
 
 /* 4) Chaque section = 100vw absolu */
 .lf2 > section,
-.lf2 > div.lf2-marquee-wrap,
 .lf2 > div.lf2-narrative,
 .lf2 > div.lf2-split {
   width: 100vw !important;
@@ -106,7 +105,6 @@ body.wp-child-theme-atelier-child {
   margin-right: -50vw !important;
   box-sizing: border-box;
 }
-.lf2 > div.lf2-marquee-wrap { display: block; }
 .lf2 > div.lf2-narrative { display: grid !important; }
 .lf2 > div.lf2-split { display: grid !important; }
 
@@ -195,34 +193,7 @@ body.wp-child-theme-atelier-child {
 }
 .lf2-btn-ghost:hover { background: #fff; color: #000; }
 
-/* ===== MARQUEE VERT — directement sous hero ===== */
-.lf2-marquee-wrap {
-  background: #36B7B2;
-  overflow: hidden;
-  padding: 15px 0;
-  white-space: nowrap;
-}
-.lf2-marquee-track {
-  display: inline-flex;
-  animation: lf2-scroll 35s linear infinite;
-}
-.lf2-marquee-track span {
-  font-size: .72rem;
-  font-weight: 800;
-  letter-spacing: .25em;
-  text-transform: uppercase;
-  color: #fff;
-  padding: 0 36px;
-}
-.lf2-marquee-track span::after {
-  content: '·';
-  margin-left: 36px;
-  opacity: .5;
-}
-@keyframes lf2-scroll {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
-}
+
 
 /* ===== NARRATIVE ===== */
 .lf2-narrative {
@@ -330,10 +301,21 @@ body.wp-child-theme-atelier-child {
 .lf2-grid-3 {
   display: grid;
   grid-template-columns: repeat(3,1fr);
-  gap: 3px;
-  background: #ddd;
+  gap: 32px;
+  background: transparent;
+  padding: 0 40px 60px;
 }
-.lf2-product-tile { background: #fff; overflow: hidden; }
+.lf2-product-tile {
+  background: #fff;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 8px 40px rgba(0,0,0,.10), 0 2px 8px rgba(0,0,0,.06);
+  transition: box-shadow .3s, transform .3s;
+}
+.lf2-product-tile:hover {
+  box-shadow: 0 16px 60px rgba(0,0,0,.16), 0 4px 16px rgba(0,0,0,.08);
+  transform: translateY(-4px);
+}
 .lf2-product-img-wrap {
   overflow: hidden;
   aspect-ratio: 1/1;
@@ -348,7 +330,7 @@ body.wp-child-theme-atelier-child {
   transition: transform .5s;
 }
 .lf2-product-tile:hover .lf2-product-img { transform: scale(1.06); }
-.lf2-product-info { padding: 24px 28px 36px; border-top: 1px solid #eee; }
+.lf2-product-info { padding: 24px 28px 36px; }
 .lf2-product-tag {
   font-size: .62rem;
   letter-spacing: .22em;
@@ -439,7 +421,65 @@ body.wp-child-theme-atelier-child {
 }
 .lf2-btn-white:hover { background: #fff; color: #000; }
 
-/* ===== LIFTX ===== */
+/* ===== VIDEO TOURNANTE PRODUIT ===== */
+.lf2-product-video-section {
+  position: relative;
+  min-height: 680px;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+.lf2-product-video-section video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.lf2-product-video-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  pointer-events: none;
+  z-index: 1;
+}
+.lf2-product-video-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: #fff;
+  max-width: 520px;
+  padding: 0 6vw;
+}
+.lf2-product-video-text.right { right: 0; text-align: right; }
+.lf2-product-video-text.left  { left: 0;  text-align: left;  }
+.lf2-product-video-text .lf2-eyebrow { color: #36B7B2; }
+.lf2-product-video-text h2 {
+  font-size: clamp(3rem, 7vw, 7rem);
+  font-weight: 900;
+  color: #fff !important;
+  line-height: 1;
+  margin: 12px 0 20px;
+  letter-spacing: .05em;
+}
+.lf2-product-video-text h2 .accent { color: #36B7B2; }
+.lf2-product-video-text p {
+  font-size: 1.1rem;
+  color: rgba(255,255,255,.8);
+  font-weight: 300;
+  line-height: 1.7;
+  margin: 0 0 2rem;
+}
+@media(max-width:900px){
+  .lf2-product-video-section { min-height: 500px; }
+  .lf2-product-video-text { max-width: 90vw; }
+  .lf2-product-video-text.right,
+  .lf2-product-video-text.left { left: 0; right: auto; text-align: left; }
+}
+
+/* ===== LIFTX =====
 .lf2-liftx-section {
   padding: 100px 6vw;
   background: #eeede9;
@@ -831,12 +871,6 @@ body.wp-child-theme-atelier-child {
 </div>
 </section>
 
-<!-- === MARQUEE VERT JUSTE SOUS LE HERO === -->
-<div class="lf2-marquee-wrap">
-<div class="lf2-marquee-track">
-<span>eFoil</span><span>Lift Foils France</span><span>C&#244;te d&#8217;Azur</span><span>Essai gratuit</span><span>Foil &#233;lectrique</span><span>LIFT5 Pro</span><span>LIFT5 Sport</span><span>LIFT5 Cruiser</span><span>LiftX Hybride</span><span>100% carbone</span><span>Silencieux</span><span>64 km/h</span><span>eFoil</span><span>Lift Foils France</span><span>C&#244;te d&#8217;Azur</span><span>Essai gratuit</span><span>Foil &#233;lectrique</span><span>LIFT5 Pro</span><span>LIFT5 Sport</span><span>LIFT5 Cruiser</span><span>LiftX Hybride</span><span>100% carbone</span><span>Silencieux</span><span>64 km/h</span>
-</div>
-</div>
 
 <!-- === DECOUVREZ LIFT5 & LIFTX === -->
 <div class="lf2-narrative light">
@@ -848,7 +882,7 @@ body.wp-child-theme-atelier-child {
 <span class="lf2-eyebrow">eFoils</span>
 <h2>Découvrez le LIFT5 et le LiftX</h2>
 <p>Nés de la glisse, construits pour l'avenir. Trois ans de perfectionnement, d'innombrables vagues et un seul objectif — créer l'expérience de foil la plus puissante, intuitive et silencieuse qui soit.</p>
-<a href="/efoil-lift-foils/" class="lf2-btn-dark">Découvrir la gamme</a>
+<a href="/efoil-lift-foils/" class="lf2-btn-teal">Découvrir la gamme &#8594;</a>
 </div>
 </div>
 </div>
@@ -860,11 +894,24 @@ body.wp-child-theme-atelier-child {
 <span class="lf2-eyebrow">Notre histoire</span>
 <h2>Nous construisons des foils depuis avant que ce mot existait</h2>
 <p>Lift Foils est n&#233; d&#8217;une passion absolue pour la glisse. Plus de 15 ans de R&amp;D, des mat&#233;riaux a&#233;rospatiaux, des ing&#233;nieurs obss&#233;d&#233;s par la perfection.</p>
-<a href="/efoil-lift-foils/" class="lf2-link-arrow">D&#233;couvrir notre gamme &#8594;</a>
+<a href="/efoil-lift-foils/" class="lf2-btn-teal">D&#233;couvrir notre gamme &#8594;</a>
 </div>
 </div>
 <div class="lf2-narrative-img">
 <img src="https://liftfoils.fr/wp-content/uploads/2025/12/DSC1001_RodrigoSnaps-Inc.-1-edited-scaled.jpg" alt="eFoil action Lift Foils" loading="lazy">
+</div>
+</div>
+
+<!-- === VIDEO TOURNANTE LIFT5 === -->
+<div class="lf2-product-video-section">
+<video autoplay muted loop playsinline>
+<source src="https://liftfoils.fr/wp-content/uploads/2021/03/Lift-Foils-5-vue-tournante.mp4" type="video/mp4">
+</video>
+<div class="lf2-product-video-text right">
+<span class="lf2-eyebrow">eFoil Premium</span>
+<h2>LIFT<span class="accent">5</span></h2>
+<p>L'eFoil le plus intuitif que nous ayons jamais conçu. Rapide à installer, silencieux sur l'eau, et pensé pour disparaître sous vos pieds. Assez stable pour apprendre, assez réactif pour progresser.</p>
+<a href="/efoil-lift5-decouvrez-le-nouveau-foil-electrique-lift-5/" class="lf2-btn-teal">Découvrir le LIFT5</a>
 </div>
 </div>
 
@@ -914,6 +961,65 @@ body.wp-child-theme-atelier-child {
 </div>
 </section>
 
+<!-- === VIDEO TOURNANTE LIFTX === -->
+<div class="lf2-product-video-section">
+<div class="lf2-product-video-text left">
+<span class="lf2-eyebrow">Nouveau · 2025</span>
+<h2>LIFT<span class="accent">X</span></h2>
+<p>Une nouvelle ère du foil. Là où le surf rencontre la propulsion électrique. Conçu pour rider comme un vrai surf foil — léger, surf-first, fait pour chasser la vague parfaite.</p>
+<a href="/efoil-lift-x-le-foil-electrique-reinvente-surf-foil-hybride-motorise/" class="lf2-btn-teal">Découvrir le LiftX</a>
+</div>
+<video autoplay muted loop playsinline>
+<source src="https://liftfoils.fr/wp-content/uploads/2021/03/Lift-FoilsX-vue-tournante-.mp4" type="video/mp4">
+</video>
+</div>
+
+<!-- === COLLECTION LIFTX === -->
+<section class="lf2-collection">
+<div class="lf2-collection-header">
+<h2>LIFT<span style="color:#36B7B2">X</span></h2>
+<a href="/efoil-lift-x-le-foil-electrique-reinvente-surf-foil-hybride-motorise/">Voir toute la gamme &#8594;</a>
+</div>
+<div class="lf2-grid-3">
+<div class="lf2-product-tile">
+<div class="lf2-product-img-wrap">
+<img class="lf2-product-img" src="https://cdn.shopify.com/s/files/1/0607/0907/7155/files/2025_LIFTX_4_3_OFFWHITE_Package_Iso_Shadow_2000x2000_f621ab95-452d-4c71-9790-1df69d7ca8c3.png" alt="LiftX 4'3" loading="lazy">
+</div>
+<div class="lf2-product-info">
+<span class="lf2-product-tag">Expert &#183; Surf foil</span>
+<h3 class="lf2-product-name">LiftX 4&#8217;3&#8221;</h3>
+<p class="lf2-product-tagline">Le plus agile. Le plus vif.</p>
+<div class="lf2-product-price">&#192; partir de 9&#8239;999&#160;&#8364;</div>
+<a href="/efoil-lift-x-le-foil-electrique-reinvente-surf-foil-hybride-motorise/" class="lf2-product-cta">D&#233;couvrir &#8594;</a>
+</div>
+</div>
+<div class="lf2-product-tile">
+<div class="lf2-product-img-wrap">
+<img class="lf2-product-img" src="https://cdn.shopify.com/s/files/1/0607/0907/7155/files/2025_LIFTX_4_8_SPARKBLUE_Package_Iso_Shadow_2000x2000_a6ae3fee-ff22-4811-ab12-ba5e5242a9af.png" alt="LiftX 4'8" loading="lazy">
+</div>
+<div class="lf2-product-info">
+<span class="lf2-product-tag">Polyvalent &#183; Tous niveaux</span>
+<h3 class="lf2-product-name">LiftX 4&#8217;8&#8221;</h3>
+<p class="lf2-product-tagline">L&#8217;&#233;quilibre parfait.</p>
+<div class="lf2-product-price">&#192; partir de 9&#8239;999&#160;&#8364;</div>
+<a href="/efoil-lift-x-le-foil-electrique-reinvente-surf-foil-hybride-motorise/" class="lf2-product-cta">D&#233;couvrir &#8594;</a>
+</div>
+</div>
+<div class="lf2-product-tile">
+<div class="lf2-product-img-wrap">
+<img class="lf2-product-img" src="https://cdn.shopify.com/s/files/1/0607/0907/7155/files/2025_LIFTX_5_2_DAWNPATROL_Package_Iso_Shadow_2000x2000_012a6dba-e31b-40a0-9675-8947a4d21e69.png" alt="LiftX 5'2" loading="lazy">
+</div>
+<div class="lf2-product-info">
+<span class="lf2-product-tag">D&#233;butants &#183; Familles</span>
+<h3 class="lf2-product-name">LiftX 5&#8217;2&#8221;</h3>
+<p class="lf2-product-tagline">Stabilit&#233; maximale.</p>
+<div class="lf2-product-price">&#192; partir de 9&#8239;999&#160;&#8364;</div>
+<a href="/efoil-lift-x-le-foil-electrique-reinvente-surf-foil-hybride-motorise/" class="lf2-product-cta">D&#233;couvrir &#8594;</a>
+</div>
+</div>
+</div>
+</section>
+
 <!-- === SPLIT 2 PANNEAUX === -->
 <div class="lf2-split">
 <div class="lf2-split-panel">
@@ -940,26 +1046,6 @@ body.wp-child-theme-atelier-child {
 </div>
 </div>
 
-<!-- === LIFTX === -->
-<section class="lf2-liftx-section">
-<div class="lf2-liftx-inner">
-<div class="lf2-liftx-text">
-<span class="lf2-eyebrow">Nouveau &#183; 2025</span>
-<h2>LIFT<span class="x">X</span><br>Le foil hybride<br>r&#233;invent&#233;</h2>
-<p>LiftX va au-del&#224; du simple eFoil. Con&#231;u pour le surf, le wing et le tow foil, il apporte une assistance &#233;lectrique intelligente.</p>
-<div class="lf2-liftx-tags">
-<span class="lf2-tag">eFoil</span>
-<span class="lf2-tag">Wing Foil</span>
-<span class="lf2-tag">Surf Foil</span>
-<span class="lf2-tag">Tow Foil</span>
-</div>
-<a href="/efoil-lift-x-le-foil-electrique-reinvente-surf-foil-hybride-motorise/" class="lf2-btn-dark">D&#233;couvrir LiftX</a>
-</div>
-<div class="lf2-liftx-img">
-<img src="https://liftfoils.fr/wp-content/uploads/2026/02/2025_LIFTX_43_DAWNPATROL_Package_Iso_Shadow_2000x2000.png" alt="LiftX 2025" loading="lazy">
-</div>
-</div>
-</section>
 
 <!-- === SPECS PRODUIT === -->
 <section class="lf2-specs-section">
