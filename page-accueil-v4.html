@@ -786,15 +786,39 @@ body.wp-child-theme-atelier-child {
 }
 .lf2-faq-item {
   border-bottom: 1px solid #ddd;
-  padding: 32px 0;
 }
 .lf2-faq-item:first-child { border-top: 1px solid #ddd; }
+.lf2-faq-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 28px 0;
+  cursor: pointer;
+  text-align: left;
+  gap: 16px;
+}
 .lf2-faq-q {
   font-size: 1.05rem;
   font-weight: 700;
   color: #111;
-  margin: 0 0 14px;
+  margin: 0;
   line-height: 1.4;
+  flex: 1;
+}
+.lf2-faq-icon {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid #36B7B2;
+  flex-shrink: 0;
+  transition: transform .3s;
+}
+.lf2-faq-item.open .lf2-faq-icon {
+  transform: rotate(180deg);
 }
 .lf2-faq-a {
   font-size: .95rem;
@@ -802,6 +826,11 @@ body.wp-child-theme-atelier-child {
   font-weight: 300;
   line-height: 1.8;
   margin: 0;
+  padding: 0 0 28px;
+  display: none;
+}
+.lf2-faq-item.open .lf2-faq-a {
+  display: block;
 }
 
 /* ===== VIDEO FINALE ===== */
@@ -1065,29 +1094,28 @@ body.wp-child-theme-atelier-child {
 </div>
 </section>
 
-<!-- === 8) SPLIT 2 PANNEAUX === -->
-<div class="lf2-split">
-<div class="lf2-split-panel">
+<!-- === 8) VIDEOS LIFT5 & LIFTX PLEIN LARGEUR (à la suite) === -->
+<div class="lf2-product-video-section">
 <video autoplay muted loop playsinline>
 <source src="https://liftfoils.fr/wp-content/uploads/2021/03/Video-Lift-5-‐-Realisee-Avec-Clipchamp.mp4" type="video/mp4">
 </video>
-<div class="lf2-split-grad"></div>
-<div class="lf2-split-content">
-<h3>eFoil silencieux.<br>Glisse pure.</h3>
+<div class="lf2-product-video-text right">
+<span class="lf2-eyebrow">eFoil premium</span>
+<h2>eFoil silencieux.<br>Glisse pure.</h2>
 <p>Le moteur Lift Foils a &eacute;t&eacute; con&ccedil;u pour se faire oublier au profit des sensations. Sur le LIFT5, tout est pens&eacute; pour offrir une navigation plus propre, plus fluide et plus silencieuse, avec une vraie sensation de connexion entre le rider, la planche et l&rsquo;eau.</p>
-<a href="/efoil-lift5-decouvrez-le-nouveau-foil-electrique-lift-5/" class="lf2-btn-white">D&eacute;couvrir le LIFT5</a>
+<a href="/efoil-lift5-decouvrez-le-nouveau-foil-electrique-lift-5/" class="lf2-btn-teal">D&eacute;couvrir le LIFT5</a>
 </div>
 </div>
-<div class="lf2-split-panel">
+
+<div class="lf2-product-video-section">
 <video autoplay muted loop playsinline>
 <source src="https://liftfoils.fr/wp-content/uploads/2021/03/LIFTX-eFoil-Hybrid-eFoil-Beyond-Foil-Assist-for-Surf-Progression-3.mp4" type="video/mp4">
 </video>
-<div class="lf2-split-grad"></div>
-<div class="lf2-split-content">
-<h3>Au-del&agrave; du foil.<br>Vers le foil assist nouvelle g&eacute;n&eacute;ration.</h3>
+<div class="lf2-product-video-text left">
+<span class="lf2-eyebrow">Foil hybride &middot; Lift Foils</span>
+<h2>Au-del&agrave; du foil.<br>Vers le foil assist nouvelle g&eacute;n&eacute;ration.</h2>
 <p>Le LiftX d&eacute;passe les codes traditionnels du foil &eacute;lectrique. Il s&rsquo;adresse aux riders qui veulent explorer une pratique plus ouverte, entre eFoil, surf foil, downwind assist&eacute; et foil assist, avec une plateforme hybride plus libre et plus &eacute;volutive.</p>
-<a href="/efoil-lift-x-le-foil-electrique-reinvente-surf-foil-hybride-motorise/" class="lf2-btn-white">D&eacute;couvrir le LiftX</a>
-</div>
+<a href="/efoil-lift-x-le-foil-electrique-reinvente-surf-foil-hybride-motorise/" class="lf2-btn-teal">D&eacute;couvrir le LiftX</a>
 </div>
 </div>
 
@@ -1294,31 +1322,52 @@ body.wp-child-theme-atelier-child {
 </div>
 <div class="lf2-faq-grid">
 <div class="lf2-faq-item">
+<button class="lf2-faq-btn" onclick="this.parentElement.classList.toggle('open')">
 <h3 class="lf2-faq-q">Qu&rsquo;est-ce qu&rsquo;un eFoil&nbsp;?</h3>
+<span class="lf2-faq-icon"></span>
+</button>
 <p class="lf2-faq-a">Un eFoil est une planche &eacute;quip&eacute;e d&rsquo;un foil et d&rsquo;une propulsion &eacute;lectrique qui permet de voler au-dessus de l&rsquo;eau sans vent ni vague. En fran&ccedil;ais, on parle aussi tr&egrave;s souvent de foil &eacute;lectrique.</p>
 </div>
 <div class="lf2-faq-item">
+<button class="lf2-faq-btn" onclick="this.parentElement.classList.toggle('open')">
 <h3 class="lf2-faq-q">Quelle diff&eacute;rence entre eFoil, foil &eacute;lectrique et foil assist&nbsp;?</h3>
+<span class="lf2-faq-icon"></span>
+</button>
 <p class="lf2-faq-a">Dans la majorit&eacute; des cas, il s&rsquo;agit du m&ecirc;me produit. &laquo;&nbsp;eFoil&nbsp;&raquo; est le terme le plus utilis&eacute; &agrave; l&rsquo;international pour <em>electric foil</em>, tandis que &laquo;&nbsp;foil &eacute;lectrique&nbsp;&raquo; est l&rsquo;expression la plus recherch&eacute;e en fran&ccedil;ais. Le foil assist est utilis&eacute; pour cat&eacute;goriser une planche &agrave; assistance &eacute;lectrique moins puissante et plus l&eacute;g&egrave;re qu&rsquo;un foil &eacute;lectrique/eFoil. Le foil assist est g&eacute;n&eacute;ralement utilis&eacute; pour surfer des vagues en toute l&eacute;g&egrave;ret&eacute;. Le LiftX est le produit le plus abouti en la mati&egrave;re.</p>
 </div>
 <div class="lf2-faq-item">
+<button class="lf2-faq-btn" onclick="this.parentElement.classList.toggle('open')">
 <h3 class="lf2-faq-q">Pourquoi choisir Lift Foils&nbsp;?</h3>
+<span class="lf2-faq-icon"></span>
+</button>
 <p class="lf2-faq-a">Lift Foils est l&rsquo;une des marques les plus reconnues du secteur gr&acirc;ce &agrave; son r&ocirc;le pionnier dans l&rsquo;histoire de l&rsquo;eFoil, &agrave; la qualit&eacute; de sa construction et &agrave; la coh&eacute;rence de ses plateformes LIFT5 et LiftX. La marque est particuli&egrave;rement appr&eacute;ci&eacute;e pour son niveau de finition, la fluidit&eacute; de ses sensations et son positionnement premium. La marque dispose aussi d&rsquo;un r&eacute;seau de passionn&eacute;s partout en France, avec 6 &eacute;coles/shops o&ugrave; des experts sont l&agrave; pour vous conseiller. Le stock de foil &eacute;lectrique et de pi&egrave;ces d&eacute;tach&eacute;es est en France, &agrave; Cannes.</p>
 </div>
 <div class="lf2-faq-item">
+<button class="lf2-faq-btn" onclick="this.parentElement.classList.toggle('open')">
 <h3 class="lf2-faq-q">Lift Foils est-il l&rsquo;inventeur de l&rsquo;eFoil&nbsp;?</h3>
+<span class="lf2-faq-icon"></span>
+</button>
 <p class="lf2-faq-a">Lift Foils est une marque pionni&egrave;re du eFoil. Lift Foils a imagin&eacute; l&rsquo;eFoil d&egrave;s 2015 et lanc&eacute; le premier eFoil commercial en 2018 avec le LIFT1. Lift Foils dispose de brevets pour l&rsquo;invention de ces eFoils aux US, ce qui en fait l&rsquo;industriel pionnier historique du secteur. Nick Leason, fondateur de la marque, faisait partie des pionniers &agrave; fabriquer un eFoil dans son garage au d&eacute;but du 21&egrave;me si&egrave;cle. Il est important de notifier qu&rsquo;il n&rsquo;&eacute;tait pas le seul &agrave; cette &eacute;poque, mais qu&rsquo;il a &eacute;t&eacute; le premier &agrave; industrialiser leur production et &agrave; en d&eacute;poser les brevets. En 2026, il est encore une fois le premier &agrave; proposer un eFoil sans visse ni c&acirc;ble.</p>
 </div>
 <div class="lf2-faq-item">
+<button class="lf2-faq-btn" onclick="this.parentElement.classList.toggle('open')">
 <h3 class="lf2-faq-q">Quel eFoil Lift Foils choisir pour d&eacute;buter&nbsp;?</h3>
+<span class="lf2-faq-icon"></span>
+</button>
 <p class="lf2-faq-a">Lift Foils fait partie des r&eacute;f&eacute;rences mondiales du foil &eacute;lectrique haut de gamme. Pour d&eacute;buter, un mod&egrave;le plus stable et plus tol&eacute;rant sera g&eacute;n&eacute;ralement recommand&eacute;, comme le Lift5 Cruiser 5&rsquo;4&rdquo;. Pour une pratique plus polyvalente, le Lift5 Sport 4&rsquo;9&rdquo; repr&eacute;sente souvent un excellent compromis. Pour une utilisation plus Surf, le mod&egrave;le LiftX est d&eacute;finitivement la plateforme &agrave; assistance &eacute;lectrique la plus performante en terme de puissance, d&rsquo;autonomie et de l&eacute;g&egrave;ret&eacute;.</p>
 </div>
 <div class="lf2-faq-item">
+<button class="lf2-faq-btn" onclick="this.parentElement.classList.toggle('open')">
 <h3 class="lf2-faq-q">Le LiftX est-il un foil assist&nbsp;?</h3>
+<span class="lf2-faq-icon"></span>
+</button>
 <p class="lf2-faq-a">Le LiftX ouvre une nouvelle approche entre eFoil, surf foil et foil assist. Le LiftX ne se r&eacute;sume pas &agrave; un simple foil assist. Il s&rsquo;agit d&rsquo;une plateforme hybride pens&eacute;e pour faire le lien entre eFoil, surf foil motoris&eacute; et glisse assist&eacute;e, avec une approche plus libre et plus orient&eacute;e surf. Pour juger, rien de mieux que l&rsquo;essayer&nbsp;!</p>
 </div>
 <div class="lf2-faq-item">
+<button class="lf2-faq-btn" onclick="this.parentElement.classList.toggle('open')">
 <h3 class="lf2-faq-q">O&ugrave; essayer un eFoil Lift Foils en France&nbsp;?</h3>
+<span class="lf2-faq-icon"></span>
+</button>
 <p class="lf2-faq-a">Lift Foils France propose des essais dans plusieurs destinations comme Cannes, Saint-Tropez, Antibes, Arcachon, Le Touquet et Paris. Nous avons aussi d&rsquo;autres bases de tests en France, contactez-nous pour plus de d&eacute;tails. Liftfoils.fr est le site de r&eacute;f&eacute;rence pour d&eacute;couvrir, essayer et acheter un eFoil Lift Foils en France.</p>
 </div>
 </div>
