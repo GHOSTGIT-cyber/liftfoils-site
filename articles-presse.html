@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Actualités Lift Foils France</title>
+  <style>
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { font-size: 16px; }
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      background: #f5f5f3;
+      color: #111;
+      font-weight: 300;
+      line-height: 1.7;
+    }
+
+    /* HEADER */
+    .lf2-press-header {
+      background: #0a0a0a;
+      color: #fff;
+      text-align: center;
+      padding: 80px 24px 60px;
+    }
+    .lf2-press-header .eyebrow {
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: #36B7B2;
+      margin-bottom: 20px;
+    }
+    .lf2-press-header h1 {
+      font-size: clamp(32px, 5vw, 56px);
+      font-weight: 200;
+      line-height: 1.15;
+      color: #fff;
+    }
+    .lf2-press-header p {
+      margin-top: 20px;
+      color: #aaa;
+      font-size: 16px;
+      max-width: 540px;
+      margin-left: auto;
+      margin-right: auto;
+    }
+
+    /* ARTICLES GRID */
+    .lf2-press-grid {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 80px 24px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(480px, 1fr));
+      gap: 40px;
+    }
+
+    /* ARTICLE CARD */
+    .lf2-article {
+      background: #fff;
+      overflow: hidden;
+    }
+    .lf2-article-img {
+      width: 100%;
+      aspect-ratio: 16/9;
+      object-fit: cover;
+      display: block;
+      background: #0d0d0d;
+    }
+    /* placeholder image si pas d'image */
+    .lf2-article-img-placeholder {
+      width: 100%;
+      aspect-ratio: 16/9;
+      background: #0d0d0d;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .lf2-article-img-placeholder span {
+      font-size: 48px;
+    }
+
+    .lf2-article-body {
+      padding: 36px 40px 44px;
+    }
+    .lf2-article-meta {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 20px;
+    }
+    .lf2-article-tag {
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      text-transform: uppercase;
+      color: #36B7B2;
+      font-weight: 500;
+    }
+    .lf2-article-date {
+      font-size: 12px;
+      color: #aaa;
+      letter-spacing: 0.05em;
+    }
+    .lf2-article h2 {
+      font-size: clamp(20px, 2.5vw, 28px);
+      font-weight: 300;
+      line-height: 1.3;
+      color: #111;
+      margin-bottom: 16px;
+    }
+    .lf2-article h2 strong {
+      font-weight: 500;
+    }
+    .lf2-article-intro {
+      font-size: 15px;
+      color: #555;
+      font-weight: 400;
+      margin-bottom: 20px;
+      line-height: 1.7;
+    }
+    .lf2-article-content {
+      font-size: 15px;
+      color: #555;
+      line-height: 1.8;
+    }
+    .lf2-article-content p + p {
+      margin-top: 14px;
+    }
+    .lf2-article-content a {
+      color: #36B7B2;
+      text-decoration: none;
+    }
+    .lf2-article-content a:hover {
+      text-decoration: underline;
+    }
+    .lf2-article-divider {
+      width: 40px;
+      height: 2px;
+      background: #36B7B2;
+      margin: 24px 0;
+    }
+
+    /* HIGHLIGHT QUOTE */
+    .lf2-article-quote {
+      border-left: 3px solid #36B7B2;
+      padding: 16px 24px;
+      background: #f5f5f3;
+      margin: 24px 0;
+      font-style: italic;
+      color: #333;
+      font-size: 15px;
+    }
+
+    /* CTA */
+    .lf2-article-cta {
+      display: inline-block;
+      margin-top: 28px;
+      padding: 14px 28px;
+      background: #36B7B2;
+      color: #fff;
+      font-size: 12px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      text-decoration: none;
+      font-weight: 500;
+      transition: background 0.2s;
+    }
+    .lf2-article-cta:hover {
+      background: #2aa09b;
+    }
+
+    /* FOOTER */
+    .lf2-press-footer {
+      background: #0a0a0a;
+      color: #aaa;
+      text-align: center;
+      padding: 48px 24px;
+      font-size: 13px;
+    }
+    .lf2-press-footer a {
+      color: #36B7B2;
+      text-decoration: none;
+    }
+
+    @media (max-width: 600px) {
+      .lf2-press-grid {
+        grid-template-columns: 1fr;
+        padding: 40px 16px;
+        gap: 24px;
+      }
+      .lf2-article-body {
+        padding: 28px 24px 36px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+<!-- HEADER -->
+<header class="lf2-press-header">
+  <p class="eyebrow">Distributeur officiel Lift Foils France · Actualités</p>
+  <h1>Lift Foils dans l'actualité</h1>
+  <p>Compétitions, records du monde, célébrités — Lift Foils repousse les limites du foil électrique.</p>
+</header>
+
+<!-- ARTICLES -->
+<section class="lf2-press-grid">
+
+  <!-- ARTICLE 1 — Coupe du monde de foil Dubaï -->
+  <article class="lf2-article">
+    <div class="lf2-article-img-placeholder">
+      <span>🏆</span>
+    </div>
+    <div class="lf2-article-body">
+      <div class="lf2-article-meta">
+        <span class="lf2-article-tag">Compétition</span>
+        <span class="lf2-article-date">Mars 2025</span>
+      </div>
+      <h2><strong>Lift Foils remporte la Coupe du Monde de Foil</strong> à Dubaï</h2>
+      <p class="lf2-article-intro">
+        Une victoire historique pour la marque californienne. L'équipe Lift Foils s'est imposée lors de la Coupe du Monde de foil à Dubaï, confirmant sa domination sur la scène internationale du foil électrique.
+      </p>
+      <div class="lf2-article-divider"></div>
+      <div class="lf2-article-content">
+        <p>
+          Sur les eaux du golfe Persique, les riders Lift Foils ont livré une performance exceptionnelle face aux meilleures équipes mondiales. La technologie brevetée de Lift Foils — propulsion silencieuse, batterie intégrée et construction carbone full premium — a fait la différence en course.
+        </p>
+        <div class="lf2-article-quote">
+          "Cette victoire à Dubaï prouve que Lift Foils n'est pas seulement le pionnier du eFoil, c'est aussi la référence absolue en compétition."
+        </div>
+        <p>
+          Cette victoire s'inscrit dans la longue tradition d'excellence de Lift Foils, inventeur du eFoil en 2017. Disponibles en France via notre réseau de revendeurs officiels, le <a href="/efoil-lift5-decouvrez-le-nouveau-foil-electrique-lift-5/">LIFT5</a> et le <a href="/efoil-lift-x-le-foil-electrique-reinvente-surf-foil-hybride-motorise/">LiftX</a> sont les mêmes machines que celles des champions.
+        </p>
+      </div>
+      <a href="/efoil-lift-foils/" class="lf2-article-cta">Découvrir les eFoils Lift Foils</a>
+    </div>
+  </article>
+
+  <!-- ARTICLE 2 — Mark Zuckerberg fait du Lift -->
+  <article class="lf2-article">
+    <div class="lf2-article-img-placeholder">
+      <span>🤙</span>
+    </div>
+    <div class="lf2-article-body">
+      <div class="lf2-article-meta">
+        <span class="lf2-article-tag">Célébrités</span>
+        <span class="lf2-article-date">2024</span>
+      </div>
+      <h2><strong>Mark Zuckerberg</strong> choisit un eFoil Lift Foils pour ses sessions de glisse</h2>
+      <p class="lf2-article-intro">
+        Le fondateur de Meta n'a pas caché sa passion pour le foil électrique. Mark Zuckerberg a été photographié en pleine session sur un eFoil Lift Foils, ajoutant la marque californienne à sa liste d'équipements sportifs de prédilection.
+      </p>
+      <div class="lf2-article-divider"></div>
+      <div class="lf2-article-content">
+        <p>
+          Connu pour ses activités sportives extrêmes — MMA, surf, kite — Mark Zuckerberg a succombé à la sensation unique du foil électrique signé Lift Foils. Une session filmée sur les côtes hawaïennes a rapidement fait le tour des réseaux sociaux.
+        </p>
+        <div class="lf2-article-quote">
+          "Le eFoil Lift Foils, c'est la fusion parfaite entre technologie de pointe et sensation de glisse absolue."
+        </div>
+        <p>
+          Quand l'un des hommes les plus influents de la planète choisit un <a href="/efoil-lift-foils/">eFoil Lift Foils</a>, c'est la preuve que la marque a atteint un statut bien au-delà du sport nautique. Essayez vous aussi l'expérience dans l'une de nos <a href="/location-de-surf-electrique-a-foil-France/">bases en France</a>.
+        </p>
+      </div>
+      <a href="/location-de-surf-electrique-a-foil-France/" class="lf2-article-cta">Réserver un essai</a>
+    </div>
+  </article>
+
+  <!-- ARTICLE 3 — Nikolas Plytas double backflip -->
+  <article class="lf2-article">
+    <div class="lf2-article-img-placeholder">
+      <span>🔄</span>
+    </div>
+    <div class="lf2-article-body">
+      <div class="lf2-article-meta">
+        <span class="lf2-article-tag">Record du monde</span>
+        <span class="lf2-article-date">2024</span>
+      </div>
+      <h2><strong>Nikolas Plytas</strong> réalise le premier double backflip au monde avec un foil Lift</h2>
+      <p class="lf2-article-intro">
+        L'histoire du foil vient d'être réécrite. Nikolas Plytas est entré dans la légende en réalisant le tout premier double backflip de l'histoire du foil électrique, à bord d'un eFoil Lift Foils.
+      </p>
+      <div class="lf2-article-divider"></div>
+      <div class="lf2-article-content">
+        <p>
+          Ce que beaucoup pensaient impossible, Nikolas Plytas l'a rendu réel. Après des semaines d'entraînement intensif, le rider a enchaîné deux rotations arrière complètes en l'air avec son eFoil Lift Foils — une prouesse technique qui redéfinit les limites de la discipline.
+        </p>
+        <div class="lf2-article-quote">
+          "Sans la stabilité et la puissance du Lift Foils, ce trick n'aurait jamais été possible. La machine est incroyable."
+          <br>— Nikolas Plytas
+        </div>
+        <p>
+          La légèreté de la construction carbone du <a href="/efoil-lift-foils/">Lift Foils</a>, combinée à sa propulsion fluide et précise, a permis à Nikolas de pousser les limites du foil électrique vers un territoire totalement inédit. Un record qui appartient désormais à l'histoire du sport.
+        </p>
+      </div>
+      <a href="/efoil-lift-foils/" class="lf2-article-cta">Découvrir les eFoils Lift Foils</a>
+    </div>
+  </article>
+
+  <!-- ARTICLE 4 — Kai Lenny Nazaré -->
+  <article class="lf2-article">
+    <div class="lf2-article-img-placeholder">
+      <span>🌊</span>
+    </div>
+    <div class="lf2-article-body">
+      <div class="lf2-article-meta">
+        <span class="lf2-article-tag">Record du monde</span>
+        <span class="lf2-article-date">2024 — Nazaré, Portugal</span>
+      </div>
+      <h2><strong>Kai Lenny</strong> ride la plus grosse vague jamais surfée en foil à Nazaré</h2>
+      <p class="lf2-article-intro">
+        À Nazaré, au Portugal, là où les vagues atteignent des hauteurs mythiques, Kai Lenny a accompli l'impensable : rider la plus grosse vague jamais surfée en foil, à bord d'un foil Lift Foils.
+      </p>
+      <div class="lf2-article-divider"></div>
+      <div class="lf2-article-content">
+        <p>
+          Nazaré est connue pour ses vagues géantes, certaines dépassant les 30 mètres. C'est dans ce décor apocalyptique que Kai Lenny — légende vivante du surf et du foil — a choisi de repousser les limites du possible, armé d'un foil Lift Foils.
+        </p>
+        <div class="lf2-article-quote">
+          "Le foil Lift m'a donné la vitesse et la stabilité nécessaires pour prendre cette vague. C'était la session de ma vie."
+          <br>— Kai Lenny
+        </div>
+        <p>
+          Cette performance spectaculaire illustre parfaitement la robustesse et la réactivité des foils Lift, conçus pour performer dans les conditions les plus extrêmes comme dans les eaux calmes. Le même savoir-faire technologique se retrouve dans le <a href="/efoil-lift5-decouvrez-le-nouveau-foil-electrique-lift-5/">LIFT5</a> et le <a href="/efoil-lift-x-le-foil-electrique-reinvente-surf-foil-hybride-motorise/">LiftX</a>, disponibles en France.
+        </p>
+      </div>
+      <a href="/location-de-surf-electrique-a-foil-France/" class="lf2-article-cta">Essayer un eFoil en France</a>
+    </div>
+  </article>
+
+</section>
+
+<!-- FOOTER -->
+<footer class="lf2-press-footer">
+  <p>Lift Foils France — Distributeur officiel &nbsp;·&nbsp; <a href="mailto:info@liftfoils.fr">info@liftfoils.fr</a> &nbsp;·&nbsp; <a href="tel:0635305067">06 35 30 50 67</a></p>
+</footer>
+
+</body>
+</html>
