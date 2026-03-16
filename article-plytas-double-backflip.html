@@ -96,6 +96,23 @@
 
     footer { background: #0a0a0a; color: #aaa; text-align: center; padding: 40px 24px; font-size: 13px; }
     footer a { color: #36B7B2; text-decoration: none; }
+
+    .lf2-art-video-embed { margin: 40px 0; background: #000; }
+    .lf2-art-video-embed iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
+    .lf2-art-video-embed figcaption { font-size: 12px; color: #999; padding: 10px 0 0; font-style: italic; }
+    .lf2-art-person-photo {
+      display: flex; gap: 24px; align-items: flex-start; margin: 40px 0;
+      background: #fff; padding: 24px;
+    }
+    .lf2-art-person-photo img { width: 180px; height: 180px; object-fit: cover; flex-shrink: 0; }
+    .lf2-art-person-photo .bio { flex: 1; }
+    .lf2-art-person-photo .bio strong { display: block; font-size: 16px; font-weight: 600; color: #111; margin-bottom: 6px; }
+    .lf2-art-person-photo .bio span { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #36B7B2; display: block; margin-bottom: 10px; }
+    .lf2-art-person-photo .bio p { font-size: 14px; color: #555; line-height: 1.7; margin: 0; }
+    @media (max-width: 600px) {
+      .lf2-art-person-photo { flex-direction: column; }
+      .lf2-art-person-photo img { width: 100%; height: 240px; }
+    }
   </style>
 </head>
 <body>
@@ -119,6 +136,17 @@
   <div class="lf2-art-record">
     <p class="record-label">Record mondial</p>
     <p class="record-title"><strong>1er double backflip</strong> de l'histoire du foil électrique</p>
+  </div>
+
+  <!-- BIO NIKOLAS PLYTAS -->
+  <div class="lf2-art-person-photo">
+    <img src="https://liftfoils.com/cdn/shop/files/Nikolas_Plytas_Rider_Profile_Lift_Foils.jpg" alt="Nikolas Plytas — rider officiel Lift Foils, 1er double backflip eFoil"
+      onerror="this.src='https://liftfoils.fr/wp-content/uploads/2025/12/DSC1001_RodrigoSnaps-Inc.-1-edited-scaled.jpg'">
+    <div class="bio">
+      <span>Rider officiel Lift Foils · Record mondial 2024</span>
+      <strong>Nikolas Plytas</strong>
+      <p>Waterman de haut niveau et rider officiel Lift Foils, Nikolas Plytas est l'homme qui a réalisé le premier double backflip de l'histoire du foil électrique. Originaire de Grèce, il repousse sans cesse les limites du eFoil à travers le monde.</p>
+    </div>
   </div>
 
   <h2>La préparation d'un record impossible</h2>
@@ -146,6 +174,17 @@
   <p>
     Le système de batterie intégré en bateau garantit un centre de gravité bas et constant, crucial pour maintenir l'axe de rotation pendant deux tours complets. Un eFoil classique avec batterie en sac à dos aurait rendu le trick quasi impossible à contrôler.
   </p>
+
+  <!-- VIDÉO NIKOLAS PLYTAS × LIFT FOILS -->
+  <figure class="lf2-art-video-embed">
+    <iframe src="https://www.youtube.com/embed/oWkNBD9LzeQ" title="Legendary Waterman — Nikolas Plytas × Lift Foils" allowfullscreen loading="lazy"></iframe>
+    <figcaption>Nikolas Plytas × Lift Foils — le waterman légendaire en action (source : chaîne officielle Lift Foils)</figcaption>
+  </figure>
+
+  <figure class="lf2-art-video-embed">
+    <iframe src="https://www.youtube.com/embed/IRqcex0BZeQ" title="Foil Progression — Nikolas Plytas #shorts" allowfullscreen loading="lazy"></iframe>
+    <figcaption>Nikolas Plytas — progression en foil (source : Lift Foils)</figcaption>
+  </figure>
 
   <div class="lf2-art-divider"></div>
 

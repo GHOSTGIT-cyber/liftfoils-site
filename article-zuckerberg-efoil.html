@@ -87,6 +87,35 @@
 
     footer { background: #0a0a0a; color: #aaa; text-align: center; padding: 40px 24px; font-size: 13px; }
     footer a { color: #36B7B2; text-decoration: none; }
+
+    .lf2-art-video-embed { margin: 40px 0; background: #000; }
+    .lf2-art-video-embed iframe { width: 100%; aspect-ratio: 16/9; display: block; border: none; }
+    .lf2-art-video-embed figcaption { font-size: 12px; color: #999; padding: 10px 0 0; font-style: italic; }
+    .lf2-art-ig-block {
+      margin: 40px 0; background: #fff; padding: 28px 32px;
+      border-left: 3px solid #36B7B2;
+    }
+    .lf2-art-ig-block .ig-label {
+      font-size: 11px; letter-spacing: 0.2em; text-transform: uppercase; color: #36B7B2; margin-bottom: 12px; display: block;
+    }
+    .lf2-art-ig-block p { font-size: 15px; color: #333; line-height: 1.7; margin-bottom: 14px; }
+    .lf2-art-ig-block a {
+      display: inline-block; padding: 10px 24px; background: #111; color: #fff;
+      font-size: 12px; letter-spacing: 0.1em; text-transform: uppercase; text-decoration: none;
+    }
+    .lf2-art-person-photo {
+      display: flex; gap: 24px; align-items: flex-start; margin: 40px 0;
+      background: #fff; padding: 24px;
+    }
+    .lf2-art-person-photo img { width: 180px; height: 180px; object-fit: cover; flex-shrink: 0; }
+    .lf2-art-person-photo .bio { flex: 1; }
+    .lf2-art-person-photo .bio strong { display: block; font-size: 16px; font-weight: 600; color: #111; margin-bottom: 6px; }
+    .lf2-art-person-photo .bio span { font-size: 11px; letter-spacing: 0.15em; text-transform: uppercase; color: #36B7B2; display: block; margin-bottom: 10px; }
+    .lf2-art-person-photo .bio p { font-size: 14px; color: #555; line-height: 1.7; margin: 0; }
+    @media (max-width: 600px) {
+      .lf2-art-person-photo { flex-direction: column; }
+      .lf2-art-person-photo img { width: 100%; height: 240px; }
+    }
   </style>
 </head>
 <body>
@@ -124,6 +153,24 @@
 
   <div class="lf2-art-quote">
     "Le eFoil Lift Foils, c'est la fusion parfaite entre technologie de pointe et sensation de glisse absolue."
+  </div>
+
+  <!-- PHOTO + BIO ZUCKERBERG -->
+  <div class="lf2-art-person-photo">
+    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/1/18/Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg/440px-Mark_Zuckerberg_F8_2019_Keynote_%2832830578717%29_%28cropped%29.jpg"
+      alt="Mark Zuckerberg — fondateur de Meta, passionné de eFoil Lift Foils">
+    <div class="bio">
+      <span>Fondateur de Meta · Passionné de glisse</span>
+      <strong>Mark Zuckerberg</strong>
+      <p>PDG de Meta (Facebook, Instagram, WhatsApp), Zuckerberg est connu pour son engagement sportif intense : MMA, surf, kite, foil. En 2024, il a posté sur Instagram une session en eFoil Lift Foils, rapidement virale, propulsant la marque dans la culture pop mondiale.</p>
+    </div>
+  </div>
+
+  <!-- EMBED REEL INSTAGRAM ZUCKERBERG EN EFOIL -->
+  <div class="lf2-art-ig-block">
+    <span class="ig-label">📱 Instagram — Reel viral</span>
+    <p>Mark Zuckerberg a partagé sa session eFoil sur son Instagram, vue par des millions d'abonnés. Le reel montre le patron de Meta voler sur l'eau en totale maîtrise — une pub gratuite et planétaire pour Lift Foils.</p>
+    <a href="https://www.instagram.com/reel/DE_FWQtOOGO/" target="_blank" rel="noopener noreferrer">Voir le reel Instagram →</a>
   </div>
 
   <h2>Le eFoil, nouveau symbole du lifestyle premium</h2>
