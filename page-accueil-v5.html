@@ -64,22 +64,23 @@ body.lfmm-v4-active {
   margin-top: 0 !important;
 }
 
-/* 2c) ZONE BLANCHE ATELIER — .page-heading génère une zone blanche
-   même avec page-heading-hidden, il a du height. On le colle. */
+/* 2c) ZONE BLANCHE ATELIER — suppression totale du page-heading */
 .page-heading,
 .page-heading-hidden,
 .page-heading.page-heading-hidden,
 #main-container > .page-heading,
 .page-heading .container,
-.page-heading .heading-text,
+.page-heading .heading-text {
+  display: none !important;
+  height: 0 !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
 #main-container {
   padding-top: 0 !important;
   margin-top: 0 !important;
-  min-height: 0 !important;
-  height: auto !important;
-}
-.page-heading-hidden {
-  display: none !important;
 }
 
 /* 2d) Fond body turquoise Atelier (#1fe2c5) — on le passe en noir
