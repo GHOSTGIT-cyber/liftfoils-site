@@ -1,0 +1,321 @@
+<!-- wp:html -->
+<style>
+/* ===== RESET ATELIER ===== */
+body.page #page,body.page #content,body.page #primary,body.page #inner-content,
+body.page .content-area,body.page .site-content,body.page .entry-content,
+body.page .entry-content-wrap,body.page .page-content,body.page article.page,
+body.page .hentry,body.page main#main,
+#page,#content,#primary,#inner-content,.content-area,.site-content,.entry-content,
+.entry-content-wrap,.page-content,.hentry,main#main,.wrap,.container,.site-inner {
+  max-width:none!important;width:100%!important;
+  padding-left:0!important;padding-right:0!important;
+  margin-left:0!important;margin-right:0!important;
+}
+.page-heading,.page-heading-hidden,#main-container>.page-heading,
+.page-heading .container,.page-heading .heading-text,#main-container {
+  padding-top:0!important;margin-top:0!important;min-height:0!important;height:auto!important;
+}
+.page-heading-hidden{display:none!important;}
+body.wp-theme-atelier,body.wp-child-theme-atelier-child,#container,#main-container{background:#0a0a0a!important;}
+#page,.site-content,#content,.entry-content-wrap,#primary,.content-area{padding-top:0!important;margin-top:0!important;}
+*,*::before,*::after{box-sizing:border-box}
+
+/* ===== BASE ===== */
+.lfc {
+  font-family:-apple-system,BlinkMacSystemFont,'Segoe UI',sans-serif;
+  width:100%;max-width:100%;overflow-x:hidden;background:#0a0a0a;
+}
+.lfc > section {
+  width:100vw!important;max-width:100vw!important;
+  position:relative;left:50%;margin-left:-50vw!important;margin-right:-50vw!important;
+  box-sizing:border-box;
+}
+.lfc-eyebrow {
+  font-size:.8rem;letter-spacing:.35em;text-transform:uppercase;
+  color:#36B7B2;display:block;font-weight:700;margin-bottom:1.2rem;
+}
+
+/* ===== HERO ===== */
+.lfc-hero {
+  position:relative;height:60vh;min-height:400px;overflow:hidden;
+  display:flex;align-items:flex-end;justify-content:flex-start;background:#000;
+}
+.lfc-hero video {
+  position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:.7;
+}
+.lfc-hero-grad {
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.95) 0%,rgba(0,0,0,.3) 60%,transparent 100%);
+}
+.lfc-hero-content {
+  position:relative;z-index:2;padding:0 7vw 80px;color:#fff;
+}
+.lfc-hero-content h1 {
+  font-size:clamp(2.5rem,6vw,6rem);font-weight:900;line-height:.9;
+  color:#fff!important;letter-spacing:-.03em;margin:0 0 1.5rem;
+  text-transform:uppercase;text-shadow:0 4px 40px rgba(0,0,0,.5);
+}
+.lfc-hero-content h1 span{color:#36B7B2;}
+.lfc-hero-content p {
+  font-size:1.05rem;font-weight:300;opacity:.85;max-width:520px;
+  line-height:1.7;text-shadow:0 2px 12px rgba(0,0,0,.6);
+}
+
+/* ===== CONTACT STRIP ===== */
+.lfc-contact-strip {
+  background:#111;padding:80px 6vw;
+  display:grid;grid-template-columns:1fr 1fr 1fr;gap:2px;
+}
+.lfc-contact-card {
+  background:#1a1a1a;padding:56px 48px;text-align:center;
+  transition:background .3s;
+}
+.lfc-contact-card:hover{background:#222;}
+.lfc-contact-icon {
+  font-size:2rem;margin-bottom:1.2rem;display:block;
+}
+.lfc-contact-label {
+  font-size:.65rem;letter-spacing:.28em;text-transform:uppercase;
+  color:#36B7B2;font-weight:700;display:block;margin-bottom:.8rem;
+}
+.lfc-contact-value {
+  font-size:1.25rem;font-weight:700;color:#fff;text-decoration:none;
+  display:block;line-height:1.3;
+}
+.lfc-contact-value:hover{color:#36B7B2;}
+.lfc-contact-sub {
+  font-size:.85rem;color:#666;margin-top:.5rem;font-weight:300;
+}
+
+/* ===== MAP ===== */
+.lfc-map-section {
+  background:#0a0a0a;padding:100px 6vw;
+}
+.lfc-map-header {
+  display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:56px;
+}
+.lfc-map-header h2 {
+  font-size:clamp(2.5rem,5vw,4rem);font-weight:900;letter-spacing:-.04em;
+  margin:0;text-transform:uppercase;color:#fff;
+}
+.lfc-map-header p {
+  font-size:.9rem;color:#666;font-weight:300;max-width:400px;text-align:right;line-height:1.6;
+}
+.lfc-map-embed {
+  width:100%;height:560px;border:none;
+  filter:grayscale(20%) contrast(1.05);
+}
+
+/* ===== BASES GRID ===== */
+.lfc-bases {
+  background:#111;padding:100px 6vw;
+}
+.lfc-bases-head {
+  margin-bottom:60px;
+}
+.lfc-bases-head h2 {
+  font-size:clamp(2rem,4vw,3.5rem);font-weight:900;letter-spacing:-.04em;
+  text-transform:uppercase;color:#fff;margin:0 0 .8rem;
+}
+.lfc-bases-head p {
+  font-size:.95rem;color:#666;font-weight:300;max-width:650px;line-height:1.7;
+}
+.lfc-bases-grid {
+  display:grid;grid-template-columns:repeat(3,1fr);gap:4px;background:#222;
+}
+.lfc-base-tile {
+  position:relative;overflow:hidden;background:#333;aspect-ratio:3/4;
+  text-decoration:none;
+}
+.lfc-base-tile img {
+  width:100%;height:100%;object-fit:cover;object-position:center;
+  display:block;transition:transform .6s ease;
+}
+.lfc-base-tile:hover img{transform:scale(1.05);}
+.lfc-base-overlay {
+  position:absolute;inset:0;
+  background:linear-gradient(to top,rgba(0,0,0,.88) 0%,transparent 55%);
+  display:flex;align-items:flex-end;padding:28px 24px;
+}
+.lfc-base-label {color:#fff;}
+.lfc-base-label span {
+  display:block;font-size:.6rem;letter-spacing:.28em;text-transform:uppercase;
+  color:#36B7B2;font-weight:700;margin-bottom:4px;
+}
+.lfc-base-label h3 {
+  font-size:1.4rem;font-weight:800;margin:0;text-transform:uppercase;
+  line-height:1;color:#fff;
+}
+.lfc-base-tile:hover .lfc-base-label h3{color:#36B7B2;}
+
+/* ===== CTA FINAL ===== */
+.lfc-cta {
+  position:relative;height:70vh;min-height:460px;overflow:hidden;background:#000;
+}
+.lfc-cta video {
+  width:100%;height:100%;object-fit:cover;display:block;
+}
+.lfc-cta-overlay {
+  position:absolute;inset:0;background:rgba(0,0,0,.55);
+  display:flex;align-items:center;justify-content:center;
+}
+.lfc-cta-text{text-align:center;color:#fff;max-width:680px;padding:0 24px;}
+.lfc-cta-text h2 {
+  font-size:clamp(2.5rem,6vw,5rem);font-weight:900;margin:0 0 1rem;
+  text-transform:uppercase;line-height:1;color:#fff!important;
+}
+.lfc-cta-text p {
+  font-size:1rem;font-weight:300;margin:0 0 2.5rem;opacity:.85;line-height:1.7;
+}
+.lfc-cta-group {
+  display:flex;gap:16px;flex-wrap:wrap;justify-content:center;align-items:center;
+}
+.lfc-btn-teal {
+  display:inline-block;padding:18px 60px;background:#36B7B2;color:#fff;
+  text-decoration:none;font-size:.8rem;letter-spacing:.2em;text-transform:uppercase;font-weight:700;
+}
+.lfc-btn-border {
+  display:inline-block;padding:18px 32px;border:2px solid rgba(255,255,255,.7);
+  color:#fff;text-decoration:none;font-size:.8rem;letter-spacing:.15em;
+  text-transform:uppercase;font-weight:600;
+}
+.lfc-btn-border:hover{background:rgba(255,255,255,.1);}
+
+@media(max-width:900px){
+  .lfc-contact-strip{grid-template-columns:1fr;}
+  .lfc-bases-grid{grid-template-columns:1fr 1fr;}
+  .lfc-map-header{flex-direction:column;align-items:flex-start;gap:16px;}
+  .lfc-map-header p{text-align:left;}
+}
+@media(max-width:600px){
+  .lfc-bases-grid{grid-template-columns:1fr;}
+}
+</style>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<div class="lfc">
+
+<!-- HERO -->
+<section class="lfc-hero">
+<video autoplay muted loop playsinline>
+<source src="https://liftfoils.fr/wp-content/uploads/2021/03/Lift-Foils-eFoil-Lift-5-vue-drone.mp4" type="video/mp4">
+</video>
+<div class="lfc-hero-grad"></div>
+<div class="lfc-hero-content">
+<span class="lfc-eyebrow">Lift Foils France &middot; Distributeur officiel</span>
+<h1>Nous<br><span>contacter</span></h1>
+<p>Essai, achat, conseil ou partenariat &mdash; notre &eacute;quipe de sp&eacute;cialistes Lift Foils est disponible pour vous accompagner.</p>
+</div>
+</section>
+
+<!-- CONTACT STRIP -->
+<section class="lfc-contact-strip">
+<div class="lfc-contact-card">
+<span class="lfc-contact-icon">✉</span>
+<span class="lfc-contact-label">Email</span>
+<a href="mailto:info@liftfoils.fr" class="lfc-contact-value">info@liftfoils.fr</a>
+<p class="lfc-contact-sub">R&eacute;ponse sous 24h</p>
+</div>
+<div class="lfc-contact-card">
+<span class="lfc-contact-icon">📞</span>
+<span class="lfc-contact-label">T&eacute;l&eacute;phone</span>
+<a href="tel:0635305067" class="lfc-contact-value">06 35 30 50 67</a>
+<p class="lfc-contact-sub">Lun&ndash;Sam, 9h&ndash;19h</p>
+</div>
+<div class="lfc-contact-card">
+<span class="lfc-contact-icon">📍</span>
+<span class="lfc-contact-label">Stock &amp; SAV</span>
+<span class="lfc-contact-value">Cannes, France</span>
+<p class="lfc-contact-sub">Livraison partout en France</p>
+</div>
+</section>
+
+<!-- MAP -->
+<section class="lfc-map-section">
+<div class="lfc-map-header">
+<div>
+<span class="lfc-eyebrow">Nos bases en France</span>
+<h2>O&ugrave; nous trouver</h2>
+</div>
+<p>Retrouvez nos points d&rsquo;essai et partenaires Lift Foils sur toute la France m&eacute;tropolitaine et en Corse.</p>
+</div>
+<iframe
+  class="lfc-map-embed"
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2795123.4!2d0.5!3d46.5!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cebb8e5f7f0d5b%3A0x40819a5fd970220!2sFrance!5e0!3m2!1sfr!2sfr!4v1710000000000!5m2!1sfr!2sfr"
+  allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade">
+</iframe>
+</section>
+
+<!-- BASES -->
+<section class="lfc-bases">
+<div class="lfc-bases-head">
+<span class="lfc-eyebrow">Essais &amp; partenaires</span>
+<h2>Nos bases eFoil</h2>
+<p>D&eacute;couvrez, testez et comparez les mod&egrave;les Lift Foils dans nos bases partout en France. R&eacute;servez un essai ou passez nous voir directement.</p>
+</div>
+<div class="lfc-bases-grid">
+<a class="lfc-base-tile" href="https://efoilcotedazur.fr/" target="_blank" rel="noopener">
+<img src="https://liftfoils.fr/wp-content/uploads/2025/12/Cannes_day1-177-edited.jpg" alt="eFoil Cannes" loading="lazy">
+<div class="lfc-base-overlay"><div class="lfc-base-label"><span>C&ocirc;te d&rsquo;Azur</span><h3>eFoil Cannes</h3></div></div>
+</a>
+<a class="lfc-base-tile" href="https://efoil-sainttropez.fr/" target="_blank" rel="noopener">
+<img src="https://liftfoils.fr/wp-content/uploads/2021/03/ROD6336-scaled.jpg" alt="eFoil Saint-Tropez" loading="lazy">
+<div class="lfc-base-overlay"><div class="lfc-base-label"><span>Var</span><h3>eFoil Saint-Tropez</h3></div></div>
+</a>
+<a class="lfc-base-tile" href="https://efoil-antibes.fr/" target="_blank" rel="noopener">
+<img src="https://liftfoils.fr/wp-content/uploads/2025/12/DSC1001_RodrigoSnaps-Inc.-1-edited-scaled.jpg" alt="eFoil Antibes" loading="lazy">
+<div class="lfc-base-overlay"><div class="lfc-base-label"><span>Alpes-Maritimes</span><h3>eFoil Antibes</h3></div></div>
+</a>
+<a class="lfc-base-tile" href="https://efoil-arcachon.fr/" target="_blank" rel="noopener">
+<img src="https://liftfoils.fr/wp-content/uploads/2021/03/ROD0807.NEF83131-scaled.jpg" alt="eFoil Arcachon" loading="lazy">
+<div class="lfc-base-overlay"><div class="lfc-base-label"><span>Gironde</span><h3>eFoil Arcachon</h3></div></div>
+</a>
+<a class="lfc-base-tile" href="https://efoil-letouquet.fr/" target="_blank" rel="noopener">
+<img src="https://liftfoils.fr/wp-content/uploads/2021/03/ROD7600-scaled.jpg" alt="eFoil Le Touquet" loading="lazy">
+<div class="lfc-base-overlay"><div class="lfc-base-label"><span>Pas-de-Calais</span><h3>eFoil Le Touquet</h3></div></div>
+</a>
+<a class="lfc-base-tile" href="https://foilinparis.fr/" target="_blank" rel="noopener">
+<img src="https://liftfoils.fr/wp-content/uploads/2026/01/Foilin_paris-357-scaled.jpg" alt="eFoil Paris" loading="lazy">
+<div class="lfc-base-overlay"><div class="lfc-base-label"><span>&Icirc;le-de-France</span><h3>eFoil Paris</h3></div></div>
+</a>
+</div>
+</section>
+
+<!-- CTA FINAL -->
+<section class="lfc-cta">
+<video autoplay muted loop playsinline>
+<source src="https://liftfoils.fr/wp-content/uploads/2021/03/Lift-Foils-eFoil-Electric-Surfboard-Premium-Surf-Hydrofoils-10.mp4" type="video/mp4">
+</video>
+<div class="lfc-cta-overlay">
+<div class="lfc-cta-text">
+<h2>Pr&ecirc;t &agrave; voler&nbsp;?</h2>
+<p>R&eacute;servez votre essai ou &eacute;changez avec un sp&eacute;cialiste pour trouver le eFoil Lift Foils adapt&eacute; &agrave; votre pratique.</p>
+<div class="lfc-cta-group">
+<a href="mailto:info@liftfoils.fr" class="lfc-btn-teal">Envoyer un email</a>
+<a href="tel:0635305067" class="lfc-btn-border">06 35 30 50 67</a>
+</div>
+</div>
+</div>
+</section>
+
+</div>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<script>
+(function(){
+  var lfc=document.querySelector('.lfc');
+  if(!lfc)return;
+  var el=lfc.parentElement;
+  while(el&&el!==document.body){
+    el.style.maxWidth='none';el.style.width='100%';
+    el.style.paddingLeft='0';el.style.paddingRight='0';
+    el.style.marginLeft='0';el.style.marginRight='0';
+    el=el.parentElement;
+  }
+  var ec=document.querySelector('.entry-content');
+  if(ec){ec.style.padding='0';ec.style.maxWidth='none';}
+})();
+</script>
+<!-- /wp:html -->
