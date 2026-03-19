@@ -135,7 +135,7 @@ body.wp-child-theme-atelier-child {
   color: #fff;
 }
 .lf2-hero-eyebrow {
-  font-size: .72rem;
+  font-size: .85rem;
   letter-spacing: .3em;
   text-transform: uppercase;
   opacity: .75;
@@ -144,7 +144,7 @@ body.wp-child-theme-atelier-child {
   font-weight: 500;
 }
 .lf2-hero-title {
-  font-size: clamp(2.8rem, 7.84vw, 7.28rem);
+  font-size: clamp(2.2rem, 6.4vw, 6.2rem);
   font-weight: 900;
   line-height: .88;
   color: #fff !important;
@@ -228,9 +228,9 @@ body.wp-child-theme-atelier-child {
   text-transform: none;
 }
 .lf2-narrative.light .lf2-narrative-text p { color: #555; }
-.lf2-narrative-inner { max-width: 460px; }
+.lf2-narrative-inner { max-width: 600px; }
 .lf2-eyebrow {
-  font-size: .68rem;
+  font-size: .85rem;
   letter-spacing: .35em;
   text-transform: uppercase;
   color: #36B7B2;
@@ -435,6 +435,13 @@ body.wp-child-theme-atelier-child {
   object-fit: cover;
   display: block;
 }
+.lf2-product-video-section.lf2-product-video-section-liftx {
+  background: #000;
+}
+.lf2-product-video-section.lf2-product-video-section-liftx video {
+  box-sizing: border-box;
+  padding-left: 40%;
+}
 .lf2-product-video-section::after {
   content: '';
   position: absolute;
@@ -449,11 +456,9 @@ body.wp-child-theme-atelier-child {
   transform: translateY(-50%);
   z-index: 2;
   color: #fff;
-  max-width: 520px;
+  max-width: 60%;
   padding: 0 6vw;
 }
-.lf2-product-video-text.right { right: 0; text-align: right; }
-.lf2-product-video-text.left  { left: 0;  text-align: left;  }
 .lf2-product-video-text .lf2-eyebrow { color: #36B7B2; }
 .lf2-product-video-text h2 {
   font-size: clamp(1.8rem, 4vw, 3.5rem);
@@ -567,7 +572,7 @@ body.wp-child-theme-atelier-child {
   background: #fff;
 }
 .lf2-feat-num {
-  font-size: 4.5rem;
+  font-size: 8.5rem;
   font-weight: 900;
   color: #36B7B2;
   display: block;
@@ -935,28 +940,29 @@ body.wp-child-theme-atelier-child {
 }
 </style>
 <!-- /wp:html -->
+
 <!-- wp:html -->
 <div class="lf2">
 
 <!-- === 1) HERO VIDEO PLEIN ECRAN === -->
 <section class="lf2-hero">
 <video autoplay muted loop playsinline poster="https://liftfoils.fr/wp-content/uploads/2025/12/Cannes_day1-177-edited.jpg">
-<source src="https://liftfoils.fr/wp-content/uploads/2021/03/Lift-Foils-eFoil-Electric-Surfboard-Premium-Surf-Hydrofoils-10.mp4" type="video/mp4">
+<source src="https://liftfoils.com/cdn/shop/videos/c/vp/1aa2b498170f44f5a166ecb7cf92346e/1aa2b498170f44f5a166ecb7cf92346e.HD-1080p-7.2Mbps-46507663.mp4?v=0" type="video/mp4">
 </video>
 <div class="lf2-hero-grad"></div>
 <div class="lf2-hero-content">
 <span class="lf2-hero-eyebrow">Distributeur Lift Foils France &middot; Revendeur officiel eFoil et foil &eacute;lectrique</span>
-<h1 class="lf2-hero-title">eFoil Lift Foils<br><span class="accent">le foil &eacute;lectrique premium</span><br><span class="dim">disponible en France</span></h1>
+<h1 class="lf2-hero-title">eFoil Lift Foils<br><span class="accent">le foil electrique </span><br><span class="dim">premium</span></h1>
 <p class="lf2-hero-sub">D&eacute;couvrez les eFoils Lift Foils, l&rsquo;inventeur du foil &eacute;lectrique depuis 2017. Les mod&egrave;les haut de gamme LIFT5 et LiftX offrent une glisse silencieuse et intuitive, avec un syst&egrave;me clic &amp; connect 100&nbsp;% int&eacute;gr&eacute;. Disponibles en France&nbsp;: essais, livraison, accompagnement &agrave; l&rsquo;achat et service expert Lift Foils.</p>
 <div class="lf2-hero-actions">
-<a href="/efoil-lift-foils/" class="lf2-btn-teal">D&eacute;couvrir les eFoils Lift Foils</a>
-<a href="/location-de-surf-electrique-a-foil-France/" class="lf2-btn-ghost">R&eacute;server un essai en France</a>
+<a href="https://liftfoils.fr/efoil-lift5/" class="lf2-btn-teal">D&eacute;couvrir les eFoils Lift Foils</a>
+<a href="mailto:contact@efoilcotedazur.com?Subject=Pouvez vous me rappeler ?&body=Bonjour, je souhaite être rappeler au 06 XX XX XX XX. Avez vous une disponibilité ? Merci et bonne journee’" class="lf2-btn-ghost">R&eacute;server un essai en France</a>
 </div>
 </div>
 </section>
 
 
-<!-- === 2) DECOUVREZ LIFT5 & LIFTX === -->
+<!-- === 2) DECOUVREZ LIFT5 &amp; LIFTX === -->
 <div class="lf2-narrative light">
 <div class="lf2-narrative-img">
 <img src="https://liftfoils.com/cdn/shop/files/Introducing_LIFT5_LIFTX_Hero.jpg?v=1747178360&width=1500" alt="eFoil Lift Foils en navigation" loading="lazy">
@@ -965,9 +971,9 @@ body.wp-child-theme-atelier-child {
 <div class="lf2-narrative-inner">
 <span class="lf2-eyebrow">eFoils Lift Foils</span>
 <h2>D&eacute;couvrez le LIFT5 et le LiftX, les eFoils Lift Foils sans visses ni c&acirc;bles.</h2>
-<p>Pens&eacute;s pour offrir une exp&eacute;rience de glisse plus fluide, plus silencieuse et plus intuitive, les nouveaux <a href="/efoil-lift-foils/">eFoils Lift Foils</a> incarnent la prochaine g&eacute;n&eacute;ration du foil &eacute;lectrique. Le LIFT5 et le LiftX sont mont&eacute;s et d&eacute;mont&eacute;s en 10 secondes.</p>
-<p>Le foil &eacute;lectrique <a href="/efoil-lift5-decouvrez-le-nouveau-foil-electrique-lift-5/">LIFT5</a> s&rsquo;adresse aux riders qui recherchent le meilleur &eacute;quilibre entre stabilit&eacute;, performance et progression. Le foil hybride <a href="/efoil-lift-x-le-foil-electrique-reinvente-surf-foil-hybride-motorise/">LiftX</a> ouvre une nouvelle voie, plus surf, plus libre, plus l&eacute;g&egrave;re, &agrave; la fronti&egrave;re entre eFoil, surf foil et <em>foil assist</em>. Deux visions compl&eacute;mentaires d&rsquo;une m&ecirc;me exigence&nbsp;: cr&eacute;er les sensations les plus abouties sur l&rsquo;eau.</p>
-<a href="/efoil-lift-foils/" class="lf2-btn-teal">D&eacute;couvrir la gamme Lift Foils &#8594;</a>
+<p>Pens&eacute;s pour offrir une exp&eacute;rience de glisse plus fluide, plus silencieuse et plus intuitive, les nouveaux <a href="https://liftfoils.fr/efoil-liftx/">eFoils Lift Foils</a> incarnent la prochaine g&eacute;n&eacute;ration du foil &eacute;lectrique. Le LIFT5 et le LiftX sont mont&eacute;s et d&eacute;mont&eacute;s en 10 secondes.</p>
+<p>Le foil &eacute;lectrique <a href="https://liftfoils.fr/efoil-lift5/">LIFT5</a> s&rsquo;adresse aux riders qui recherchent le meilleur &eacute;quilibre entre stabilit&eacute;, performance et progression. Le foil hybride <a href="https://liftfoils.fr/efoil-liftx/">LiftX</a> ouvre une nouvelle voie, plus surf, plus libre, plus l&eacute;g&egrave;re, &agrave; la fronti&egrave;re entre eFoil, surf foil et <em>foil assist</em>. Deux visions compl&eacute;mentaires d&rsquo;une m&ecirc;me exigence&nbsp;: cr&eacute;er les sensations les plus abouties sur l&rsquo;eau.</p>
+<a href="https://liftfoils.fr/efoil-lift5/" class="lf2-btn-teal">D&eacute;couvrir la gamme Lift Foils &#8594;</a>
 </div>
 </div>
 </div>
@@ -979,24 +985,24 @@ body.wp-child-theme-atelier-child {
 <span class="lf2-eyebrow">Notre histoire</span>
 <h2>Lift Foils, inventeur du eFoil et r&eacute;f&eacute;rence du foil carbone haut de gamme</h2>
 <p>Lift Foils est n&eacute; d&rsquo;une passion profonde pour la glisse, l&rsquo;hydrodynamique et la performance sur l&rsquo;eau. Bien avant l&rsquo;explosion du march&eacute; du foil &eacute;lectrique, la marque d&eacute;veloppait d&eacute;j&agrave; des foils en carbone pour les riders les plus exigeants &agrave; l&rsquo;or&eacute;e du 21&egrave;me si&egrave;cle. Cette culture du ride, associ&eacute;e &agrave; des ann&eacute;es de recherche et d&eacute;veloppement, a conduit Lift Foils &agrave; imaginer puis commercialiser les premiers eFoils au monde. Aujourd&rsquo;hui, la marque continue d&rsquo;innover avec des plateformes comme le LIFT5 et le LiftX 100&nbsp;% clic &amp; connect, pens&eacute;es pour repousser les standards du eFoil premium.</p>
-<a href="/efoil-lift-foils/" class="lf2-btn-teal">Nos efoils clic &amp; connect &#8594;</a>
+<a href="https://liftfoils.fr/efoil-lift5/" class="lf2-btn-teal">Nos efoils clic &amp; connect &#8594;</a>
 </div>
 </div>
 <div class="lf2-narrative-img">
-<img src="https://liftfoils.fr/wp-content/uploads/2025/12/DSC1001_RodrigoSnaps-Inc.-1-edited-scaled.jpg" alt="foil &eacute;lectrique Lift Foils LIFT5" loading="lazy">
+<img src="https://liftfoils.fr/wp-content/uploads/2021/03/ROD7600-scaled.jpg" alt="foil &eacute;lectrique Lift Foils LIFT5" loading="lazy">
 </div>
 </div>
 
 <!-- === 4) VIDEO TOURNANTE LIFT5 === -->
-<div class="lf2-product-video-section">
+<div class="lf2-product-video-section lf2-product-video-section-liftx">
 <video autoplay muted loop playsinline>
 <source src="https://liftfoils.fr/wp-content/uploads/2021/03/Lift-Foils-5-vue-tournante.mp4" type="video/mp4">
 </video>
 <div class="lf2-product-video-text right">
 <span class="lf2-eyebrow">eFoil premium</span>
 <h2>LIFT5, l&rsquo;eFoil Lift Foils le plus intuitif</h2>
-<p>Le <a href="/efoil-lift5-decouvrez-le-nouveau-foil-electrique-lift-5/">LIFT5 est l&rsquo;eFoil phare de Lift Foils</a>. Install&eacute; en 10 secondes sans outils, visses ou c&acirc;bles, silencieux sur l&rsquo;eau et pens&eacute; pour s&rsquo;effacer sous les pieds du rider, il combine stabilit&eacute;, pr&eacute;cision et performance dans une plateforme haut de gamme. Que vous d&eacute;couvriez le <a href="/efoil-lift-foils/">foil &eacute;lectrique</a> ou que vous cherchiez un eFoil plus abouti pour progresser, le LIFT5 offre une exp&eacute;rience fluide, rassurante et &eacute;volutive.</p>
-<a href="/efoil-lift5-decouvrez-le-nouveau-foil-electrique-lift-5/" class="lf2-btn-teal">D&eacute;couvrir le LIFT5</a>
+<p>Le <a href="https://liftfoils.fr/efoil-lift5/">LIFT5 est l&rsquo;eFoil phare de Lift Foils</a>. Install&eacute; en 10 secondes sans outils, visses ou c&acirc;bles, silencieux sur l&rsquo;eau et pens&eacute; pour s&rsquo;effacer sous les pieds du rider, il combine stabilit&eacute;, pr&eacute;cision et performance dans une plateforme haut de gamme. Que vous d&eacute;couvriez le <a href="https://liftfoils.fr/efoil-lift5/">foil &eacute;lectrique</a> ou que vous cherchiez un eFoil plus abouti pour progresser, le LIFT5 offre une exp&eacute;rience fluide, rassurante et &eacute;volutive.</p>
+<a href="https://liftfoils.fr/efoil-lift5/" class="lf2-btn-teal">D&eacute;couvrir le LIFT5</a>
 </div>
 </div>
 
@@ -1004,7 +1010,7 @@ body.wp-child-theme-atelier-child {
 <section class="lf2-collection">
 <div class="lf2-collection-header">
 <h2>LIFT<span style="color:#36B7B2">5</span></h2>
-<a href="/efoil-lift5-decouvrez-le-nouveau-foil-electrique-lift-5/">Voir toute la gamme LIFT5 &#8594;</a>
+<a href="https://liftfoils.fr/efoil-lift5/">Voir toute la gamme LIFT5 &#8594;</a>
 </div>
 <div class="lf2-grid-3">
 <div class="lf2-product-tile">
@@ -1016,7 +1022,7 @@ body.wp-child-theme-atelier-child {
 <h3 class="lf2-product-name">LIFT5 Pro 4&#8217;4&#8243;</h3>
 <p class="lf2-product-tagline">Le plus l&eacute;ger. Le plus vif.</p>
 <div class="lf2-product-price">&Agrave; partir de 13&thinsp;333&nbsp;&euro; HT</div>
-<a href="/efoil-lift5-decouvrez-le-nouveau-foil-electrique-lift-5/" class="lf2-product-cta">D&eacute;couvrir le Lift5 Pro 55 litres &#8594;</a>
+<a href="https://liftfoils.fr/efoil-lift5-pro-44/" class="lf2-product-cta">D&eacute;couvrir le Lift5 Pro 55 litres &#8594;</a>
 </div>
 </div>
 <div class="lf2-product-tile">
@@ -1028,7 +1034,7 @@ body.wp-child-theme-atelier-child {
 <h3 class="lf2-product-name">LIFT5 Sport 4&#8217;9&#8243;</h3>
 <p class="lf2-product-tagline">L&rsquo;&eacute;quilibre parfait.</p>
 <div class="lf2-product-price">&Agrave; partir de 13&thinsp;333&nbsp;&euro; HT</div>
-<a href="/efoil-lift5-decouvrez-le-nouveau-foil-electrique-lift-5/" class="lf2-product-cta">D&eacute;couvrir le Lift5 Sport 67 litres &#8594;</a>
+<a href="https://liftfoils.fr/efoil-lift5-sport-49/" class="lf2-product-cta">D&eacute;couvrir le Lift5 Sport 67 litres &#8594;</a>
 </div>
 </div>
 <div class="lf2-product-tile">
@@ -1040,19 +1046,19 @@ body.wp-child-theme-atelier-child {
 <h3 class="lf2-product-name">LIFT5 Cruiser 5&#8217;4&#8243;</h3>
 <p class="lf2-product-tagline">Stabilit&eacute; maximale.</p>
 <div class="lf2-product-price">&Agrave; partir de 13&thinsp;333&nbsp;&euro; HT</div>
-<a href="/efoil-lift5-decouvrez-le-nouveau-foil-electrique-lift-5/" class="lf2-product-cta">D&eacute;couvrir le Lift5 Cruiser 83 litres &#8594;</a>
+<a href="https://liftfoils.fr/efoil-lift5-cruiser-54/" class="lf2-product-cta">D&eacute;couvrir le Lift5 Cruiser 83 litres &#8594;</a>
 </div>
 </div>
 </div>
 </section>
 
 <!-- === 6) VIDEO TOURNANTE LIFTX === -->
-<div class="lf2-product-video-section">
+<div class="lf2-product-video-section lf2-product-video-section-liftx">
 <div class="lf2-product-video-text left">
 <span class="lf2-eyebrow">Nouveau FOIL HYBRIDE &middot; Lift Foils</span>
 <h2>LiftX, un foil &eacute;lectrique entre eFoil, surf foil et foil assist</h2>
 <p>Le LiftX propose une glisse plus fluide, plus libre et plus surf qu&rsquo;un foil &eacute;lectrique. Plus l&eacute;ger, plus direct dans les sensations, il a &eacute;t&eacute; pens&eacute; pour les riders qui veulent se rapprocher du comportement d&rsquo;un vrai surf foil tout en profitant de l&rsquo;assistance &eacute;lectrique. Entre eFoil premium, foil assist nouvelle g&eacute;n&eacute;ration et plateforme hybride motoris&eacute;e, le LiftX ouvre un nouveau territoire de glisse. Lift Foils a invent&eacute; le foil &eacute;lectrique, et il le r&eacute;invente aujourd&rsquo;hui.</p>
-<a href="/efoil-lift-x-le-foil-electrique-reinvente-surf-foil-hybride-motorise/" class="lf2-btn-teal">D&eacute;couvrir le LiftX</a>
+<a href="https://liftfoils.fr/efoil-liftx/" class="lf2-btn-teal">D&eacute;couvrir le LiftX</a>
 </div>
 <video autoplay muted loop playsinline>
 <source src="https://liftfoils.fr/wp-content/uploads/2021/03/Lift-FoilsX-vue-tournante-.mp4" type="video/mp4">
@@ -1063,7 +1069,7 @@ body.wp-child-theme-atelier-child {
 <section class="lf2-collection">
 <div class="lf2-collection-header">
 <h2>LIFT<span style="color:#36B7B2">X</span></h2>
-<a href="/efoil-lift-x-le-foil-electrique-reinvente-surf-foil-hybride-motorise/">Voir toute la gamme LiftX &#8594;</a>
+<a href="https://liftfoils.fr/efoil-liftx/">Voir toute la gamme LiftX &#8594;</a>
 </div>
 <div class="lf2-grid-3">
 <div class="lf2-product-tile">
@@ -1075,7 +1081,7 @@ body.wp-child-theme-atelier-child {
 <h3 class="lf2-product-name">LiftX 4&#8217;3&#8243;</h3>
 <p class="lf2-product-tagline">Pour les experts.</p>
 <div class="lf2-product-price">&Agrave; partir de 12&thinsp;500&nbsp;&euro; HT</div>
-<a href="/efoil-lift-x-le-foil-electrique-reinvente-surf-foil-hybride-motorise/" class="lf2-product-cta">D&eacute;couvrir le LiftX 42 litres &#8594;</a>
+<a href="https://liftfoils.fr/efoil-liftx-43/" class="lf2-product-cta">D&eacute;couvrir le LiftX 42 litres &#8594;</a>
 </div>
 </div>
 <div class="lf2-product-tile">
@@ -1087,7 +1093,7 @@ body.wp-child-theme-atelier-child {
 <h3 class="lf2-product-name">LiftX 4&#8217;8&#8243;</h3>
 <p class="lf2-product-tagline">La glisse ultime.</p>
 <div class="lf2-product-price">&Agrave; partir de 12&thinsp;500&nbsp;&euro; HT</div>
-<a href="/efoil-lift-x-le-foil-electrique-reinvente-surf-foil-hybride-motorise/" class="lf2-product-cta">D&eacute;couvrir le LiftX 51 litres &#8594;</a>
+<a href="https://liftfoils.fr/efoil-liftx-48/" class="lf2-product-cta">D&eacute;couvrir le LiftX 51 litres &#8594;</a>
 </div>
 </div>
 <div class="lf2-product-tile">
@@ -1099,13 +1105,13 @@ body.wp-child-theme-atelier-child {
 <h3 class="lf2-product-name">LiftX 5&#8217;2&#8243;</h3>
 <p class="lf2-product-tagline">Le surf foil, accessible.</p>
 <div class="lf2-product-price">&Agrave; partir de 12&thinsp;500&nbsp;&euro; HT</div>
-<a href="/efoil-lift-x-le-foil-electrique-reinvente-surf-foil-hybride-motorise/" class="lf2-product-cta">D&eacute;couvrir le LiftX 63 litres &#8594;</a>
+<a href="https://liftfoils.fr/efoil-liftx-52/" class="lf2-product-cta">D&eacute;couvrir le LiftX 63 litres &#8594;</a>
 </div>
 </div>
 </div>
 </section>
 
-<!-- === 8) VIDEOS LIFT5 & LIFTX PLEIN LARGEUR (à la suite) === -->
+<!-- === 8) VIDEOS LIFT5 &amp; LIFTX PLEIN LARGEUR === -->
 <div class="lf2-product-video-section">
 <video autoplay muted loop playsinline>
 <source src="https://liftfoils.fr/wp-content/uploads/2021/03/Video-Lift-5-‐-Realisee-Avec-Clipchamp.mp4" type="video/mp4">
@@ -1114,7 +1120,7 @@ body.wp-child-theme-atelier-child {
 <span class="lf2-eyebrow">eFoil premium</span>
 <h2>eFoil silencieux.<br>Glisse pure.</h2>
 <p>Le moteur Lift Foils a &eacute;t&eacute; con&ccedil;u pour se faire oublier au profit des sensations. Sur le LIFT5, tout est pens&eacute; pour offrir une navigation plus propre, plus fluide et plus silencieuse, avec une vraie sensation de connexion entre le rider, la planche et l&rsquo;eau.</p>
-<a href="/efoil-lift5-decouvrez-le-nouveau-foil-electrique-lift-5/" class="lf2-btn-teal">D&eacute;couvrir le LIFT5</a>
+<a href="https://liftfoils.fr/efoil-lift5/" class="lf2-btn-teal">D&eacute;couvrir le LIFT5</a>
 </div>
 </div>
 
@@ -1126,7 +1132,7 @@ body.wp-child-theme-atelier-child {
 <span class="lf2-eyebrow">Foil hybride &middot; Lift Foils</span>
 <h2>Au-del&agrave; du foil.<br>Vers le foil assist nouvelle g&eacute;n&eacute;ration.</h2>
 <p>Le LiftX d&eacute;passe les codes traditionnels du foil &eacute;lectrique. Il s&rsquo;adresse aux riders qui veulent explorer une pratique plus ouverte, entre eFoil, surf foil, downwind assist&eacute; et foil assist, avec une plateforme hybride plus libre et plus &eacute;volutive.</p>
-<a href="/efoil-lift-x-le-foil-electrique-reinvente-surf-foil-hybride-motorise/" class="lf2-btn-teal">D&eacute;couvrir le LiftX</a>
+<a href="https://liftfoils.fr/efoil-liftx/" class="lf2-btn-teal">D&eacute;couvrir le LiftX</a>
 </div>
 </div>
 
@@ -1185,23 +1191,22 @@ body.wp-child-theme-atelier-child {
 <h2>Technologie de r&eacute;f&eacute;rence mondiale</h2>
 <div class="lf2-features-grid">
 <div class="lf2-feat">
-<span class="lf2-feat-num">15+</span>
-<h3>Batterie int&eacute;gr&eacute;e et installation simplifi&eacute;e</h3>
+<span class="lf2-feat-num"><h3>Batterie int&eacute;gr&eacute;e et installation simplifi&eacute;e</h3></span>
 <p>Avec le LIFT5, Lift Foils met l&rsquo;accent sur une mise en &oelig;uvre plus rapide, plus propre et plus intuitive. Moins de manipulations, moins de contraintes, plus de temps sur l&rsquo;eau.</p>
 </div>
 <div class="lf2-feat">
-<span class="lf2-feat-num">40+</span>
-<h3>Construction carbone premium</h3>
+<span class="lf2-feat-num"><h3>Construction carbone premium</h3>
+</span>
 <p>Les eFoils Lift Foils s&rsquo;appuient sur une construction carbone haut de gamme, reconnue pour sa rigidit&eacute;, sa l&eacute;g&egrave;ret&eacute; et sa pr&eacute;cision de pilotage. C&rsquo;est l&rsquo;un des grands marqueurs de la marque depuis ses d&eacute;buts dans le foil de performance.</p>
 </div>
 <div class="lf2-feat">
-<span class="lf2-feat-num">90+</span>
-<h3>Propulsion fluide et silencieuse</h3>
+<span class="lf2-feat-num"><h3>Propulsion fluide et silencieuse</h3>
+</span>
 <p>Le comportement sur l&rsquo;eau fait partie de l&rsquo;ADN Lift Foils&nbsp;: une propulsion ma&icirc;tris&eacute;e, une sensation de continuit&eacute; sous les pieds et une exp&eacute;rience de glisse qui privil&eacute;gie le ride plut&ocirc;t que la m&eacute;canique.</p>
 </div>
 <div class="lf2-feat">
-<span class="lf2-feat-num">0 dB</span>
-<h3>Une plateforme &eacute;volutive pour progresser</h3>
+<span class="lf2-feat-num"><h3 class="lf2-feat-num">Une plateforme &eacute;volutive pour progresser</h3>
+</span>
 <p>Que vous choisissiez un eFoil LIFT5 ou un LiftX orient&eacute; sensations surf, la logique Lift Foils reste la m&ecirc;me&nbsp;: proposer du mat&eacute;riel premium capable d&rsquo;accompagner l&rsquo;apprentissage, la progression et la recherche de performance.</p>
 </div>
 </div>
@@ -1211,7 +1216,7 @@ body.wp-child-theme-atelier-child {
 <section class="lf2-lifestyle-section">
 <div class="lf2-lifestyle-head">
 <h2>Essayer un eFoil Lift Foils en France</h2>
-<a href="/location-de-surf-electrique-a-foil-France/">Voir toutes les localisations Lift Foils &#8594;</a>
+<a href="liftfoils.fr">Voir toutes les localisations Lift Foils &#8594;</a>
 </div>
 <p class="lf2-lifestyle-intro">Lift Foils France vous permet de d&eacute;couvrir, tester et comparer les mod&egrave;les eFoil et foil &eacute;lectrique de la marque partout en France. Que vous souhaitiez r&eacute;server un essai, organiser une initiation ou pr&eacute;parer un achat, nos bases vous accompagnent dans le choix du eFoil Lift Foils adapt&eacute; &agrave; votre niveau.</p>
 <div class="lf2-lifestyle-tiles">
@@ -1407,7 +1412,9 @@ body.wp-child-theme-atelier-child {
 </section>
 
 </div>
-<!-- SCRIPT : force plein ecran via JS pour Atelier -->
+<!-- /wp:html -->
+
+<!-- wp:html -->
 <script>
 (function(){
   var lf2 = document.querySelector('.lf2');
