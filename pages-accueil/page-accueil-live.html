@@ -1,0 +1,1442 @@
+<!-- wp:html -->
+<style>
+/* ============================================================
+   ATELIER CHILD — RESET COMPLET POUR PLEIN ECRAN
+   ============================================================ */
+
+/* 1) Neutraliser TOUS les conteneurs Atelier/WP qui limitent la largeur */
+body.page #page,
+body.page #content,
+body.page #primary,
+body.page #inner-content,
+body.page .content-area,
+body.page .site-content,
+body.page .entry-content,
+body.page .entry-content-wrap,
+body.page .page-content,
+body.page article.page,
+body.page .hentry,
+body.page main#main,
+#page, #content, #primary, #inner-content,
+.content-area, .site-content, .entry-content,
+.entry-content-wrap, .page-content, .hentry,
+main#main, .wrap, .container, .site-inner {
+  max-width: none !important;
+  width: 100% !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+/* 2) FIX MEGAMENU V4 — supprime le padding-top:72px du body */
+body.lfmm-v4-active {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+@media (max-width: 900px) {
+  body.lfmm-v4-active {
+    padding-top: 0 !important;
+  }
+}
+
+/* 2b) Supprimer tout autre espace résiduel */
+.site-header, #site-header, #site-header-wrap,
+.header-wrap, .header-main, #header,
+.top-bar, #top-bar-wrap, .header-top,
+.oceanwp-mobile-menu-icon {
+  margin-bottom: 0 !important;
+}
+#page, .site-content, #content,
+.entry-content-wrap, #primary, .content-area {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+}
+
+/* 2c) ZONE BLANCHE ATELIER */
+.page-heading,
+.page-heading-hidden,
+.page-heading.page-heading-hidden,
+#main-container > .page-heading,
+.page-heading .container,
+.page-heading .heading-text,
+#main-container {
+  padding-top: 0 !important;
+  margin-top: 0 !important;
+  min-height: 0 !important;
+  height: auto !important;
+}
+.page-heading-hidden {
+  display: none !important;
+}
+
+/* 2d) Fond body */
+body.wp-theme-atelier,
+body.wp-child-theme-atelier-child {
+  background-color: #000 !important;
+}
+#container, #main-container {
+  background-color: #000 !important;
+}
+
+/* 3) Le div lf2 prend 100% */
+*,*::before,*::after{box-sizing:border-box}
+.lf2 {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  width: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+}
+
+/* 4) Chaque section = 100vw absolu */
+.lf2 > section,
+.lf2 > div.lf2-narrative,
+.lf2 > div.lf2-split {
+  width: 100vw !important;
+  max-width: 100vw !important;
+  position: relative;
+  left: 50%;
+  right: 50%;
+  margin-left: -50vw !important;
+  margin-right: -50vw !important;
+  box-sizing: border-box;
+}
+.lf2 > div.lf2-narrative { display: grid !important; }
+.lf2 > div.lf2-split { display: grid !important; }
+
+/* ===== HERO ===== */
+.lf2-hero {
+  position: relative;
+  height: 100vh;
+  min-height: 600px;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-start;
+  background: #000;
+}
+.lf2-hero video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  opacity: .88;
+}
+.lf2-hero-grad {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.92) 0%, rgba(0,0,0,.4) 50%, transparent 100%);
+}
+.lf2-hero-content {
+  position: relative;
+  z-index: 2;
+  padding: 0 7vw 90px;
+  color: #fff;
+}
+.lf2-hero-eyebrow {
+  font-size: .85rem;
+  letter-spacing: .3em;
+  text-transform: uppercase;
+  opacity: .75;
+  margin-bottom: 1.5rem;
+  display: block;
+  font-weight: 500;
+}
+.lf2-hero-title {
+  font-size: clamp(2.2rem, 6.4vw, 6.2rem);
+  font-weight: 900;
+  line-height: .88;
+  color: #fff !important;
+  letter-spacing: -.03em;
+  margin: 0 0 2rem;
+  text-transform: uppercase;
+  text-shadow: 0 4px 40px rgba(0,0,0,.5);
+}
+.lf2-hero-title .accent { color: #36B7B2; }
+.lf2-hero-title .dim { color: rgba(255,255,255,.22); }
+.lf2-hero-sub {
+  font-size: 1.1rem;
+  font-weight: 300;
+  opacity: .9;
+  margin-bottom: 2.5rem;
+  max-width: 560px;
+  line-height: 1.7;
+  text-shadow: 0 2px 12px rgba(0,0,0,.6);
+}
+.lf2-hero-actions { display: flex; gap: 16px; flex-wrap: wrap; }
+.lf2-btn-teal {
+  padding: 16px 48px;
+  background: #36B7B2;
+  color: #fff;
+  text-decoration: none;
+  font-size: .8rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+}
+.lf2-btn-ghost {
+  padding: 16px 48px;
+  border: 2px solid rgba(255,255,255,.8);
+  color: #fff;
+  text-decoration: none;
+  font-size: .8rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-weight: 600;
+  display: inline-block;
+}
+.lf2-btn-ghost:hover { background: #fff; color: #000; }
+
+/* ===== NARRATIVE ===== */
+.lf2-narrative {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 80vh;
+}
+.lf2-narrative-img {
+  overflow: hidden;
+  background: #222;
+  position: relative;
+  min-height: 500px;
+}
+.lf2-narrative-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  position: absolute;
+  inset: 0;
+  filter: contrast(1.08) saturate(1.1);
+}
+.lf2-narrative-text {
+  background: #1a1a1a;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 80px 70px;
+}
+.lf2-narrative.light .lf2-narrative-text {
+  background: #fff;
+  color: #111;
+}
+.lf2-narrative.light .lf2-narrative-text h2 {
+  color: #111;
+  font-size: clamp(1.6rem, 2.5vw, 2.2rem);
+  text-transform: none;
+}
+.lf2-narrative.light .lf2-narrative-text p { color: #555; }
+.lf2-narrative-inner { max-width: 600px; }
+.lf2-eyebrow {
+  font-size: .85rem;
+  letter-spacing: .35em;
+  text-transform: uppercase;
+  color: #36B7B2;
+  margin-bottom: 1.5rem;
+  display: block;
+  font-weight: 700;
+}
+.lf2-narrative-text h2 {
+  font-size: clamp(2rem, 3vw, 2.8rem);
+  font-weight: 800;
+  line-height: 1.1;
+  margin: 0 0 1.5rem;
+  color: #fff;
+}
+.lf2-narrative-text p {
+  font-size: 1rem;
+  line-height: 1.9;
+  color: #aaa;
+  font-weight: 300;
+  margin-bottom: 1.4rem;
+}
+.lf2-narrative.light .lf2-narrative-text p { color: #555; }
+.lf2-narrative-text p a {
+  color: #36B7B2;
+  text-decoration: underline;
+}
+.lf2-link-arrow {
+  color: #36B7B2;
+  text-decoration: none;
+  font-size: .8rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-weight: 700;
+  border-bottom: 1px solid #36B7B2;
+  padding-bottom: 2px;
+}
+
+/* ===== COLLECTION ===== */
+.lf2-collection {
+  padding: 100px 6vw;
+  background: #f4f4f2;
+}
+.lf2-collection-header {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 60px;
+}
+.lf2-collection-header h2 {
+  font-size: clamp(3rem, 6vw, 5rem);
+  font-weight: 900;
+  letter-spacing: -.04em;
+  margin: 0;
+  text-transform: uppercase;
+  color: #111;
+}
+.lf2-collection-header a {
+  color: #111;
+  text-decoration: none;
+  font-size: .75rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  border-bottom: 2px solid #111;
+  font-weight: 700;
+  padding-bottom: 2px;
+}
+.lf2-grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 32px;
+  background: transparent;
+  padding: 0 40px 60px;
+}
+.lf2-product-tile {
+  background: #fff;
+  overflow: hidden;
+  border-radius: 4px;
+  box-shadow: 0 8px 40px rgba(0,0,0,.10), 0 2px 8px rgba(0,0,0,.06);
+  transition: box-shadow .3s, transform .3s;
+  display: block;
+  color: inherit;
+  text-decoration: none;
+}
+.lf2-product-tile:hover {
+  box-shadow: 0 16px 60px rgba(0,0,0,.16), 0 4px 16px rgba(0,0,0,.08);
+  transform: translateY(-4px);
+}
+.lf2-product-img-wrap {
+  overflow: hidden;
+  aspect-ratio: 1/1;
+  background: #f5f5f5;
+}
+.lf2-product-img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  padding: 24px;
+  transition: transform .5s;
+}
+.lf2-product-tile:hover .lf2-product-img { transform: scale(1.06); }
+.lf2-product-info { padding: 24px 28px 36px; }
+.lf2-product-tag {
+  font-size: .62rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: #36B7B2;
+  margin-bottom: 6px;
+  display: block;
+  font-weight: 700;
+}
+.lf2-product-name { font-size: 1.3rem; font-weight: 800; margin: 0 0 6px; color: #111; }
+.lf2-product-tagline { font-size: .95rem; color: #777; font-weight: 300; margin: 0 0 16px; }
+.lf2-product-price { font-size: 1.05rem; font-weight: 700; color: #111; }
+.lf2-product-cta {
+  display: inline-block;
+  margin-top: 14px;
+  font-size: .72rem;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+  color: #36B7B2;
+  text-decoration: none;
+  font-weight: 700;
+  border-bottom: 2px solid #36B7B2;
+}
+
+/* ===== SPLIT ===== */
+.lf2-split {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  min-height: 90vh;
+}
+.lf2-split-panel {
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: flex-end;
+  padding: 60px;
+  min-height: 500px;
+}
+.lf2-split-panel video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.lf2-split-panel-bg { position: absolute; inset: 0; }
+.lf2-split-panel-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  filter: contrast(1.12) saturate(1.1);
+}
+.lf2-split-grad {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.9) 0%, rgba(0,0,0,.3) 55%, rgba(0,0,0,.05) 100%);
+}
+.lf2-split-content { position: relative; z-index: 1; color: #fff; }
+.lf2-split-content h3 {
+  font-size: clamp(1.6rem, 2.8vw, 2.8rem);
+  font-weight: 900;
+  margin: 0 0 .8rem;
+  text-transform: uppercase;
+  line-height: 1.1;
+  text-shadow: 0 2px 20px rgba(0,0,0,.5);
+}
+.lf2-split-content p {
+  font-size: .95rem;
+  color: rgba(255,255,255,.85);
+  margin: 0 0 1.8rem;
+  font-weight: 300;
+  max-width: 320px;
+  line-height: 1.7;
+}
+.lf2-btn-white {
+  padding: 14px 40px;
+  border: 2px solid #fff;
+  color: #fff;
+  text-decoration: none;
+  font-size: .75rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  display: inline-block;
+  transition: all .3s;
+}
+.lf2-btn-white:hover { background: #fff; color: #000; }
+
+/* ===== VIDEO TOURNANTE PRODUIT ===== */
+.lf2-product-video-section {
+  position: relative;
+  min-height: 680px;
+  overflow: hidden;
+  background: #0a0a0a;
+}
+.lf2-product-video-section video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.lf2-product-video-section.lf2-product-video-section-liftx {
+  background: #000;
+}
+.lf2-product-video-section.lf2-product-video-section-liftx video {
+  box-sizing: border-box;
+  padding-left: 40%;
+}
+.lf2-product-video-section::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.45);
+  pointer-events: none;
+  z-index: 1;
+}
+.lf2-product-video-text {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  z-index: 2;
+  color: #fff;
+  max-width: 60%;
+  padding: 0 6vw;
+}
+.lf2-product-video-text .lf2-eyebrow { color: #36B7B2; }
+.lf2-product-video-text h2 {
+  font-size: clamp(1.8rem, 4vw, 3.5rem);
+  font-weight: 900;
+  color: #fff !important;
+  line-height: 1.1;
+  margin: 12px 0 20px;
+  letter-spacing: .02em;
+  text-transform: none;
+}
+.lf2-product-video-text h2 .accent { color: #36B7B2; }
+.lf2-product-video-text p {
+  font-size: .95rem;
+  color: rgba(255,255,255,.8);
+  font-weight: 300;
+  line-height: 1.7;
+  margin: 0 0 2rem;
+}
+.lf2-product-video-text p a {
+  color: #36B7B2;
+  text-decoration: underline;
+}
+@media(max-width:900px){
+  .lf2-product-video-section { min-height: 500px; }
+  .lf2-product-video-text { max-width: 90vw; }
+  .lf2-product-video-text.right,
+  .lf2-product-video-text.left { left: 0; right: auto; text-align: left; }
+}
+
+/* ===== SPECS ===== */
+.lf2-specs-section {
+  padding: 110px 6vw;
+  background: #1c1c1c;
+  color: #fff;
+}
+.lf2-specs-title { text-align: center; margin-bottom: 24px; }
+.lf2-specs-title .lf2-eyebrow { display: block; text-align: center; }
+.lf2-specs-title h2 {
+  font-size: clamp(2.5rem, 5vw, 4.5rem);
+  font-weight: 900;
+  color: #fff;
+  margin: .5rem 0 0;
+  text-transform: uppercase;
+  letter-spacing: -.03em;
+}
+.lf2-specs-intro {
+  text-align: center;
+  max-width: 700px;
+  margin: 0 auto 60px;
+  font-size: .95rem;
+  color: #aaa;
+  font-weight: 300;
+  line-height: 1.7;
+}
+.lf2-specs-layout {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: 40px;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+.lf2-specs-col { display: flex; flex-direction: column; gap: 40px; }
+.lf2-spec-item { display: flex; flex-direction: column; gap: 4px; }
+.lf2-spec-item.right { text-align: right; }
+.lf2-spec-val {
+  font-size: 3rem;
+  font-weight: 900;
+  color: #36B7B2;
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+.lf2-spec-label {
+  font-size: .65rem;
+  letter-spacing: .22em;
+  text-transform: uppercase;
+  color: #888;
+  font-weight: 600;
+}
+.lf2-spec-desc { font-size: .9rem; color: #555; margin-top: 2px; font-weight: 300; }
+.lf2-specs-img { text-align: center; padding: 0 20px; }
+.lf2-specs-img img {
+  width: 100%;
+  max-width: 380px;
+  height: auto;
+  filter: drop-shadow(0 30px 80px rgba(54,183,178,.25));
+}
+
+/* ===== FEATURES ===== */
+.lf2-features-section {
+  padding: 110px 6vw;
+  background: #f4f4f2;
+}
+.lf2-features-section h2 {
+  font-size: clamp(2.4rem, 4.8vw, 3.84rem);
+  font-weight: 800;
+  text-align: center;
+  margin: 0 0 80px;
+  color: #111;
+}
+.lf2-features-grid {
+  display: grid;
+  grid-template-columns: repeat(4,1fr);
+  gap: 3px;
+  background: #ddd;
+  max-width: 100%;
+}
+.lf2-feat {
+  text-align: center;
+  padding: 50px 28px;
+  background: #fff;
+}
+.lf2-feat-num {
+  font-size: 8.5rem;
+  font-weight: 900;
+  color: #36B7B2;
+  display: block;
+  margin-bottom: .4rem;
+  line-height: 1;
+  letter-spacing: -.02em;
+}
+.lf2-feat h3 {
+  font-size: .75rem;
+  font-weight: 700;
+  margin: 0 0 .8rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  color: #111;
+  line-height: 1.3;
+}
+.lf2-feat p { font-size: .9rem; color: #777; font-weight: 300; line-height: 1.7; }
+
+/* ===== LIFESTYLE GRID ===== */
+.lf2-lifestyle-section {
+  background: #eeecea;
+  padding: 100px 6vw;
+}
+.lf2-lifestyle-head {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+.lf2-lifestyle-head h2 {
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 900;
+  letter-spacing: -.04em;
+  margin: 0;
+  text-transform: uppercase;
+  color: #111;
+}
+.lf2-lifestyle-head a {
+  color: #111;
+  font-size: .72rem;
+  letter-spacing: .18em;
+  text-transform: uppercase;
+  font-weight: 700;
+  text-decoration: none;
+  border-bottom: 2px solid #111;
+  padding-bottom: 2px;
+}
+.lf2-lifestyle-intro {
+  font-size: .95rem;
+  color: #555;
+  font-weight: 300;
+  line-height: 1.7;
+  max-width: 700px;
+  margin-bottom: 48px;
+}
+.lf2-lifestyle-tiles {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 4px;
+  background: #ccc;
+}
+.lf2-lifestyle-tile {
+  position: relative;
+  overflow: hidden;
+  background: #333;
+  aspect-ratio: 3/4;
+}
+.lf2-lifestyle-tile img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+  transition: transform .6s ease;
+}
+.lf2-lifestyle-tile:hover img { transform: scale(1.05); }
+.lf2-lifestyle-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,.82) 0%, transparent 55%);
+  display: flex;
+  align-items: flex-end;
+  padding: 28px 24px;
+}
+.lf2-lifestyle-label { color: #fff; }
+.lf2-lifestyle-label span {
+  display: block;
+  font-size: .6rem;
+  letter-spacing: .28em;
+  text-transform: uppercase;
+  color: #36B7B2;
+  font-weight: 700;
+  margin-bottom: 4px;
+}
+.lf2-lifestyle-label h3 {
+  font-size: 1.4rem;
+  font-weight: 800;
+  margin: 0;
+  text-transform: uppercase;
+  line-height: 1;
+  color: #fff;
+}
+.lf2-lifestyle-label a {
+  color: #fff;
+  text-decoration: none;
+}
+.lf2-lifestyle-label a:hover h3 { color: #36B7B2; }
+
+/* ===== YOUTUBE ===== */
+.lf2-youtube-section {
+  background: #f4f4f2;
+  padding: 100px 6vw;
+}
+.lf2-yt-header { text-align: center; margin-bottom: 24px; }
+.lf2-yt-header .lf2-eyebrow { color: #36B7B2; display: block; text-align: center; }
+.lf2-yt-header h2 {
+  font-size: clamp(2rem, 4vw, 3.5rem);
+  font-weight: 900;
+  color: #111;
+  margin: .5rem 0 0;
+  text-transform: uppercase;
+}
+.lf2-yt-intro {
+  text-align: center;
+  max-width: 680px;
+  margin: 0 auto 48px;
+  font-size: .95rem;
+  color: #555;
+  font-weight: 300;
+  line-height: 1.7;
+}
+.lf2-yt-grid {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  gap: 16px;
+  max-width: 1300px;
+  margin: 0 auto;
+}
+.lf2-yt-card {
+  background: #fff;
+  overflow: hidden;
+  box-shadow: 0 2px 20px rgba(0,0,0,.1);
+  cursor: pointer;
+}
+.lf2-yt-thumb {
+  position: relative;
+  aspect-ratio: 16/9;
+  overflow: hidden;
+  background: #111;
+}
+.lf2-yt-thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform .4s;
+}
+.lf2-yt-card:hover .lf2-yt-thumb img { transform: scale(1.04); }
+.lf2-yt-play {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lf2-yt-play-btn {
+  width: 60px;
+  height: 60px;
+  background: rgba(255,255,255,.95);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 20px rgba(0,0,0,.3);
+  transition: transform .25s;
+}
+.lf2-yt-card:hover .lf2-yt-play-btn { transform: scale(1.15); }
+.lf2-yt-play-icon {
+  width: 0;
+  height: 0;
+  border-top: 11px solid transparent;
+  border-bottom: 11px solid transparent;
+  border-left: 20px solid #ff0000;
+  margin-left: 5px;
+}
+.lf2-yt-info { padding: 16px 18px 20px; }
+.lf2-yt-info h4 { font-size: .88rem; font-weight: 700; color: #111; margin: 0 0 5px; line-height: 1.4; }
+.lf2-yt-info p { font-size: .72rem; color: #999; margin: 0; }
+.lf2-yt-cta { text-align: center; margin-top: 48px; }
+.lf2-yt-cta a {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 48px;
+  background: #ff0000;
+  color: #fff;
+  text-decoration: none;
+  font-size: .78rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.lf2-yt-cta a:hover { background: #cc0000; }
+
+/* ===== FAQ ===== */
+.lf2-faq-section {
+  background: #f5f5f3;
+  padding: 110px 6vw;
+}
+.lf2-faq-header {
+  text-align: center;
+  margin-bottom: 64px;
+}
+.lf2-faq-header h2 {
+  font-size: clamp(2rem, 4vw, 3.2rem);
+  font-weight: 800;
+  color: #111;
+  margin: 0;
+  text-transform: uppercase;
+}
+.lf2-faq-grid {
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+.lf2-faq-item {
+  border-bottom: 1px solid #ddd;
+}
+.lf2-faq-item:first-child { border-top: 1px solid #ddd; }
+.lf2-faq-btn {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background: none;
+  border: none;
+  padding: 28px 0;
+  cursor: pointer;
+  text-align: left;
+  gap: 16px;
+}
+.lf2-faq-q {
+  font-size: 1.05rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+  line-height: 1.4;
+  flex: 1;
+}
+.lf2-faq-icon {
+  width: 0;
+  height: 0;
+  border-left: 8px solid transparent;
+  border-right: 8px solid transparent;
+  border-top: 12px solid #36B7B2;
+  flex-shrink: 0;
+  transition: transform .3s;
+}
+.lf2-faq-item.open .lf2-faq-icon {
+  transform: rotate(180deg);
+}
+.lf2-faq-a {
+  font-size: .95rem;
+  color: #555;
+  font-weight: 300;
+  line-height: 1.8;
+  margin: 0;
+  padding: 0 0 28px;
+  display: none;
+}
+.lf2-faq-item.open .lf2-faq-a {
+  display: block;
+}
+
+/* ===== VIDEO FINALE ===== */
+.lf2-video-full {
+  position: relative;
+  height: 85vh;
+  min-height: 500px;
+  overflow: hidden;
+  background: #000;
+}
+.lf2-video-full video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.lf2-video-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,.5);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.lf2-video-overlay-text { text-align: center; color: #fff; max-width: 700px; padding: 0 24px; }
+.lf2-video-overlay-text h2 {
+  font-size: clamp(2.5rem, 6vw, 5rem);
+  font-weight: 900;
+  margin: 0 0 1.2rem;
+  text-transform: uppercase;
+  line-height: 1;
+  text-shadow: 0 4px 30px rgba(0,0,0,.5);
+  color: #fff !important;
+}
+.lf2-video-overlay-text p {
+  font-size: 1rem;
+  font-weight: 300;
+  margin: 0 0 2.5rem;
+  opacity: .85;
+  line-height: 1.7;
+}
+.lf2-cta-final-group {
+  display: flex;
+  gap: 16px;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+.lf2-btn-teal-lg {
+  display: inline-block;
+  padding: 18px 60px;
+  background: #36B7B2;
+  color: #fff;
+  text-decoration: none;
+  font-size: .8rem;
+  letter-spacing: .2em;
+  text-transform: uppercase;
+  font-weight: 700;
+}
+.lf2-cta-contact-link {
+  display: inline-block;
+  padding: 18px 32px;
+  border: 2px solid rgba(255,255,255,.7);
+  color: #fff;
+  text-decoration: none;
+  font-size: .8rem;
+  letter-spacing: .15em;
+  text-transform: uppercase;
+  font-weight: 600;
+}
+.lf2-cta-contact-link:hover { background: rgba(255,255,255,.1); }
+
+/* ===== RESPONSIVE ===== */
+@media(max-width:900px){
+  .lf2-grid-3, .lf2-lifestyle-tiles, .lf2-yt-grid { grid-template-columns: 1fr 1fr; }
+  .lf2-narrative, .lf2-split { grid-template-columns: 1fr; }
+  .lf2-narrative-img { min-height: 400px; }
+  .lf2-features-grid { grid-template-columns: repeat(2,1fr); }
+  .lf2-narrative-text { padding: 60px 40px; }
+  .lf2-specs-layout { grid-template-columns: 1fr 1fr; }
+  .lf2-specs-img { grid-column: 1/-1; order: -1; }
+  .lf2-spec-item.right { text-align: left; }
+}
+@media(max-width:600px){
+  .lf2-grid-3, .lf2-lifestyle-tiles, .lf2-yt-grid { grid-template-columns: 1fr; }
+  .lf2-hero-title { font-size: 3rem; }
+  .lf2-narrative-text { padding: 50px 28px; }
+  .lf2-features-grid { grid-template-columns: 1fr 1fr; }
+  .lf2-specs-layout { grid-template-columns: 1fr; }
+  .lf2-grid-3 { padding: 0 0 40px; }
+}
+</style>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<div class="lf2">
+
+<!-- === 1) HERO VIDEO PLEIN ECRAN === -->
+<section class="lf2-hero">
+<video autoplay muted loop playsinline poster="https://liftfoils.fr/wp-content/uploads/2025/12/Cannes_day1-177-edited.jpg">
+<source src="https://liftfoils.com/cdn/shop/videos/c/vp/1aa2b498170f44f5a166ecb7cf92346e/1aa2b498170f44f5a166ecb7cf92346e.HD-1080p-7.2Mbps-46507663.mp4?v=0" type="video/mp4">
+</video>
+<div class="lf2-hero-grad"></div>
+<div class="lf2-hero-content">
+<span class="lf2-hero-eyebrow">Distributeur Lift Foils France &middot; Revendeur officiel eFoil et foil &eacute;lectrique</span>
+<h1 class="lf2-hero-title">eFoil Lift Foils<br><span class="accent">le foil electrique </span><br><span class="dim">premium</span></h1>
+<p class="lf2-hero-sub">D&eacute;couvrez les eFoils Lift Foils, l&rsquo;inventeur du foil &eacute;lectrique depuis 2017. Les mod&egrave;les haut de gamme LIFT5 et LiftX offrent une glisse silencieuse et intuitive, avec un syst&egrave;me clic &amp; connect 100&nbsp;% int&eacute;gr&eacute;. Disponibles en France&nbsp;: essais, livraison, accompagnement &agrave; l&rsquo;achat et service expert Lift Foils.</p>
+<div class="lf2-hero-actions">
+<a href="https://liftfoils.fr/efoil-lift5/" class="lf2-btn-teal">D&eacute;couvrir les eFoils Lift Foils</a>
+<a href="mailto:contact@efoilcotedazur.com?Subject=Pouvez vous me rappeler ?&body=Bonjour, je souhaite être rappeler au 06 XX XX XX XX. Avez vous une disponibilité ? Merci et bonne journee’" class="lf2-btn-ghost">R&eacute;server un essai en France</a>
+</div>
+</div>
+</section>
+
+
+<!-- === 2) DECOUVREZ LIFT5 &amp; LIFTX === -->
+<div class="lf2-narrative light">
+<div class="lf2-narrative-img">
+<img src="https://liftfoils.com/cdn/shop/files/Introducing_LIFT5_LIFTX_Hero.jpg?v=1747178360&width=1500" alt="eFoil Lift Foils en navigation" loading="lazy">
+</div>
+<div class="lf2-narrative-text">
+<div class="lf2-narrative-inner">
+<span class="lf2-eyebrow">eFoils Lift Foils</span>
+<h2>D&eacute;couvrez le LIFT5 et le LiftX, les eFoils Lift Foils sans visses ni c&acirc;bles.</h2>
+<p>Pens&eacute;s pour offrir une exp&eacute;rience de glisse plus fluide, plus silencieuse et plus intuitive, les nouveaux <a href="https://liftfoils.fr/efoil-liftx/">eFoils Lift Foils</a> incarnent la prochaine g&eacute;n&eacute;ration du foil &eacute;lectrique. Le LIFT5 et le LiftX sont mont&eacute;s et d&eacute;mont&eacute;s en 10 secondes.</p>
+<p>Le foil &eacute;lectrique <a href="https://liftfoils.fr/efoil-lift5/">LIFT5</a> s&rsquo;adresse aux riders qui recherchent le meilleur &eacute;quilibre entre stabilit&eacute;, performance et progression. Le foil hybride <a href="https://liftfoils.fr/efoil-liftx/">LiftX</a> ouvre une nouvelle voie, plus surf, plus libre, plus l&eacute;g&egrave;re, &agrave; la fronti&egrave;re entre eFoil, surf foil et <em>foil assist</em>. Deux visions compl&eacute;mentaires d&rsquo;une m&ecirc;me exigence&nbsp;: cr&eacute;er les sensations les plus abouties sur l&rsquo;eau.</p>
+<a href="https://liftfoils.fr/efoil-lift5/" class="lf2-btn-teal">D&eacute;couvrir la gamme Lift Foils &#8594;</a>
+</div>
+</div>
+</div>
+
+<!-- === 3) NARRATIVE : Notre histoire === -->
+<div class="lf2-narrative">
+<div class="lf2-narrative-text">
+<div class="lf2-narrative-inner">
+<span class="lf2-eyebrow">Notre histoire</span>
+<h2>Lift Foils, inventeur du eFoil et r&eacute;f&eacute;rence du foil carbone haut de gamme</h2>
+<p>Lift Foils est n&eacute; d&rsquo;une passion profonde pour la glisse, l&rsquo;hydrodynamique et la performance sur l&rsquo;eau. Bien avant l&rsquo;explosion du march&eacute; du foil &eacute;lectrique, la marque d&eacute;veloppait d&eacute;j&agrave; des foils en carbone pour les riders les plus exigeants &agrave; l&rsquo;or&eacute;e du 21&egrave;me si&egrave;cle. Cette culture du ride, associ&eacute;e &agrave; des ann&eacute;es de recherche et d&eacute;veloppement, a conduit Lift Foils &agrave; imaginer puis commercialiser les premiers eFoils au monde. Aujourd&rsquo;hui, la marque continue d&rsquo;innover avec des plateformes comme le LIFT5 et le LiftX 100&nbsp;% clic &amp; connect, pens&eacute;es pour repousser les standards du eFoil premium.</p>
+<a href="https://liftfoils.fr/efoil-lift5/" class="lf2-btn-teal">Nos efoils clic &amp; connect &#8594;</a>
+</div>
+</div>
+<div class="lf2-narrative-img">
+<img src="https://liftfoils.fr/wp-content/uploads/2021/03/ROD7600-scaled.jpg" alt="foil &eacute;lectrique Lift Foils LIFT5" loading="lazy">
+</div>
+</div>
+
+<!-- === 4) VIDEO TOURNANTE LIFT5 === -->
+<div class="lf2-product-video-section lf2-product-video-section-liftx">
+<video autoplay muted loop playsinline>
+<source src="https://liftfoils.fr/wp-content/uploads/2021/03/Lift-Foils-5-vue-tournante.mp4" type="video/mp4">
+</video>
+<div class="lf2-product-video-text right">
+<span class="lf2-eyebrow">eFoil premium</span>
+<h2>LIFT5, l&rsquo;eFoil Lift Foils le plus intuitif</h2>
+<p>Le <a href="https://liftfoils.fr/efoil-lift5/">LIFT5 est l&rsquo;eFoil phare de Lift Foils</a>. Install&eacute; en 10 secondes sans outils, visses ou c&acirc;bles, silencieux sur l&rsquo;eau et pens&eacute; pour s&rsquo;effacer sous les pieds du rider, il combine stabilit&eacute;, pr&eacute;cision et performance dans une plateforme haut de gamme. Que vous d&eacute;couvriez le <a href="https://liftfoils.fr/efoil-lift5/">foil &eacute;lectrique</a> ou que vous cherchiez un eFoil plus abouti pour progresser, le LIFT5 offre une exp&eacute;rience fluide, rassurante et &eacute;volutive.</p>
+<a href="https://liftfoils.fr/efoil-lift5/" class="lf2-btn-teal">D&eacute;couvrir le LIFT5</a>
+</div>
+</div>
+
+<!-- === 5) COLLECTION LIFT5 === -->
+<section class="lf2-collection">
+<div class="lf2-collection-header">
+<h2>LIFT<span style="color:#36B7B2">5</span></h2>
+<a href="https://liftfoils.fr/efoil-lift5/">Voir toute la gamme LIFT5 &#8594;</a>
+</div>
+<div class="lf2-grid-3">
+<a class="lf2-product-tile" href="https://liftfoils.fr/efoil-lift5-pro-44/">
+<div class="lf2-product-img-wrap">
+<img class="lf2-product-img" src="https://liftfoils.fr/wp-content/uploads/2025/02/2025_LIFT5_44_SUNKISSED_Package_Iso_Shadow_2000x2000-e1740401205924.png" alt="Lift5 Pro eFoil Lift Foils" loading="lazy">
+</div>
+<div class="lf2-product-info">
+<span class="lf2-product-tag">Expert &middot; Carving</span>
+<h3 class="lf2-product-name">LIFT5 Pro 4&#8217;4&#8243;</h3>
+<p class="lf2-product-tagline">Le plus l&eacute;ger. Le plus vif.</p>
+<div class="lf2-product-price">&Agrave; partir de 13&thinsp;333&nbsp;&euro; HT</div>
+<span class="lf2-product-cta">D&eacute;couvrir le Lift5 Pro 55 litres &#8594;</span>
+</div>
+</a>
+<a class="lf2-product-tile" href="https://liftfoils.fr/efoil-lift5-sport-49/">
+<div class="lf2-product-img-wrap">
+<img class="lf2-product-img" src="https://liftfoils.fr/wp-content/uploads/2025/02/2025_LIFT5_49_CARBONBLACK_Package_Iso_Shadow_2000x2000-e1740402267678.png" alt="Lift5 Sport foil &eacute;lectrique Lift Foils" loading="lazy">
+</div>
+<div class="lf2-product-info">
+<span class="lf2-product-tag">Polyvalent &middot; Tous niveaux</span>
+<h3 class="lf2-product-name">LIFT5 Sport 4&#8217;9&#8243;</h3>
+<p class="lf2-product-tagline">L&rsquo;&eacute;quilibre parfait.</p>
+<div class="lf2-product-price">&Agrave; partir de 13&thinsp;333&nbsp;&euro; HT</div>
+<span class="lf2-product-cta">D&eacute;couvrir le Lift5 Sport 67 litres &#8594;</span>
+</div>
+</a>
+<a class="lf2-product-tile" href="https://liftfoils.fr/efoil-lift5-cruiser-54/">
+<div class="lf2-product-img-wrap">
+<img class="lf2-product-img" src="https://liftfoils.fr/wp-content/uploads/2025/02/2025_LIFT5_54_STEELBLUE_Package_Iso_Shadow_2000x2000-e1740402213338.png" alt="Lift5 Cruiser eFoil d&eacute;butant Lift Foils" loading="lazy">
+</div>
+<div class="lf2-product-info">
+<span class="lf2-product-tag">D&eacute;butant &middot; Famille</span>
+<h3 class="lf2-product-name">LIFT5 Cruiser 5&#8217;4&#8243;</h3>
+<p class="lf2-product-tagline">Stabilit&eacute; maximale.</p>
+<div class="lf2-product-price">&Agrave; partir de 13&thinsp;333&nbsp;&euro; HT</div>
+<span class="lf2-product-cta">D&eacute;couvrir le Lift5 Cruiser 83 litres &#8594;</span>
+</div>
+</a>
+</div>
+</section>
+
+<!-- === 6) VIDEO TOURNANTE LIFTX === -->
+<div class="lf2-product-video-section lf2-product-video-section-liftx">
+<div class="lf2-product-video-text left">
+<span class="lf2-eyebrow">Nouveau FOIL HYBRIDE &middot; Lift Foils</span>
+<h2>LiftX, un foil &eacute;lectrique entre eFoil, surf foil et foil assist</h2>
+<p>Le LiftX propose une glisse plus fluide, plus libre et plus surf qu&rsquo;un foil &eacute;lectrique. Plus l&eacute;ger, plus direct dans les sensations, il a &eacute;t&eacute; pens&eacute; pour les riders qui veulent se rapprocher du comportement d&rsquo;un vrai surf foil tout en profitant de l&rsquo;assistance &eacute;lectrique. Entre eFoil premium, foil assist nouvelle g&eacute;n&eacute;ration et plateforme hybride motoris&eacute;e, le LiftX ouvre un nouveau territoire de glisse. Lift Foils a invent&eacute; le foil &eacute;lectrique, et il le r&eacute;invente aujourd&rsquo;hui.</p>
+<a href="https://liftfoils.fr/efoil-liftx/" class="lf2-btn-teal">D&eacute;couvrir le LiftX</a>
+</div>
+<video autoplay muted loop playsinline>
+<source src="https://liftfoils.fr/wp-content/uploads/2021/03/Lift-FoilsX-vue-tournante-.mp4" type="video/mp4">
+</video>
+</div>
+
+<!-- === 7) COLLECTION LIFTX === -->
+<section class="lf2-collection">
+<div class="lf2-collection-header">
+<h2>LIFT<span style="color:#36B7B2">X</span></h2>
+<a href="https://liftfoils.fr/efoil-liftx/">Voir toute la gamme LiftX &#8594;</a>
+</div>
+<div class="lf2-grid-3">
+<a class="lf2-product-tile" href="https://liftfoils.fr/efoil-liftx-43/">
+<div class="lf2-product-img-wrap">
+<img class="lf2-product-img" src="https://liftfoils.fr/wp-content/uploads/2026/02/2025_LIFTX_43_DAWNPATROL_Package_Iso_Shadow_2000x2000.png" alt="LiftX 4 3 surf foil motoris&eacute; Lift Foils" loading="lazy">
+</div>
+<div class="lf2-product-info">
+<span class="lf2-product-tag">Expert &middot; Extr&ecirc;me</span>
+<h3 class="lf2-product-name">LiftX 4&#8217;3&#8243;</h3>
+<p class="lf2-product-tagline">Pour les experts.</p>
+<div class="lf2-product-price">&Agrave; partir de 12&thinsp;500&nbsp;&euro; HT</div>
+<span class="lf2-product-cta">D&eacute;couvrir le LiftX 42 litres &#8594;</span>
+</div>
+</a>
+<a class="lf2-product-tile" href="https://liftfoils.fr/efoil-liftx-48/">
+<div class="lf2-product-img-wrap">
+<img class="lf2-product-img" src="https://liftfoils.fr/wp-content/uploads/2021/03/2025_LIFTX_48_SPARKBLUE_Package_Iso_Shadow_2000x2000.png" alt="LiftX eFoil hybride Lift Foils" loading="lazy">
+</div>
+<div class="lf2-product-info">
+<span class="lf2-product-tag">Surf foil &middot; Polyvalent</span>
+<h3 class="lf2-product-name">LiftX 4&#8217;8&#8243;</h3>
+<p class="lf2-product-tagline">La glisse ultime.</p>
+<div class="lf2-product-price">&Agrave; partir de 12&thinsp;500&nbsp;&euro; HT</div>
+<span class="lf2-product-cta">D&eacute;couvrir le LiftX 51 litres &#8594;</span>
+</div>
+</a>
+<a class="lf2-product-tile" href="https://liftfoils.fr/efoil-liftx-52/">
+<div class="lf2-product-img-wrap">
+<img class="lf2-product-img" src="https://liftfoils.fr/wp-content/uploads/2026/03/LiftX52-.png" alt="eFoil premium Lift Foils France" loading="lazy">
+</div>
+<div class="lf2-product-info">
+<span class="lf2-product-tag">Accessible &middot; Progression</span>
+<h3 class="lf2-product-name">LiftX 5&#8217;2&#8243;</h3>
+<p class="lf2-product-tagline">Le surf foil, accessible.</p>
+<div class="lf2-product-price">&Agrave; partir de 12&thinsp;500&nbsp;&euro; HT</div>
+<span class="lf2-product-cta">D&eacute;couvrir le LiftX 63 litres &#8594;</span>
+</div>
+</a>
+</div>
+</section>
+
+<!-- === 8) VIDEOS LIFT5 &amp; LIFTX PLEIN LARGEUR === -->
+<div class="lf2-product-video-section">
+<video autoplay muted loop playsinline>
+<source src="https://liftfoils.fr/wp-content/uploads/2021/03/Video-Lift-5-‐-Realisee-Avec-Clipchamp.mp4" type="video/mp4">
+</video>
+<div class="lf2-product-video-text right">
+<span class="lf2-eyebrow">eFoil premium</span>
+<h2>eFoil silencieux.<br>Glisse pure.</h2>
+<p>Le moteur Lift Foils a &eacute;t&eacute; con&ccedil;u pour se faire oublier au profit des sensations. Sur le LIFT5, tout est pens&eacute; pour offrir une navigation plus propre, plus fluide et plus silencieuse, avec une vraie sensation de connexion entre le rider, la planche et l&rsquo;eau.</p>
+<a href="https://liftfoils.fr/efoil-lift5/" class="lf2-btn-teal">D&eacute;couvrir le LIFT5</a>
+</div>
+</div>
+
+<div class="lf2-product-video-section">
+<video autoplay muted loop playsinline>
+<source src="https://liftfoils.fr/wp-content/uploads/2021/03/LIFTX-eFoil-Hybrid-eFoil-Beyond-Foil-Assist-for-Surf-Progression-3.mp4" type="video/mp4">
+</video>
+<div class="lf2-product-video-text left">
+<span class="lf2-eyebrow">Foil hybride &middot; Lift Foils</span>
+<h2>Au-del&agrave; du foil.<br>Vers le foil assist nouvelle g&eacute;n&eacute;ration.</h2>
+<p>Le LiftX d&eacute;passe les codes traditionnels du foil &eacute;lectrique. Il s&rsquo;adresse aux riders qui veulent explorer une pratique plus ouverte, entre eFoil, surf foil, downwind assist&eacute; et foil assist, avec une plateforme hybride plus libre et plus &eacute;volutive.</p>
+<a href="https://liftfoils.fr/efoil-liftx/" class="lf2-btn-teal">D&eacute;couvrir le LiftX</a>
+</div>
+</div>
+
+
+<!-- === 9) SPECS PRODUIT === -->
+<section class="lf2-specs-section">
+<div class="lf2-specs-title">
+<span class="lf2-eyebrow">Technologie LIFT5</span>
+<h2>Con&ccedil;u pour voler, pens&eacute; pour durer</h2>
+</div>
+<p class="lf2-specs-intro">Chaque eFoil Lift Foils est pens&eacute; comme un syst&egrave;me complet&nbsp;: planche, batterie, propulsion, m&acirc;t, ailes et t&eacute;l&eacute;commande. L&rsquo;objectif&nbsp;: rendre le foil &eacute;lectrique plus simple &agrave; utiliser, plus fiable et plus performant, session apr&egrave;s session.</p>
+<div class="lf2-specs-layout">
+<div class="lf2-specs-col">
+<div class="lf2-spec-item">
+<span class="lf2-spec-val">120</span>
+<span class="lf2-spec-label">Minutes d&rsquo;autonomie</span>
+<span class="lf2-spec-desc">Batterie lithium haute densit&eacute;</span>
+</div>
+<div class="lf2-spec-item">
+<span class="lf2-spec-val">100%</span>
+<span class="lf2-spec-label">Carbone</span>
+<span class="lf2-spec-desc">Board et foil en carbone a&eacute;rospatial</span>
+</div>
+<div class="lf2-spec-item">
+<span class="lf2-spec-val">64</span>
+<span class="lf2-spec-label">km/h max</span>
+<span class="lf2-spec-desc">Vitesse de pointe en mode expert</span>
+</div>
+</div>
+<div class="lf2-specs-img">
+<img src="https://liftfoils.fr/wp-content/uploads/2026/02/2025_LIFT5_44_STEELBLUE_Package_Iso_Shadow_2000x2000.png" alt="eFoil premium Lift Foils France" loading="lazy">
+</div>
+<div class="lf2-specs-col">
+<div class="lf2-spec-item right">
+<span class="lf2-spec-val">0</span>
+<span class="lf2-spec-label">C&acirc;bles et visses</span>
+<span class="lf2-spec-desc">Design totalement int&eacute;gr&eacute;</span>
+</div>
+<div class="lf2-spec-item right">
+<span class="lf2-spec-val">50</span>
+<span class="lf2-spec-label">Min de recharge</span>
+<span class="lf2-spec-desc">Chargeur rapide inclus</span>
+</div>
+<div class="lf2-spec-item right">
+<span class="lf2-spec-val">24</span>
+<span class="lf2-spec-label">kg tout compris</span>
+<span class="lf2-spec-desc">Le plus l&eacute;ger de sa cat&eacute;gorie</span>
+</div>
+</div>
+</div>
+</section>
+
+
+<!-- === 9BIS) FEATURES STATS === -->
+<section class="lf2-features-section">
+<h2>Technologie de r&eacute;f&eacute;rence mondiale</h2>
+<div class="lf2-features-grid">
+<div class="lf2-feat">
+<span class="lf2-feat-num"><h3>Batterie int&eacute;gr&eacute;e et installation simplifi&eacute;e</h3></span>
+<p>Avec le LIFT5, Lift Foils met l&rsquo;accent sur une mise en &oelig;uvre plus rapide, plus propre et plus intuitive. Moins de manipulations, moins de contraintes, plus de temps sur l&rsquo;eau.</p>
+</div>
+<div class="lf2-feat">
+<span class="lf2-feat-num"><h3>Construction carbone premium</h3>
+</span>
+<p>Les eFoils Lift Foils s&rsquo;appuient sur une construction carbone haut de gamme, reconnue pour sa rigidit&eacute;, sa l&eacute;g&egrave;ret&eacute; et sa pr&eacute;cision de pilotage. C&rsquo;est l&rsquo;un des grands marqueurs de la marque depuis ses d&eacute;buts dans le foil de performance.</p>
+</div>
+<div class="lf2-feat">
+<span class="lf2-feat-num"><h3>Propulsion fluide et silencieuse</h3>
+</span>
+<p>Le comportement sur l&rsquo;eau fait partie de l&rsquo;ADN Lift Foils&nbsp;: une propulsion ma&icirc;tris&eacute;e, une sensation de continuit&eacute; sous les pieds et une exp&eacute;rience de glisse qui privil&eacute;gie le ride plut&ocirc;t que la m&eacute;canique.</p>
+</div>
+<div class="lf2-feat">
+<span class="lf2-feat-num"><h3 class="lf2-feat-num">Une plateforme &eacute;volutive pour progresser</h3>
+</span>
+<p>Que vous choisissiez un eFoil LIFT5 ou un LiftX orient&eacute; sensations surf, la logique Lift Foils reste la m&ecirc;me&nbsp;: proposer du mat&eacute;riel premium capable d&rsquo;accompagner l&rsquo;apprentissage, la progression et la recherche de performance.</p>
+</div>
+</div>
+</section>
+
+<!-- === 10) NOS BASES === -->
+<section class="lf2-lifestyle-section">
+<div class="lf2-lifestyle-head">
+<h2>Essayer un eFoil Lift Foils en France</h2>
+<a href="liftfoils.fr">Voir toutes les localisations Lift Foils &#8594;</a>
+</div>
+<p class="lf2-lifestyle-intro">Lift Foils France vous permet de d&eacute;couvrir, tester et comparer les mod&egrave;les eFoil et foil &eacute;lectrique de la marque partout en France. Que vous souhaitiez r&eacute;server un essai, organiser une initiation ou pr&eacute;parer un achat, nos bases vous accompagnent dans le choix du eFoil Lift Foils adapt&eacute; &agrave; votre niveau.</p>
+<div class="lf2-lifestyle-tiles">
+<div class="lf2-lifestyle-tile">
+<img src="https://liftfoils.fr/wp-content/uploads/2025/12/Cannes_day1-177-edited.jpg" alt="essai eFoil Lift Foils &agrave; Cannes" loading="lazy">
+<div class="lf2-lifestyle-overlay">
+<div class="lf2-lifestyle-label">
+<a href="https://efoilcotedazur.fr/" target="_blank" rel="noopener noreferrer">
+<span>C&ocirc;te d&rsquo;Azur</span>
+<h3>eFoil Cannes</h3>
+</a>
+</div>
+</div>
+</div>
+<div class="lf2-lifestyle-tile">
+<img src="https://liftfoils.fr/wp-content/uploads/2021/03/ROD6336-scaled.jpg" alt="session Lift Foils Saint-Tropez" loading="lazy">
+<div class="lf2-lifestyle-overlay">
+<div class="lf2-lifestyle-label">
+<a href="https://efoil-sainttropez.fr/" target="_blank" rel="noopener noreferrer">
+<span>Var</span>
+<h3>eFoil Saint-Tropez</h3>
+</a>
+</div>
+</div>
+</div>
+<div class="lf2-lifestyle-tile">
+<img src="https://liftfoils.fr/wp-content/uploads/2025/12/DSC1001_RodrigoSnaps-Inc.-1-edited-scaled.jpg" alt="eFoil Lift Foils Antibes" loading="lazy">
+<div class="lf2-lifestyle-overlay">
+<div class="lf2-lifestyle-label">
+<a href="https://efoil-antibes.fr/" target="_blank" rel="noopener noreferrer">
+<span>Alpes-Maritimes</span>
+<h3>eFoil Antibes</h3>
+</a>
+</div>
+</div>
+</div>
+<div class="lf2-lifestyle-tile">
+<img src="https://liftfoils.fr/wp-content/uploads/2021/03/ROD0807.NEF83131-scaled.jpg" alt="eFoil Lift Foils Arcachon" loading="lazy">
+<div class="lf2-lifestyle-overlay">
+<div class="lf2-lifestyle-label">
+<a href="https://efoil-arcachon.fr/" target="_blank" rel="noopener noreferrer">
+<span>Gironde</span>
+<h3>eFoil Arcachon</h3>
+</a>
+</div>
+</div>
+</div>
+<div class="lf2-lifestyle-tile">
+<img src="https://liftfoils.fr/wp-content/uploads/2021/03/ROD7600-scaled.jpg" alt="eFoil Lift Foils Le Touquet" loading="lazy">
+<div class="lf2-lifestyle-overlay">
+<div class="lf2-lifestyle-label">
+<a href="https://efoil-letouquet.fr/" target="_blank" rel="noopener noreferrer">
+<span>Pas-de-Calais</span>
+<h3>eFoil Le Touquet</h3>
+</a>
+</div>
+</div>
+</div>
+<div class="lf2-lifestyle-tile">
+<img src="https://liftfoils.fr/wp-content/uploads/2026/01/Foilin_paris-357-scaled.jpg" alt="eFoil Lift Foils Paris" loading="lazy">
+<div class="lf2-lifestyle-overlay">
+<div class="lf2-lifestyle-label">
+<a href="https://foilinparis.fr/" target="_blank" rel="noopener noreferrer">
+<span>&Icirc;le-de-France</span>
+<h3>eFoil Paris</h3>
+</a>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<!-- === 11) YOUTUBE === -->
+<section class="lf2-youtube-section">
+<div class="lf2-yt-header">
+<span class="lf2-eyebrow">Notre cha&icirc;ne YouTube</span>
+<h2>Lift Foils en vid&eacute;o</h2>
+</div>
+<p class="lf2-yt-intro">Retrouvez les vid&eacute;os officielles Lift Foils pour d&eacute;couvrir le LIFT5, le LiftX, les sensations de l&rsquo;eFoil et l&rsquo;univers de la marque. Un excellent point de d&eacute;part pour comprendre les diff&eacute;rences entre les mod&egrave;les et d&eacute;couvrir nos tutos.</p>
+<div class="lf2-yt-grid">
+<div class="lf2-yt-card" onclick="window.open('https://www.youtube.com/watch?v=7WdX2LgkGpE','_blank')">
+<div class="lf2-yt-thumb">
+<img src="https://img.youtube.com/vi/7WdX2LgkGpE/mqdefault.jpg" alt="LIFT5 eFoil Lift Foils pr&eacute;sentation officielle" loading="lazy">
+<div class="lf2-yt-play"><div class="lf2-yt-play-btn"><div class="lf2-yt-play-icon"></div></div></div>
+</div>
+<div class="lf2-yt-info">
+<h4>LIFT5&nbsp;: pr&eacute;sentation officielle de l&rsquo;eFoil Lift5</h4>
+<p>@liftfoils</p>
+</div>
+</div>
+<div class="lf2-yt-card" onclick="window.open('https://www.youtube.com/watch?v=q4F-eAEpkZw','_blank')">
+<div class="lf2-yt-thumb">
+<img src="https://img.youtube.com/vi/q4F-eAEpkZw/mqdefault.jpg" alt="LiftX eFoil hybride surf foil" loading="lazy">
+<div class="lf2-yt-play"><div class="lf2-yt-play-btn"><div class="lf2-yt-play-icon"></div></div></div>
+</div>
+<div class="lf2-yt-info">
+<h4>LiftX Hybride&nbsp;: entre eFoil, surf foil et foil assist</h4>
+<p>@liftfoils</p>
+</div>
+</div>
+<div class="lf2-yt-card" onclick="window.open('https://www.youtube.com/watch?v=uLrJrbSGXzQ','_blank')">
+<div class="lf2-yt-thumb">
+<img src="https://img.youtube.com/vi/uLrJrbSGXzQ/mqdefault.jpg" alt="histoire invention eFoil Lift Foils" loading="lazy">
+<div class="lf2-yt-play"><div class="lf2-yt-play-btn"><div class="lf2-yt-play-icon"></div></div></div>
+</div>
+<div class="lf2-yt-info">
+<h4>Lift Foils&nbsp;: l&rsquo;histoire de l&rsquo;invention de l&rsquo;efoil</h4>
+<p>@liftfoils</p>
+</div>
+</div>
+</div>
+<div class="lf2-yt-cta">
+<a href="https://www.youtube.com/@liftfoils" target="_blank" rel="noopener noreferrer">
+&#9654; Voir toutes nos vid&eacute;os sur YouTube
+</a>
+</div>
+</section>
+
+<!-- === 12) FAQ === -->
+<section class="lf2-faq-section">
+<div class="lf2-faq-header">
+<h2>FAQ eFoil, foil &eacute;lectrique et Lift Foils</h2>
+</div>
+<div class="lf2-faq-grid">
+<div class="lf2-faq-item">
+<button class="lf2-faq-btn" onclick="this.parentElement.classList.toggle('open')">
+<h3 class="lf2-faq-q">Qu&rsquo;est-ce qu&rsquo;un eFoil&nbsp;?</h3>
+<span class="lf2-faq-icon"></span>
+</button>
+<p class="lf2-faq-a">Un eFoil est une planche &eacute;quip&eacute;e d&rsquo;un foil et d&rsquo;une propulsion &eacute;lectrique qui permet de voler au-dessus de l&rsquo;eau sans vent ni vague. En fran&ccedil;ais, on parle aussi tr&egrave;s souvent de foil &eacute;lectrique.</p>
+</div>
+<div class="lf2-faq-item">
+<button class="lf2-faq-btn" onclick="this.parentElement.classList.toggle('open')">
+<h3 class="lf2-faq-q">Quelle diff&eacute;rence entre eFoil, foil &eacute;lectrique et foil assist&nbsp;?</h3>
+<span class="lf2-faq-icon"></span>
+</button>
+<p class="lf2-faq-a">Dans la majorit&eacute; des cas, il s&rsquo;agit du m&ecirc;me produit. &laquo;&nbsp;eFoil&nbsp;&raquo; est le terme le plus utilis&eacute; &agrave; l&rsquo;international pour <em>electric foil</em>, tandis que &laquo;&nbsp;foil &eacute;lectrique&nbsp;&raquo; est l&rsquo;expression la plus recherch&eacute;e en fran&ccedil;ais. Le foil assist est utilis&eacute; pour cat&eacute;goriser une planche &agrave; assistance &eacute;lectrique moins puissante et plus l&eacute;g&egrave;re qu&rsquo;un foil &eacute;lectrique/eFoil. Le foil assist est g&eacute;n&eacute;ralement utilis&eacute; pour surfer des vagues en toute l&eacute;g&egrave;ret&eacute;. Le LiftX est le produit le plus abouti en la mati&egrave;re.</p>
+</div>
+<div class="lf2-faq-item">
+<button class="lf2-faq-btn" onclick="this.parentElement.classList.toggle('open')">
+<h3 class="lf2-faq-q">Pourquoi choisir Lift Foils&nbsp;?</h3>
+<span class="lf2-faq-icon"></span>
+</button>
+<p class="lf2-faq-a">Lift Foils est l&rsquo;une des marques les plus reconnues du secteur gr&acirc;ce &agrave; son r&ocirc;le pionnier dans l&rsquo;histoire de l&rsquo;eFoil, &agrave; la qualit&eacute; de sa construction et &agrave; la coh&eacute;rence de ses plateformes LIFT5 et LiftX. La marque est particuli&egrave;rement appr&eacute;ci&eacute;e pour son niveau de finition, la fluidit&eacute; de ses sensations et son positionnement premium. La marque dispose aussi d&rsquo;un r&eacute;seau de passionn&eacute;s partout en France, avec 6 &eacute;coles/shops o&ugrave; des experts sont l&agrave; pour vous conseiller. Le stock de foil &eacute;lectrique et de pi&egrave;ces d&eacute;tach&eacute;es est en France, &agrave; Cannes.</p>
+</div>
+<div class="lf2-faq-item">
+<button class="lf2-faq-btn" onclick="this.parentElement.classList.toggle('open')">
+<h3 class="lf2-faq-q">Lift Foils est-il l&rsquo;inventeur de l&rsquo;eFoil&nbsp;?</h3>
+<span class="lf2-faq-icon"></span>
+</button>
+<p class="lf2-faq-a">Lift Foils est une marque pionni&egrave;re du eFoil. Lift Foils a imagin&eacute; l&rsquo;eFoil d&egrave;s 2015 et lanc&eacute; le premier eFoil commercial en 2018 avec le LIFT1. Lift Foils dispose de brevets pour l&rsquo;invention de ces eFoils aux US, ce qui en fait l&rsquo;industriel pionnier historique du secteur. Nick Leason, fondateur de la marque, faisait partie des pionniers &agrave; fabriquer un eFoil dans son garage au d&eacute;but du 21&egrave;me si&egrave;cle. Il est important de notifier qu&rsquo;il n&rsquo;&eacute;tait pas le seul &agrave; cette &eacute;poque, mais qu&rsquo;il a &eacute;t&eacute; le premier &agrave; industrialiser leur production et &agrave; en d&eacute;poser les brevets. En 2026, il est encore une fois le premier &agrave; proposer un eFoil sans visse ni c&acirc;ble.</p>
+</div>
+<div class="lf2-faq-item">
+<button class="lf2-faq-btn" onclick="this.parentElement.classList.toggle('open')">
+<h3 class="lf2-faq-q">Quel eFoil Lift Foils choisir pour d&eacute;buter&nbsp;?</h3>
+<span class="lf2-faq-icon"></span>
+</button>
+<p class="lf2-faq-a">Lift Foils fait partie des r&eacute;f&eacute;rences mondiales du foil &eacute;lectrique haut de gamme. Pour d&eacute;buter, un mod&egrave;le plus stable et plus tol&eacute;rant sera g&eacute;n&eacute;ralement recommand&eacute;, comme le Lift5 Cruiser 5&rsquo;4&rdquo;. Pour une pratique plus polyvalente, le Lift5 Sport 4&rsquo;9&rdquo; repr&eacute;sente souvent un excellent compromis. Pour une utilisation plus Surf, le mod&egrave;le LiftX est d&eacute;finitivement la plateforme &agrave; assistance &eacute;lectrique la plus performante en terme de puissance, d&rsquo;autonomie et de l&eacute;g&egrave;ret&eacute;.</p>
+</div>
+<div class="lf2-faq-item">
+<button class="lf2-faq-btn" onclick="this.parentElement.classList.toggle('open')">
+<h3 class="lf2-faq-q">Le LiftX est-il un foil assist&nbsp;?</h3>
+<span class="lf2-faq-icon"></span>
+</button>
+<p class="lf2-faq-a">Le LiftX ouvre une nouvelle approche entre eFoil, surf foil et foil assist. Le LiftX ne se r&eacute;sume pas &agrave; un simple foil assist. Il s&rsquo;agit d&rsquo;une plateforme hybride pens&eacute;e pour faire le lien entre eFoil, surf foil motoris&eacute; et glisse assist&eacute;e, avec une approche plus libre et plus orient&eacute;e surf. Pour juger, rien de mieux que l&rsquo;essayer&nbsp;!</p>
+</div>
+<div class="lf2-faq-item">
+<button class="lf2-faq-btn" onclick="this.parentElement.classList.toggle('open')">
+<h3 class="lf2-faq-q">O&ugrave; essayer un eFoil Lift Foils en France&nbsp;?</h3>
+<span class="lf2-faq-icon"></span>
+</button>
+<p class="lf2-faq-a">Lift Foils France propose des essais dans plusieurs destinations comme Cannes, Saint-Tropez, Antibes, Arcachon, Le Touquet et Paris. Nous avons aussi d&rsquo;autres bases de tests en France, contactez-nous pour plus de d&eacute;tails. Liftfoils.fr est le site de r&eacute;f&eacute;rence pour d&eacute;couvrir, essayer et acheter un eFoil Lift Foils en France.</p>
+</div>
+</div>
+</section>
+
+<!-- === 13) VIDEO FINALE / CTA FINAL === -->
+<section class="lf2-video-full">
+<video autoplay muted loop playsinline>
+<source src="https://liftfoils.fr/wp-content/uploads/2021/03/Lift-Foils-eFoil-Lift-5-vue-drone.mp4" type="video/mp4">
+</video>
+<div class="lf2-video-overlay">
+<div class="lf2-video-overlay-text">
+<h2>Pr&ecirc;t &agrave; voler sur l&rsquo;eau&nbsp;?</h2>
+<p>R&eacute;servez votre essai, d&eacute;couvrez la gamme LIFT5 et LiftX, et &eacute;changez avec un sp&eacute;cialiste Lift Foils pour choisir le foil &eacute;lectrique adapt&eacute; &agrave; votre pratique.</p>
+<div class="lf2-cta-final-group">
+<a href="/contact/" class="lf2-btn-teal-lg">Contactez-nous</a>
+<a href="mailto:info@liftfoils.fr" class="lf2-cta-contact-link">info@liftfoils.fr</a>
+<a href="tel:0635305067" class="lf2-cta-contact-link">06 35 30 50 67</a>
+</div>
+</div>
+</div>
+</section>
+
+</div>
+<!-- /wp:html -->
+
+<!-- wp:html -->
+<script>
+(function(){
+  var lf2 = document.querySelector('.lf2');
+  if(!lf2) return;
+  var el = lf2.parentElement;
+  while(el && el !== document.body){
+    el.style.maxWidth = 'none';
+    el.style.width = '100%';
+    el.style.paddingLeft = '0';
+    el.style.paddingRight = '0';
+    el.style.marginLeft = '0';
+    el.style.marginRight = '0';
+    el = el.parentElement;
+  }
+  var ec = document.querySelector('.entry-content');
+  if(ec){
+    ec.style.padding = '0';
+    ec.style.maxWidth = 'none';
+  }
+})();
+</script>
+<!-- /wp:html -->
