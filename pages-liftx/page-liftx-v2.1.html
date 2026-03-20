@@ -1,0 +1,1074 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>LiftX | foil hybride Lift Foils entre eFoil, surf foil et foil assist</title>
+<meta name="description" content="Découvrez le LiftX, le foil hybride Lift Foils qui relie eFoil, surf foil et foil assist. Packages complets, technologie LCS, batterie LiftX, essais en France et accompagnement expert.">
+<style>
+  *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+  :root {
+    --cyan: #1DC6C8;
+    --black: #0a0a0a;
+    --white: #ffffff;
+    --off-white: #f5f5f3;
+    --light: #e8e8e8;
+    --gray-text: #555;
+    --gray-muted: #999;
+    --ocean: #0a2540;
+    --font: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  }
+  html { scroll-behavior: smooth; }
+  body { font-family: var(--font); background: var(--white); color: var(--black); line-height: 1.5; overflow-x: hidden; }
+  a { color: inherit; text-decoration: none; }
+  img { display: block; max-width: 100%; }
+
+  /* ===== HEADER ===== */
+  .site-header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0 48px; height: 68px;
+    background: rgba(10,37,64,0.96);
+    backdrop-filter: blur(16px);
+    border-bottom: 1px solid rgba(255,255,255,0.07);
+  }
+  .header-logo img { height: 26px; width: auto; filter: brightness(0) invert(1); }
+  .header-nav { display: flex; gap: 36px; }
+  .header-nav a { font-size: 13px; font-weight: 500; color: rgba(255,255,255,0.6); transition: color .2s; }
+  .header-nav a:hover { color: #fff; }
+  .btn-header {
+    background: var(--cyan); color: var(--black);
+    font-size: 12px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
+    padding: 10px 22px; border-radius: 2px; transition: opacity .2s;
+  }
+  .btn-header:hover { opacity: .85; }
+
+  /* ===== HERO VIDÉO — OCÉAN SOMBRE ===== */
+  .hero {
+    position: relative; height: 100vh; min-height: 640px;
+    overflow: hidden; display: flex; align-items: flex-end; padding-bottom: 80px;
+    background: var(--ocean);
+  }
+  .hero video {
+    position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .75;
+  }
+  .hero-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(160deg, rgba(10,37,64,0.6) 0%, rgba(0,0,0,0.1) 50%, rgba(0,0,0,0.75) 100%);
+  }
+  .hero-content { position: relative; z-index: 2; padding: 0 64px; max-width: 820px; }
+  .hero-eyebrow {
+    display: inline-flex; align-items: center; gap: 10px;
+    font-size: 11px; font-weight: 700; letter-spacing: .25em; text-transform: uppercase;
+    color: var(--cyan); margin-bottom: 20px;
+  }
+  .hero-eyebrow::before { content: ''; display: block; width: 28px; height: 1.5px; background: var(--cyan); }
+  .hero h1 {
+    font-size: clamp(52px, 7.2vw, 88px); font-weight: 900;
+    letter-spacing: -.05em; line-height: .9; color: #fff; margin-bottom: 12px;
+  }
+  .hero-tagline {
+    font-size: clamp(14px, 1.5vw, 18px); font-weight: 700; color: var(--cyan);
+    letter-spacing: .04em; margin-bottom: 20px; text-transform: uppercase;
+  }
+  .hero-desc { font-size: 15px; color: rgba(255,255,255,.65); margin-bottom: 40px; max-width: 620px; line-height: 1.7; }
+  .hero-actions { display: flex; gap: 14px; flex-wrap: wrap; }
+  .btn-cyan { display: inline-block; background: var(--cyan); color: var(--black); font-size: 12px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; padding: 16px 40px; border-radius: 2px; transition: opacity .2s; }
+  .btn-cyan:hover { opacity: .85; }
+  .btn-ghost { display: inline-block; border: 1.5px solid rgba(255,255,255,.4); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 15px 40px; border-radius: 2px; transition: all .2s; }
+  .btn-ghost:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+
+  /* Scroll indicator */
+  .scroll-ind {
+    position: absolute; bottom: 36px; right: 64px; z-index: 3;
+    display: flex; flex-direction: column; align-items: center; gap: 8px;
+    color: rgba(255,255,255,.4); font-size: 9px; letter-spacing: .15em; text-transform: uppercase;
+  }
+  .scroll-line { width: 1px; height: 48px; background: linear-gradient(to bottom, rgba(29,198,200,.8), transparent); animation: sp 2s ease-in-out infinite; }
+  @keyframes sp { 0%,100%{opacity:.3}50%{opacity:1} }
+
+  /* ===== MARQUEE ===== */
+  .marquee-bar { background: var(--ocean); overflow: hidden; white-space: nowrap; padding: 13px 0; }
+  .marquee-track { display: inline-flex; animation: marquee 32s linear infinite; }
+  .marquee-track span { font-size: 11px; font-weight: 800; letter-spacing: .18em; text-transform: uppercase; color: rgba(255,255,255,.5); padding: 0 36px; }
+  .marquee-track span em { color: var(--cyan); font-style: normal; }
+  @keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+
+  /* ===== CONCEPT — PHRASE ===== */
+  .concept {
+    padding: 100px 64px; background: var(--white);
+    display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center;
+    border-bottom: 1px solid var(--light);
+  }
+  .concept-text .label { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 20px; display: block; }
+  .concept-text h2 { font-size: clamp(28px,3.2vw,42px); font-weight: 800; letter-spacing: -.02em; line-height: 1.08; margin-bottom: 24px; }
+  .concept-text p { font-size: 15px; color: var(--gray-text); line-height: 1.72; margin-bottom: 20px; }
+  .concept-media { position: relative; border-radius: 4px; overflow: hidden; }
+  .concept-media img { width: 100%; height: 520px; object-fit: cover; object-position: center top; }
+  .concept-badge {
+    position: absolute; bottom: 24px; left: 24px;
+    background: rgba(10,37,64,.9); backdrop-filter: blur(12px);
+    border: 1px solid rgba(29,198,200,.3); border-radius: 8px;
+    padding: 16px 20px; display: flex; flex-direction: column; gap: 4px;
+  }
+  .concept-badge .b-val { font-size: 22px; font-weight: 900; color: var(--cyan); line-height: 1; }
+  .concept-badge .b-lbl { font-size: 10px; color: rgba(255,255,255,.55); text-transform: uppercase; letter-spacing: .1em; }
+
+  /* ===== 3 BOARDS ===== */
+  .boards { background: #f4f4f2; padding: 100px 6vw; }
+  .section-head { text-align: center; padding: 0 64px; margin-bottom: 64px; }
+  .section-head .label { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 16px; display: block; }
+  .section-head h2 { font-size: clamp(26px,3vw,38px); font-weight: 800; letter-spacing: -.02em; margin-bottom: 12px; }
+  .section-head p { font-size: 14px; color: var(--gray-text); max-width: 680px; margin: 0 auto; line-height: 1.7; }
+  .boards-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 32px;
+    margin-bottom: 24px;
+  }
+  .boards-title-wrap { max-width: 840px; }
+  .boards-title {
+    font-size: clamp(3rem, 6vw, 5rem);
+    font-weight: 900;
+    letter-spacing: -.04em;
+    margin: 0;
+    text-transform: uppercase;
+    color: #111;
+    line-height: .95;
+  }
+  .boards-title .accent { color: #36B7B2; }
+  .boards-link {
+    color: #111;
+    text-decoration: none;
+    font-size: .75rem;
+    letter-spacing: .18em;
+    text-transform: uppercase;
+    border-bottom: 2px solid #111;
+    font-weight: 700;
+    padding-bottom: 2px;
+    white-space: nowrap;
+  }
+  .boards-intro {
+    max-width: 760px;
+    font-size: 14px;
+    color: var(--gray-text);
+    line-height: 1.75;
+    margin: 0 0 48px;
+  }
+  .boards-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 32px;
+    background: transparent;
+    padding: 0 40px 20px;
+  }
+  .board-card {
+    background: #fff;
+    overflow: hidden;
+    border-radius: 4px;
+    box-shadow: 0 8px 40px rgba(0,0,0,.10), 0 2px 8px rgba(0,0,0,.06);
+    transition: box-shadow .3s, transform .3s;
+    display: block;
+    color: inherit;
+    text-decoration: none;
+  }
+  .board-card:hover {
+    box-shadow: 0 16px 60px rgba(0,0,0,.16), 0 4px 16px rgba(0,0,0,.08);
+    transform: translateY(-4px);
+  }
+  .board-level {
+    display: inline-block; font-size: 10px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase;
+    color: var(--cyan); margin-bottom: 8px; width: fit-content;
+  }
+  .board-card h3 { font-size: 22px; font-weight: 800; letter-spacing: -.02em; margin-bottom: 8px; }
+  .board-sub { font-size: 14px; color: #777; margin-bottom: 18px; line-height: 1.7; }
+  .board-img { overflow: hidden; aspect-ratio: 1/1; background: #f5f5f5; }
+  .board-img img { width: 100%; height: 100%; object-fit: contain; display: block; padding: 24px; transition: transform .5s ease; }
+  .board-card:hover .board-img img { transform: scale(1.06); }
+  .board-info { padding: 24px 28px 36px; }
+  .board-specs { border-top: 1px solid var(--light); padding-top: 14px; margin-bottom: 18px; }
+  .spec-row { display: flex; justify-content: space-between; padding: 7px 0; font-size: 13px; border-bottom: 1px solid rgba(0,0,0,.04); }
+  .spec-row .lbl { color: var(--gray-muted); }
+  .spec-row .val { font-weight: 600; }
+  .board-price { font-size: 1.05rem; font-weight: 700; color: #111; letter-spacing: 0; margin-bottom: 0; }
+  .board-price sup { font-size: 15px; font-weight: 600; color: var(--gray-muted); vertical-align: super; }
+  .btn-dark {
+    display: inline-block;
+    margin-top: 14px;
+    background: transparent;
+    color: #36B7B2;
+    font-size: .72rem;
+    font-weight: 700;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    padding: 0;
+    text-align: left;
+    border-radius: 0;
+    border-bottom: 2px solid #36B7B2;
+  }
+  .btn-dark:hover { background: transparent; }
+
+  /* ===== HYBRID CONCEPT — PLEIN ÉCRAN ===== */
+  .hybrid-full {
+    position: relative; height: 85vh; min-height: 540px; overflow: hidden;
+    display: flex; align-items: center;
+  }
+  .hybrid-full-bg {
+    position: absolute; inset: 0;
+    background-image: url('https://liftfoils.com/cdn/shop/files/62e2b40d5567b4b2d65834dd8d17a25c14649c58-3359x4192.png?v=1747177501');
+    background-size: cover; background-position: center 20%;
+  }
+  .hybrid-full-overlay {
+    position: absolute; inset: 0;
+    background: linear-gradient(to right, rgba(10,37,64,.92) 0%, rgba(10,37,64,.5) 55%, rgba(0,0,0,.1) 100%);
+  }
+  .hybrid-content { position: relative; z-index: 2; padding: 0 80px; max-width: 620px; }
+  .hybrid-content .label { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 16px; display: block; }
+  .hybrid-content h2 { font-size: clamp(30px,4vw,48px); font-weight: 900; letter-spacing: -.03em; color: #fff; margin-bottom: 20px; line-height: 1.04; }
+  .hybrid-content p { font-size: 15px; color: rgba(255,255,255,.65); line-height: 1.7; max-width: 520px; margin-bottom: 36px; }
+  .hybrid-pills { display: flex; flex-wrap: wrap; gap: 10px; }
+  .pill {
+    background: rgba(29,198,200,.12); border: 1px solid rgba(29,198,200,.35);
+    color: var(--cyan); font-size: 11px; font-weight: 700; letter-spacing: .1em;
+    text-transform: uppercase; padding: 8px 18px; border-radius: 100px;
+  }
+
+  /* ===== 3 FEATURES FONCÉES ===== */
+  .features-dark {
+    display: grid; grid-template-columns: repeat(3,1fr); gap: 1px;
+    background: rgba(255,255,255,.04); background-color: var(--ocean);
+  }
+  .feat-dark { background: var(--ocean); padding: 56px 48px; border-right: 1px solid rgba(255,255,255,.05); }
+  .feat-dark:last-child { border-right: none; }
+  .feat-dark .feat-icon { font-size: 28px; margin-bottom: 20px; }
+  .feat-dark h3 { font-size: 18px; font-weight: 800; color: #fff; margin-bottom: 12px; line-height: 1.25; }
+  .feat-dark p { font-size: 14px; color: rgba(255,255,255,.5); line-height: 1.7; }
+
+  /* ===== STATS ===== */
+  .stats-section {
+    background: var(--black);
+    display: grid; grid-template-columns: repeat(4,1fr);
+  }
+  .stat-cell { padding: 64px 40px; text-align: center; border-right: 1px solid rgba(255,255,255,.04); }
+  .stat-cell:last-child { border-right: none; }
+  .stat-num { font-size: clamp(38px,5vw,58px); font-weight: 900; letter-spacing: -.04em; color: #fff; line-height: 1; margin-bottom: 10px; }
+  .stat-num em { color: var(--cyan); font-style: normal; }
+  .stat-lbl { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: rgba(255,255,255,.35); line-height: 1.5; }
+
+  /* ===== BATTERIE LIFTX ===== */
+  .battery-section { padding: 100px 64px; background: var(--white); }
+  .battery-inner { max-width: 1200px; margin: 0 auto; display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+  .batt-content .label { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 16px; display: block; }
+  .batt-content h2 { font-size: clamp(26px,3vw,36px); font-weight: 800; letter-spacing: -.02em; margin-bottom: 20px; line-height: 1.12; }
+  .batt-content p { font-size: 15px; color: var(--gray-text); line-height: 1.75; margin-bottom: 36px; }
+  .batt-cards { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-bottom: 36px; }
+  .batt-card { background: var(--off-white); border-radius: 8px; padding: 24px; border: 1px solid var(--light); }
+  .batt-card .bc-val { font-size: 24px; font-weight: 900; color: var(--cyan); letter-spacing: -.02em; line-height: 1; margin-bottom: 4px; }
+  .batt-card .bc-lbl { font-size: 11px; font-weight: 600; color: var(--gray-muted); text-transform: uppercase; letter-spacing: .1em; }
+  .batt-card .bc-desc { font-size: 12px; color: var(--gray-text); margin-top: 6px; line-height: 1.5; }
+  .batt-imgs { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+  .batt-imgs img { border-radius: 4px; width: 100%; height: 220px; object-fit: cover; }
+  .batt-imgs img:first-child { grid-column: 1/-1; height: 300px; }
+
+  /* ===== GLIDE MODE ===== */
+  .glide-split { display: grid; grid-template-columns: 1fr 1fr; min-height: 70vh; }
+  .glide-media { overflow: hidden; position: relative; background: var(--ocean); }
+  .glide-media img,
+  .glide-media video { width: 100%; height: 100%; object-fit: cover; display: block; transition: transform .8s ease; }
+  .glide-split:hover .glide-media img,
+  .glide-split:hover .glide-media video { transform: scale(1.03); }
+  .glide-content { background: var(--off-white); padding: 80px 72px; display: flex; flex-direction: column; justify-content: center; border-left: 1px solid var(--light); }
+  .glide-content .label { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 20px; display: block; }
+  .glide-content h2 { font-size: clamp(26px,3vw,36px); font-weight: 800; letter-spacing: -.02em; margin-bottom: 20px; line-height: 1.12; }
+  .glide-content p { font-size: 14px; color: var(--gray-text); line-height: 1.7; margin-bottom: 28px; }
+  .glide-list { list-style: none; }
+  .glide-list li { display: flex; gap: 12px; padding: 14px 0; border-bottom: 1px solid rgba(0,0,0,.07); font-size: 14px; color: var(--gray-text); align-items: flex-start; }
+  .glide-list li:last-child { border-bottom: none; }
+  .glide-list li strong { display: block; color: var(--black); font-weight: 700; margin-bottom: 2px; }
+  .check { width: 18px; height: 18px; background: var(--cyan); border-radius: 50%; display: flex; align-items: center; justify-content: center; flex-shrink: 0; font-size: 9px; color: white; font-weight: 900; margin-top: 2px; }
+
+  /* ===== LAYOUTS ===== */
+  .layouts { padding: 100px 64px; background: var(--white); }
+  .layouts-inner { max-width: 1200px; margin: 0 auto; }
+  .layout-tabs { display: flex; justify-content: center; gap: 8px; margin: 40px 0 48px; }
+  .layout-tab { padding: 10px 28px; font-size: 11px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; border-radius: 100px; cursor: pointer; border: 1.5px solid var(--light); color: var(--gray-muted); transition: all .2s; }
+  .layout-tab.active { background: var(--ocean); color: #fff; border-color: var(--ocean); }
+  .layout-img { text-align: center; }
+  .layout-img img { width: 100%; max-width: 1100px; margin: 0 auto; border-radius: 4px; border: 1px solid var(--light); }
+
+  /* ===== AVIS ===== */
+  .reviews { padding: 100px 64px; background: var(--off-white); }
+  .reviews-inner { max-width: 1100px; margin: 0 auto; }
+  .reviews-top {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    gap: 24px;
+  }
+  .reviews-nav { display: flex; gap: 10px; }
+  .reviews-nav button {
+    width: 42px;
+    height: 42px;
+    border-radius: 999px;
+    border: 1px solid rgba(0,0,0,.12);
+    background: #fff;
+    color: #111;
+    font-size: 18px;
+    cursor: pointer;
+    transition: background .2s, border-color .2s;
+  }
+  .reviews-nav button:hover { background: #f5f5f3; border-color: rgba(0,0,0,.22); }
+  .reviews-carousel { overflow: hidden; margin-top: 40px; }
+  .reviews-track {
+    display: flex;
+    gap: 20px;
+    transition: transform .35s ease;
+    will-change: transform;
+  }
+  .review-card {
+    background: var(--white);
+    border-radius: 8px;
+    padding: 32px;
+    border: 1px solid rgba(0,0,0,.06);
+    transition: box-shadow .3s;
+    min-width: calc(50% - 10px);
+    flex: 0 0 calc(50% - 10px);
+  }
+  .review-card:hover { box-shadow: 0 8px 32px rgba(0,0,0,.07); }
+  .review-stars { font-size: 13px; color: var(--cyan); margin-bottom: 18px; letter-spacing: 2px; }
+  .review-card blockquote { font-size: 14px; color: var(--gray-text); line-height: 1.7; font-style: normal; margin-bottom: 20px; }
+  .review-source { font-size: 11px; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--black); border-top: 1px solid var(--light); padding-top: 16px; margin-bottom: 12px; }
+  .review-link {
+    display: inline-block;
+    font-size: .72rem;
+    letter-spacing: .14em;
+    text-transform: uppercase;
+    color: var(--cyan);
+    border-bottom: 2px solid var(--cyan);
+    font-weight: 700;
+    padding-bottom: 2px;
+  }
+
+  /* ===== FAQ ===== */
+  .faq-section { padding: 100px 64px; background: var(--white); }
+  .faq-inner { max-width: 980px; margin: 0 auto; }
+  .faq-list { margin-top: 36px; border-top: 1px solid var(--light); }
+  .faq-item { border-bottom: 1px solid var(--light); }
+  .faq-btn {
+    width: 100%;
+    background: none;
+    border: 0;
+    padding: 20px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    cursor: pointer;
+    text-align: left;
+  }
+  .faq-q { font-size: 17px; font-weight: 800; letter-spacing: -.02em; color: #111; margin: 0; }
+  .faq-icon {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    flex-shrink: 0;
+  }
+  .faq-icon::before,
+  .faq-icon::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    width: 16px;
+    height: 2px;
+    background: #111;
+    transform: translate(-50%, -50%);
+    transition: transform .25s ease, opacity .25s ease;
+  }
+  .faq-icon::after {
+    transform: translate(-50%, -50%) rotate(90deg);
+  }
+  .faq-item.open .faq-icon::after {
+    opacity: 0;
+    transform: translate(-50%, -50%) rotate(90deg) scaleX(.2);
+  }
+  .faq-a {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height .35s ease, padding-bottom .35s ease;
+    padding-bottom: 0;
+  }
+  .faq-a p {
+    font-size: 13px;
+    color: var(--gray-text);
+    line-height: 1.68;
+    max-width: 820px;
+    margin: 0;
+  }
+  .faq-item.open .faq-a {
+    max-height: 420px;
+    padding-bottom: 20px;
+  }
+
+  /* ===== SHIPPING ===== */
+  .shipping { background: var(--ocean); padding: 80px 64px; display: flex; align-items: center; justify-content: space-between; gap: 48px; position: relative; overflow: hidden; }
+  .shipping::after { content: ''; position: absolute; right: 100px; top: 50%; transform: translateY(-50%); width: 350px; height: 350px; background: radial-gradient(circle, rgba(29,198,200,.15) 0%, transparent 70%); pointer-events: none; }
+  .shipping-text .label { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 14px; display: block; }
+  .shipping-text h2 { font-size: clamp(26px,3vw,36px); font-weight: 800; color: #fff; margin-bottom: 14px; letter-spacing: -.02em; }
+  .shipping-text p { font-size: 14px; color: rgba(255,255,255,.5); max-width: 600px; line-height: 1.7; }
+
+  /* ===== CTA FINALE ===== */
+  .cta-final { position: relative; height: 80vh; min-height: 500px; overflow: hidden; display: flex; align-items: center; justify-content: center; text-align: center; }
+  .cta-final video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+  .cta-overlay { position: absolute; inset: 0; background: rgba(10,37,64,.65); }
+  .cta-content { position: relative; z-index: 2; padding: 40px; }
+  .cta-content .label { font-size: 11px; font-weight: 700; letter-spacing: .2em; text-transform: uppercase; color: var(--cyan); margin-bottom: 18px; display: block; }
+  .cta-content h2 { font-size: clamp(30px,4vw,46px); font-weight: 900; color: #fff; letter-spacing: -.03em; margin-bottom: 16px; }
+  .cta-content p { font-size: 15px; color: rgba(255,255,255,.65); margin-bottom: 40px; max-width: 560px; margin-left: auto; margin-right: auto; line-height: 1.7; }
+  .cta-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+  .btn-outline-w { display: inline-block; border: 1.5px solid rgba(255,255,255,.4); color: #fff; font-size: 12px; font-weight: 700; letter-spacing: .1em; text-transform: uppercase; padding: 15px 38px; border-radius: 2px; transition: all .2s; }
+  .btn-outline-w:hover { border-color: #fff; background: rgba(255,255,255,.08); }
+
+  /* ===== FOOTER ===== */
+  .site-footer { background: var(--ocean); border-top: 1px solid rgba(255,255,255,.08); padding: 64px 64px 40px; }
+  .footer-top { display: grid; grid-template-columns: 1.5fr 1fr 1fr 1fr; gap: 60px; margin-bottom: 56px; }
+  .footer-logo-img { height: 22px; filter: brightness(0) invert(1); margin-bottom: 18px; }
+  .footer-brand p { font-size: 13px; color: rgba(255,255,255,.4); line-height: 1.7; max-width: 220px; }
+  .footer-col h4 { font-size: 11px; font-weight: 700; letter-spacing: .15em; text-transform: uppercase; color: rgba(255,255,255,.8); margin-bottom: 18px; }
+  .footer-col ul { list-style: none; }
+  .footer-col ul li { margin-bottom: 10px; }
+  .footer-col ul li a { font-size: 13px; color: rgba(255,255,255,.4); transition: color .2s; }
+  .footer-col ul li a:hover { color: #fff; }
+  .footer-bottom { border-top: 1px solid rgba(255,255,255,.08); padding-top: 28px; display: flex; justify-content: space-between; font-size: 12px; color: rgba(255,255,255,.25); }
+
+  @media (max-width: 1100px) {
+    .concept,
+    .battery-inner,
+    .glide-split,
+    .footer-top { grid-template-columns: 1fr; }
+    .boards-grid,
+    .features-dark,
+    .stats-section { grid-template-columns: 1fr; }
+    .shipping { flex-direction: column; align-items: flex-start; }
+    .boards-header { flex-direction: column; align-items: flex-start; }
+    .review-card { min-width: 100%; flex-basis: 100%; }
+    .reviews-top { flex-direction: column; align-items: flex-start; }
+  }
+
+  @media (max-width: 820px) {
+    .site-header,
+    .hero-content,
+    .concept,
+    .section-head,
+    .hybrid-content,
+    .battery-section,
+    .glide-content,
+    .layouts,
+    .reviews,
+    .shipping,
+    .faq-section,
+    .site-footer { padding-left: 28px; padding-right: 28px; }
+    .header-nav { display: none; }
+    .hero { min-height: 560px; }
+    .scroll-ind { display: none; }
+    .boards-grid { padding: 0 0 20px; }
+    .layout-tabs { flex-wrap: wrap; }
+    .footer-bottom { flex-direction: column; gap: 8px; }
+  }
+</style>
+</head>
+<body>
+
+<!-- ===== HEADER OCÉAN ===== -->
+<header class="site-header">
+  <div class="header-logo">
+    <a href="/"><img src="https://liftfoils.com/cdn/shop/files/logo.webp?v=1747175498" alt="Lift Foils France"></a>
+  </div>
+  <nav class="header-nav">
+    <a href="#">eFoils</a>
+    <a href="#">Ailes</a>
+    <a href="#">Accessoires</a>
+    <a href="#">Revendeurs</a>
+  </nav>
+  <a href="#boards" class="btn-header">Packages</a>
+</header>
+
+<!-- ===== HERO VIDÉO ===== -->
+<section class="hero">
+  <video autoplay muted loop playsinline poster="https://liftfoils.com/cdn/shop/files/preview_images/de3375f3f50d42818581a5ee392d807e.thumbnail.0000000000_1100x.jpg?v=1742814321">
+    <source src="https://liftfoils.com/cdn/shop/videos/c/vp/de3375f3f50d42818581a5ee392d807e/de3375f3f50d42818581a5ee392d807e.HD-1080p-4.8Mbps-44717454.mp4?v=0" type="video/mp4">
+  </video>
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <span class="hero-eyebrow">LiftX, le foil hybride signé Lift Foils</span>
+    <h1>LiftX : le foil hybride Lift Foils entre eFoil, surf foil et foil assist</h1>
+    <p class="hero-tagline">La nouvelle référence du foil hybride motorisé</p>
+    <p class="hero-desc">Le LiftX est le premier foil hybride Lift Foils pensé pour relier l'eFoil, le surf foil et le foil assist dans une seule plateforme. Montez au vent sous puissance, coupez le moteur, surfez la vague sans traînée et retrouvez une glisse plus naturelle, plus libre et plus progressive.</p>
+    <div class="hero-actions">
+      <a href="#boards" class="btn-cyan">Voir les packages LiftX</a>
+      <a href="/location-de-surf-electrique-a-foil-le-paddle-electrique-volant/" class="btn-ghost">Réserver un essai LiftX</a>
+    </div>
+    <p class="hero-desc" style="margin-top:18px;margin-bottom:0;font-size:13px;color:rgba(255,255,255,.48);max-width:680px;">Essais en France, conseils experts, accompagnement &agrave; l'achat et disponibilit&eacute; Lift Foils France.</p>
+  </div>
+  <div class="scroll-ind">
+    <div class="scroll-line"></div>
+    Défiler
+  </div>
+</section>
+
+<!-- ===== MARQUEE ===== -->
+<div class="marquee-bar">
+  <div class="marquee-track">
+    <span><em>Hybride eFoil + Surf Foil</em></span>
+    <span>Hélice pliante LCS</span>
+    <span>45 min de puissance</span>
+    <span>Glisse sans traînée</span>
+    <span>Batterie certifiée IP68</span>
+    <span>Charge à 80% en 30 min</span>
+    <span>Cône de nez intégré</span>
+    <span>Moteur bas en carbone</span>
+    <span><em>Foil assist nouvelle génération</em></span>
+    <span><em>Hybride eFoil + Surf Foil</em></span>
+    <span>Hélice pliante LCS</span>
+    <span>45 min de puissance</span>
+    <span>Glisse sans traînée</span>
+    <span>Batterie certifiée IP68</span>
+    <span>Charge à 80% en 30 min</span>
+    <span>Cône de nez intégré</span>
+    <span>Moteur bas en carbone</span>
+    <span>Foil assist nouvelle génération</span>
+  </div>
+</div>
+
+<!-- ===== CONCEPT ===== -->
+<section class="concept">
+  <div class="concept-text">
+    <span class="label">Une nouvelle catégorie de foil</span>
+    <h2>LiftX : de la puissance quand vous en avez besoin, de la glisse quand vous n'en avez plus besoin</h2>
+    <p>Le LiftX n'est pas seulement un foil &eacute;lectrique de plus. C'est une nouvelle mani&egrave;re de rider, pens&eacute;e pour les pratiquants qui veulent monter au vent sous assistance, se placer sur la vague, puis passer en glisse pure sans sensation parasite. Le r&eacute;sultat : une plateforme hybride Lift Foils qui ouvre un espace in&eacute;dit entre eFoil, surf foil et foil assist.</p>
+    <p>Plus l&eacute;ger, plus connect&eacute; et plus orient&eacute; sensations que les g&eacute;n&eacute;rations pr&eacute;c&eacute;dentes, le LiftX associe un m&acirc;t carbone affin&eacute;, une h&eacute;lice pliante, un c&ocirc;ne de nez int&eacute;gr&eacute; et une architecture pens&eacute;e pour r&eacute;duire la tra&icirc;n&eacute;e. L'objectif est simple : retrouver une exp&eacute;rience de foil plus naturelle une fois le moteur coup&eacute;, tout en conservant la puissance n&eacute;cessaire pour se replacer, remonter au vent et prolonger les sessions.</p>
+  </div>
+  <div class="concept-media">
+    <img src="https://liftfoils.com/cdn/shop/files/5ebc7a9c42f18ba78ccc41c4e36cd1ee855f5ca3-3359x4192.png?v=1747177494" alt="LiftX foil hybride Lift Foils">
+    <div class="concept-badge">
+      <div class="b-val">16,5 kg</div>
+      <div class="b-lbl">à partir de * selon configuration</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3 BOARDS ===== -->
+<section class="boards" id="boards">
+  <div class="boards-header">
+    <div class="boards-title-wrap">
+      <span class="label">Choisissez votre foil hybride LiftX</span>
+      <h2 class="boards-title">LIFT<span class="accent">X</span></h2>
+    </div>
+    <a href="/efoil-liftx/" class="boards-link">Voir toute la gamme LiftX &#8594;</a>
+  </div>
+  <p class="boards-intro">Packages LiftX : le foil hybride Lift Foils enti&egrave;rement configur&eacute;. Trois tailles, trois programmes, une m&ecirc;me philosophie : offrir la puissance d'un eFoil quand vous en avez besoin, puis la libert&eacute; d'un surf foil ou d'un foil assist d&egrave;s que vous passez en glisse pure. Chaque package LiftX est livr&eacute; pr&ecirc;t &agrave; rider avec propulsion LCS, batterie, aile avant, aile arri&egrave;re, t&eacute;l&eacute;commande et accessoires essentiels.</p>
+
+  <div class="boards-grid">
+    <!-- 5'2 -->
+    <a class="board-card" href="/efoil-liftx-52/">
+      <div class="board-img">
+        <img src="https://liftfoils.com/cdn/shop/files/62e2b40d5567b4b2d65834dd8d17a25c14649c58-3359x4192.png?v=1747177501" alt="LiftX 5 2 foil assist Lift Foils">
+      </div>
+      <div class="board-info">
+        <span class="board-level">Progression &middot; Stabilit&eacute;</span>
+        <h3>LiftX 5'2</h3>
+        <p class="board-sub">Le LiftX 5'2 est le foil hybride le plus stable de la gamme. Il s'adresse aux riders qui veulent une plateforme rassurante pour d&eacute;couvrir le concept LiftX, progresser rapidement et explorer des usages comme la croisi&egrave;re motoris&eacute;e, le downwind assist&eacute; et la glisse en eau libre.</p>
+        <div class="board-specs">
+          <div class="spec-row"><span class="lbl">Dimensions</span><span class="val">5'2" × 23" × 4"</span></div>
+          <div class="spec-row"><span class="lbl">Volume</span><span class="val">64 L</span></div>
+          <div class="spec-row"><span class="lbl">Poids total</span><span class="val">19 kg</span></div>
+        </div>
+        <div class="board-price"><sup>€</sup>12 500 HT</div>
+        <span class="btn-dark">Voir le package &#8594;</span>
+      </div>
+    </a>
+
+    <!-- 4'8 -->
+    <a class="board-card" href="/efoil-liftx-48/">
+      <div class="board-img">
+        <img src="https://liftfoils.com/cdn/shop/files/5ebc7a9c42f18ba78ccc41c4e36cd1ee855f5ca3-3359x4192.png?v=1747177494" alt="LiftX 4 8 foil hybride polyvalent">
+      </div>
+      <div class="board-info">
+        <span class="board-level">Polyvalent &middot; Crossover</span>
+        <h3>LiftX 4'8</h3>
+        <p class="board-sub">Le LiftX 4'8 est le mod&egrave;le crossover de la gamme. &Eacute;quilibr&eacute;, r&eacute;actif et tr&egrave;s polyvalent, il combine l'agilit&eacute; d'un surf foil avec l'efficacit&eacute; d'un eFoil compact. C'est souvent le meilleur choix pour un rider qui veut tout faire : carving, transitions, glisse libre et assistance &agrave; la demande.</p>
+        <div class="board-specs">
+          <div class="spec-row"><span class="lbl">Dimensions</span><span class="val">4'8" × 22" × 3.75"</span></div>
+          <div class="spec-row"><span class="lbl">Volume</span><span class="val">54 L</span></div>
+          <div class="spec-row"><span class="lbl">Poids total</span><span class="val">17,5 kg</span></div>
+                 </div>
+        <div class="board-price"><sup>€</sup>12 500 HT</div>
+        <span class="btn-dark">Voir le package &#8594;</span>
+      </div>
+    </a>
+
+    <!-- 4'3 -->
+    <a class="board-card" href="/efoil-liftx-43/">
+      <div class="board-img">
+        <img src="https://liftfoils.com/cdn/shop/files/509094da0b2015ddb9a2c44aeb7687121d72a46d-3359x4192_61c96e57-b6ea-48d0-8fc1-ea973c0396cb.png?v=1747175978" alt="LiftX 4 3 surf foil motorisé">
+      </div>
+      <div class="board-info">
+        <span class="board-level">Expert &middot; Radical</span>
+        <h3>LiftX 4'3</h3>
+        <p class="board-sub">Le LiftX 4'3 est le mod&egrave;le le plus compact et le plus radical de la gamme. D&eacute;velopp&eacute; pour les riders avanc&eacute;s, il se fait oublier sous les pieds pour offrir un maximum d'agilit&eacute;, de pr&eacute;cision et de fluidit&eacute; entre ride motoris&eacute; et foil non assist&eacute;.</p>
+        <div class="board-specs">
+          <div class="spec-row"><span class="lbl">Dimensions</span><span class="val">4'3" × 20" × 3.5"</span></div>
+          <div class="spec-row"><span class="lbl">Volume</span><span class="val">44 L</span></div>
+          <div class="spec-row"><span class="lbl">Poids total</span><span class="val">16,5 kg</span></div>
+             </div>
+        <div class="board-price"><sup>€</sup>12 500 HT</div>
+        <span class="btn-dark">Voir le package &#8594;</span>
+      </div>
+    </a>
+  </div>
+</section>
+
+<!-- ===== HYBRIDE PLEIN ÉCRAN ===== -->
+<section class="hybrid-full">
+  <div class="hybrid-full-bg"></div>
+  <div class="hybrid-full-overlay"></div>
+  <div class="hybrid-content">
+    <span class="label">Technologie hybride Lift Foils</span>
+    <h2>Le LiftX: puissance et autonomie &agrave; la demande, puis s'efface pour une glisse ultime</h2>
+    <p>Le principe du LiftX est simple : utiliser l'assistance &eacute;lectrique pour remonter au vent, se replacer, chasser les bumps ou se mettre en position, puis couper la motorisation pour rider avec une sensation plus proche du surf foil. Gr&acirc;ce &agrave; son h&eacute;lice pliante, son moteur discret et son c&ocirc;ne de nez int&eacute;gr&eacute;, le LiftX r&eacute;duit fortement la tra&icirc;n&eacute;e et propose une exp&eacute;rience unique dans l'univers du foil hybride motoris&eacute;.</p>
+    <div class="hybrid-pills">
+      <div class="pill">Hélice pliante LCS</div>
+      <div class="pill">Cône de nez intégré</div>
+      <div class="pill">100% Clic & Connect</div>
+      <div class="pill">Foil hybride à faible traînée</div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== 3 FEATURES ===== -->
+<div class="features-dark">
+  <div class="feat-dark">
+    <h3>Conçu pour le surf, pensé pour la progression</h3>
+    <p>Le LiftX a &eacute;t&eacute; d&eacute;velopp&eacute; pour les riders qui veulent utiliser la puissance pour se placer, puis surfer sans assistance. Il cr&eacute;e un vrai lien entre eFoil et surf foil, avec des transitions plus naturelles et une lecture plus moderne du foil assist.</p>
+  </div>
+  <div class="feat-dark">
+    <h3>Une glisse plus libre, plus naturelle</h3>
+    <p>Le m&acirc;t carbone affin&eacute;, l'h&eacute;lice LCS repliable et le c&ocirc;ne de nez int&eacute;gr&eacute; travaillent ensemble pour r&eacute;duire la tra&icirc;n&eacute;e hydraulique. R&eacute;sultat : une sensation de foil plus propre, plus l&eacute;g&egrave;re et plus proche d'un surf foil traditionnel une fois la motorisation coup&eacute;e.</p>
+  </div>
+  <div class="feat-dark">
+    <h3>Système LCS nouvelle génération</h3>
+    <p>Le Lift Connect System simplifie la mise &agrave; l'eau et r&eacute;duit les contraintes techniques : batterie drop-in, connexion sans fil, d&eacute;marrage rapide, assemblage intuitif. Une approche pens&eacute;e pour laisser plus de place au ride et moins &agrave; la m&eacute;canique.</p>
+  </div>
+</div>
+
+<!-- ===== STATS ===== -->
+<div class="stats-section">
+  <div class="stat-cell">
+    <div class="stat-num">45<em>'</em></div>
+    <div class="stat-lbl">de puissance pour remonter au vent et se replacer</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num">30<em>'</em></div>
+    <div class="stat-lbl">pour recharger &agrave; 80 %</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num">IP<em>68</em></div>
+    <div class="stat-lbl">batterie &eacute;tanche certifi&eacute;e</div>
+  </div>
+  <div class="stat-cell">
+    <div class="stat-num">Glisse</div>
+    <div class="stat-lbl">tra&icirc;n&eacute;e minimis&eacute;e en mode non assist&eacute;</div>
+  </div>
+</div>
+
+<!-- ===== BATTERIE LIFTX ===== -->
+<section class="battery-section">
+  <div class="battery-inner">
+    <div class="batt-imgs">
+      <img src="https://liftfoils.com/cdn/shop/files/LIFTX_Batteries.png?v=1747176204" alt="batterie LiftX Lift Foils">
+      <img src="https://liftfoils.com/cdn/shop/files/Quick-Start.jpg?v=1747176202" alt="batterie LiftX connexion rapide">
+      <img src="https://liftfoils.com/cdn/shop/files/Ride-time-image.jpg?v=1747176194" alt="autonomie batterie LiftX">
+    </div>
+    <div class="batt-content">
+      <span class="label">Batterie LIFTX</span>
+      <h2>La batterie LiftX : puissance simplifi&eacute;e pour un foil hybride plus fluide</h2>
+      <p>La batterie LiftX a &eacute;t&eacute; pens&eacute;e pour dispara&icirc;tre dans l'exp&eacute;rience utilisateur. Installation propre, connexion sans fil, d&eacute;clenchement rapide et autonomie con&ccedil;ue pour de vraies sessions : tout est fait pour que le rider se concentre sur la glisse, la vague et le foil, plut&ocirc;t que sur la technologie.</p>
+      <div class="batt-cards">
+        <div class="batt-card">
+          <div class="bc-val">45'</div>
+          <div class="bc-lbl">Autonomie</div>
+          <div class="bc-desc">Le temps n&eacute;cessaire pour remonter au vent, se replacer et multiplier les runs.</div>
+        </div>
+        <div class="batt-card">
+          <div class="bc-val">30'</div>
+          <div class="bc-lbl">Charge à 80%</div>
+          <div class="bc-desc">Un retour &agrave; l'eau rapide entre deux sessions.</div>
+        </div>
+        <div class="batt-card">
+          <div class="bc-val">IP68</div>
+          <div class="bc-lbl">&Eacute;tanch&eacute;it&eacute; certifi&eacute;e</div>
+          <div class="bc-desc">Une batterie con&ccedil;ue pour un usage marin exigeant.</div>
+        </div>
+        <div class="batt-card">
+          <div class="bc-val">0,9kWh</div>
+          <div class="bc-lbl">Capacit&eacute; embarqu&eacute;e</div>
+          <div class="bc-desc">Un format compact pens&eacute; pour pr&eacute;server le comportement du LiftX.</div>
+        </div>
+      </div>
+      <a href="#boards" class="btn-dark" style="display:inline-block;width:auto;padding:15px 36px;">Voir les packages LiftX</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== GLIDE MODE ===== -->
+<div class="glide-split">
+  <div class="glide-media">
+    <video autoplay muted loop playsinline>
+      <source src="https://liftfoils.com/cdn/shop/videos/c/vp/858dde31e31543f492134cd600ff5920/858dde31e31543f492134cd600ff5920.HD-1080p-3.3Mbps-44717677.mp4?v=0" type="video/mp4">
+    </video>
+  </div>
+  <div class="glide-content">
+    <span class="label">Glisse pure</span>
+    <h2>Coupez le moteur. Sentez pourquoi le LiftX est un vrai foil hybride.</h2>
+    <p>Le LiftX a &eacute;t&eacute; con&ccedil;u pour offrir des transitions naturelles entre ride assist&eacute; et ride non assist&eacute;. Une fois la motorisation coup&eacute;e, tout est pens&eacute; pour lib&eacute;rer le comportement du foil : moins de tra&icirc;n&eacute;e, moins de perturbation, plus de sensation de vague et de connexion directe avec l'eau.</p>
+    <ul class="glide-list">
+      <li>
+        <div class="check">✓</div>
+        <div><strong>H&eacute;lice pliante LCS</strong>Elle se replie pour limiter la r&eacute;sistance en glisse non assist&eacute;e.</div>
+      </li>
+      <li>
+        <div class="check">✓</div>
+        <div><strong>Moteur bas ou moteur haut</strong>Un positionnement &eacute;tudi&eacute; pour pr&eacute;server le comportement du foil et optimiser l'&eacute;quilibre g&eacute;n&eacute;ral.</div>
+      </li>
+      <li>
+        <div class="check">✓</div>
+        <div><strong>C&ocirc;ne de nez int&eacute;gr&eacute;</strong>Il r&eacute;duit la tra&icirc;n&eacute;e et contribue &agrave; une sensation plus naturelle fid&egrave;le mode surf foil.</div>
+      </li>
+      <li>
+        <div class="check">✓</div>
+        <div><strong>Aile Havoc 148 LCS</strong>Une aile pens&eacute;e pour la r&eacute;activit&eacute;, le contr&ocirc;le et les transitions propres dans l'univers LiftX.</div>
+      </li>
+    </ul>
+  </div>
+</div>
+
+<!-- ===== LAYOUTS ===== -->
+<section class="layouts">
+  <div class="layouts-inner">
+    <div class="section-head" style="padding:0">
+      <span class="label">Configuration complète</span>
+      <h2>Configurez votre LiftX sur mesure</h2>
+      <p>Board, propulsion LCS Carbon, h&eacute;lice pliante, batterie LiftX, aile avant Havoc, aile arri&egrave;re Flow, t&eacute;l&eacute;commande Elite, housses et accessoires : chaque package LiftX est pens&eacute; pour offrir une exp&eacute;rience coh&eacute;rente, performante et pr&ecirc;te &agrave; naviguer.</p>
+    </div>
+[liftx_configurateur]
+    </div>
+  </div>
+</section>
+
+<!-- ===== AVIS ===== -->
+<section class="reviews">
+  <div class="reviews-inner">
+    <div class="reviews-top">
+      <div class="section-head" style="padding:0;text-align:left;margin-bottom:0">
+        <span class="label">Presse &amp; tests</span>
+        <h2>LiftX : retours v&eacute;rifiables, comparatifs et tests disponibles en ligne</h2>
+        <p>Le LiftX est encore un produit r&eacute;cent. Les sources les plus solides trouvables aujourd'hui sont surtout des tests terrain, des comparatifs sp&eacute;cialis&eacute;s et des analyses publi&eacute;es par des acteurs reconnus du secteur.</p>
+      </div>
+      <div class="reviews-nav">
+        <button type="button" class="reviews-prev" aria-label="Avis précédents">&#8592;</button>
+        <button type="button" class="reviews-next" aria-label="Avis suivants">&#8594;</button>
+      </div>
+    </div>
+    <div class="reviews-carousel">
+      <div class="reviews-track">
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <blockquote>Foiling Magazine pr&eacute;sente le LiftX comme un hybride surf / eFoil pens&eacute; pour rapprocher les sensations du surf foil tout en gardant la puissance &agrave; la demande. Le papier met surtout en avant l'approche surf, la r&eacute;duction de tra&icirc;n&eacute;e et le positionnement &agrave; part dans la gamme Lift.</blockquote>
+        <div class="review-source">Foiling Magazine · Feature</div>
+        <a class="review-link" href="https://www.thefoilingmagazine.com/features/inbound-lift-foils-liftx-lift5/" target="_blank" rel="noopener">Lire l'article &#8594;</a>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <blockquote>Houston Kiteboarding a publi&eacute; un vrai ride test du LiftX sur unit&eacute; de production. Le contenu couvre la navigation, le pumping, le poids, la charge et les d&eacute;tails pratiques d'usage, ce qui en fait l'un des retours terrain les plus concrets trouvables en ligne.</blockquote>
+        <div class="review-source">Houston Kiteboarding · Review vid&eacute;o · 30 avril 2025</div>
+        <a class="review-link" href="https://www.youtube.com/watch?v=TD6sX3Mi6_I" target="_blank" rel="noopener">Voir la review &#8594;</a>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <blockquote>E-Surfer positionne le LiftX dans la cat&eacute;gorie Foil Assist / hybride et met en avant les points qui le distinguent : batterie compacte, approche all&eacute;g&eacute;e, montage sans vis via le LCS, m&acirc;t orientable et disponibilit&eacute; en trois tailles de board.</blockquote>
+        <div class="review-source">E-Surfer · Comparatif Foil Assist · 2025</div>
+        <a class="review-link" href="https://e-surfer.com/fr/blog/flitelab-liftx-ou-foil-drive-assist/" target="_blank" rel="noopener">Lire le comparatif &#8594;</a>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <blockquote>Houston Kiteboarding a aussi publi&eacute; une analyse d&eacute;di&eacute;e &agrave; la propulsion haute du LiftX. L'article insiste sur la r&eacute;duction de tra&icirc;n&eacute;e, l'am&eacute;lioration de la glisse, le contr&ocirc;le dans les turns et l'int&eacute;r&ecirc;t du setup pour le downwind et le power assist orient&eacute; surf.</blockquote>
+        <div class="review-source">Houston Kiteboarding · Analyse produit · 8 ao&ucirc;t 2025</div>
+        <a class="review-link" href="https://houstonkiteboarding.com/blogs/news/high-mount-propulsion-for-liftx" target="_blank" rel="noopener">Lire l'analyse &#8594;</a>
+      </div>
+      <div class="review-card">
+        <div class="review-stars">★★★★★</div>
+        <blockquote>Le guide comparatif officiel Lift Foils entre LIFT5 et LiftX aide &agrave; clarifier le positionnement produit : le LIFT5 reste l'eFoil le plus intuitif et polyvalent, tandis que le LiftX est orient&eacute; vers une pratique plus surf, downwind et glisse libre avec assistance &agrave; la demande.</blockquote>
+        <div class="review-source">Lift Foils · Guide comparatif</div>
+        <a class="review-link" href="https://liftfoils.com/blogs/guide/lift5-vs-liftx_" target="_blank" rel="noopener">Lire le guide &#8594;</a>
+      </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== SHIPPING ===== -->
+<section class="shipping">
+  <div class="shipping-text">
+    <span class="label">Disponibilit&eacute; LiftX</span>
+    <h2>Commander un LiftX en France</h2>
+    <p>Lift Foils France vous accompagne dans le choix du package LiftX adapt&eacute; &agrave; votre niveau, &agrave; votre gabarit et &agrave; votre programme de navigation. Disponibilit&eacute;s, d&eacute;lais, essai, conseils et livraison : contactez-nous pour configurer votre foil hybride LiftX dans les meilleures conditions.</p>
+  </div>
+  <a href="#boards" class="btn-cyan">Voir les packages LiftX</a>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq-section">
+  <div class="faq-inner">
+    <div class="section-head" style="padding:0;text-align:left;margin-bottom:0">
+      <span class="label">FAQ</span>
+      <h2>FAQ LiftX, foil hybride et foil assist Lift Foils</h2>
+    </div>
+    <div class="faq-list">
+      <div class="faq-item">
+        <button class="faq-btn" type="button" onclick="this.parentElement.classList.toggle('open')">
+          <h3 class="faq-q">Qu'est-ce que le LiftX ?</h3>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <p>Le LiftX est le foil hybride d&eacute;velopp&eacute; par Lift Foils pour faire le lien entre eFoil, surf foil et foil assist. Il permet de rider sous assistance &eacute;lectrique pour se replacer ou remonter au vent, puis de couper le moteur pour retrouver une glisse plus naturelle sur la vague.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" type="button" onclick="this.parentElement.classList.toggle('open')">
+          <h3 class="faq-q">Le LiftX est-il un eFoil ?</h3>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <p>Oui, le LiftX appartient &agrave; l'univers de l'eFoil, mais avec une philosophie plus hybride. Il se distingue par sa capacit&eacute; &agrave; offrir une vraie transition entre ride motoris&eacute; et ride non assist&eacute;, l&agrave; o&ugrave; un eFoil classique reste plus centr&eacute; sur la propulsion continue.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" type="button" onclick="this.parentElement.classList.toggle('open')">
+          <h3 class="faq-q">Le LiftX est-il un foil assist ?</h3>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <p>Le LiftX peut &ecirc;tre d&eacute;crit comme une forme avanc&eacute;e de foil assist, mais il va plus loin. Il ne s'agit pas seulement d'une aide &agrave; la relance : c'est une plateforme compl&egrave;te pens&eacute;e pour relier foil &eacute;lectrique, surf foil et glisse libre dans un seul produit.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" type="button" onclick="this.parentElement.classList.toggle('open')">
+          <h3 class="faq-q">Quelle diff&eacute;rence entre LiftX et LIFT5 ?</h3>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <p>Le <a href="/efoil-lift5-decouvrez-le-nouveau-foil-electrique-lift-5/">LIFT5</a> est l'eFoil le plus intuitif et le plus polyvalent de Lift Foils, id&eacute;al pour une pratique eFoil premium classique. Le LiftX adopte une approche plus surf, plus libre et plus hybride, avec un accent particulier sur la glisse non assist&eacute;e, les transitions et le ride orient&eacute; vagues.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" type="button" onclick="this.parentElement.classList.toggle('open')">
+          <h3 class="faq-q">Quel LiftX choisir ?</h3>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <p>Le LiftX 5'2 convient mieux &agrave; la progression et &agrave; la stabilit&eacute;, le LiftX 4'8 est le plus polyvalent, et le LiftX 4'3 s'adresse aux riders avanc&eacute;s &agrave; la recherche d'un maximum d'agilit&eacute;.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" type="button" onclick="this.parentElement.classList.toggle('open')">
+          <h3 class="faq-q">Pourquoi choisir Lift Foils pour un foil hybride ?</h3>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <p><a href="/">Lift Foils France</a> s'appuie sur une marque pionni&egrave;re du eFoil premium. Le LiftX b&eacute;n&eacute;ficie de cette exp&eacute;rience, avec une approche tr&egrave;s aboutie de la construction carbone, de la propulsion, de la batterie et de la sensation de glisse.</p>
+        </div>
+      </div>
+      <div class="faq-item">
+        <button class="faq-btn" type="button" onclick="this.parentElement.classList.toggle('open')">
+          <h3 class="faq-q">O&ugrave; essayer le LiftX en France ?</h3>
+          <span class="faq-icon"></span>
+        </button>
+        <div class="faq-a">
+          <p>Lift Foils France propose des essais et un accompagnement &agrave; l'achat selon les bases, partenaires et disponibilit&eacute;s. L'essai est particuli&egrave;rement recommand&eacute; pour choisir entre les trois tailles de LiftX et comparer le LiftX au <a href="/efoil-lift5-decouvrez-le-nouveau-foil-electrique-lift-5/">LIFT5</a>.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ===== CTA FINALE ===== -->
+<section class="cta-final">
+  <video autoplay muted loop playsinline poster="https://liftfoils.com/cdn/shop/files/939a1c0e12e845f7abf2a7052937876bdfe3c734-684x478.jpg?v=1747175469">
+    <source src="https://liftfoils.fr/wp-content/uploads/2021/03/Lift-Foils-eFoil-Electric-Surfboard-Premium-Surf-Hydrofoils-10.mp4" type="video/mp4">
+  </video>
+  <div class="cta-overlay"></div>
+  <div class="cta-content">
+    <span class="label">Pr&ecirc;t &agrave; passer au foil hybride ?</span>
+    <h2>Essayez le LiftX en France</h2>
+    <p>D&eacute;couvrez le foil hybride Lift Foils sur l'eau avec un accompagnement expert. Nos &eacute;quipes et partenaires certifi&eacute;s vous aident &agrave; comprendre le concept LiftX, &agrave; comparer les tailles et &agrave; choisir la configuration la plus adapt&eacute;e &agrave; votre pratique.</p>
+    <div class="cta-actions">
+      <a href="/location-de-surf-electrique-a-foil-le-paddle-electrique-volant/" class="btn-cyan">R&eacute;server un essai LiftX</a>
+      <a href="#boards" class="btn-outline-w">Voir les packages LiftX</a>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FOOTER ===== -->
+<footer class="site-footer">
+  <div class="footer-top">
+    <div class="footer-brand">
+      <img class="footer-logo-img" src="https://liftfoils.com/cdn/shop/files/logo.webp?v=1747175498" alt="Lift Foils France">
+      <p>LiftX, eFoils Lift Foils, essais en France et accompagnement premium par le distributeur officiel.</p>
+    </div>
+    <div class="footer-col">
+      <h4>Service</h4>
+      <ul>
+        <li><a href="#">Nous contacter</a></li>
+        <li><a href="#">Foire aux questions</a></li>
+        <li><a href="#">Garantie</a></li>
+        <li><a href="#">Retours</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>À propos</h4>
+      <ul>
+        <li><a href="#">Notre histoire</a></li>
+        <li><a href="#">Revendeurs certifiés</a></li>
+        <li><a href="#">Riders</a></li>
+        <li><a href="#">Presse</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Légal</h4>
+      <ul>
+        <li><a href="#">Conditions générales</a></li>
+        <li><a href="#">Confidentialité</a></li>
+        <li><a href="#">Cookies</a></li>
+        <li><a href="#">Mentions légales</a></li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <span>© 2025 Lift Foils France — Tous droits réservés</span>
+    <span>Inventeurs de l'eFoil depuis 2010 — Porto Rico</span>
+  </div>
+</footer>
+
+<script>
+const lxTabs = document.querySelectorAll('.layout-tab');
+const lxImgs = [
+  'https://liftfoils.com/cdn/shop/files/62e2b40d5567b4b2d65834dd8d17a25c14649c58-3359x4192.png?v=1747177501',
+  'https://liftfoils.com/cdn/shop/files/5ebc7a9c42f18ba78ccc41c4e36cd1ee855f5ca3-3359x4192.png?v=1747177494',
+  'https://liftfoils.com/cdn/shop/files/509094da0b2015ddb9a2c44aeb7687121d72a46d-3359x4192_61c96e57-b6ea-48d0-8fc1-ea973c0396cb.png?v=1747175978'
+];
+const lxImg = document.getElementById('lxLayoutImg');
+lxTabs.forEach((tab, i) => {
+  tab.addEventListener('click', () => {
+    lxTabs.forEach(t => t.classList.remove('active'));
+    tab.classList.add('active');
+    lxImg.src = lxImgs[i];
+    lxImg.alt = 'Configuration LiftX ' + ["5'2","4'8","4'3"][i];
+  });
+});
+
+const reviewsTrack = document.querySelector('.reviews-track');
+const reviewsPrev = document.querySelector('.reviews-prev');
+const reviewsNext = document.querySelector('.reviews-next');
+
+if (reviewsTrack && reviewsPrev && reviewsNext) {
+  let reviewsIndex = 0;
+
+  const getReviewsPerView = () => window.innerWidth <= 1100 ? 1 : 2;
+  const getReviewCards = () => Array.from(reviewsTrack.querySelectorAll('.review-card'));
+
+  const updateReviews = () => {
+    const cards = getReviewCards();
+    const perView = getReviewsPerView();
+    const maxIndex = Math.max(0, cards.length - perView);
+    reviewsIndex = Math.min(reviewsIndex, maxIndex);
+    const cardWidth = cards[0] ? cards[0].getBoundingClientRect().width : 0;
+    const gap = 20;
+    reviewsTrack.style.transform = `translateX(-${reviewsIndex * (cardWidth + gap)}px)`;
+    reviewsPrev.disabled = reviewsIndex === 0;
+    reviewsNext.disabled = reviewsIndex >= maxIndex;
+  };
+
+  reviewsPrev.addEventListener('click', () => {
+    reviewsIndex = Math.max(0, reviewsIndex - 1);
+    updateReviews();
+  });
+
+  reviewsNext.addEventListener('click', () => {
+    const maxIndex = Math.max(0, getReviewCards().length - getReviewsPerView());
+    reviewsIndex = Math.min(maxIndex, reviewsIndex + 1);
+    updateReviews();
+  });
+
+  window.addEventListener('resize', updateReviews);
+  updateReviews();
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {
+      "@type": "Question",
+      "name": "Qu'est-ce que le LiftX ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le LiftX est le foil hybride développé par Lift Foils pour faire le lien entre eFoil, surf foil et foil assist. Il permet de rider sous assistance électrique pour se replacer ou remonter au vent, puis de couper le moteur pour retrouver une glisse plus naturelle sur la vague."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le LiftX est-il un eFoil ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Oui, le LiftX appartient à l'univers de l'eFoil, mais avec une philosophie plus hybride. Il se distingue par sa capacité à offrir une vraie transition entre ride motorisé et ride non assisté."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Le LiftX est-il un foil assist ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le LiftX peut être décrit comme une forme avancée de foil assist, mais il va plus loin. C'est une plateforme complète pensée pour relier foil électrique, surf foil et glisse libre dans un seul produit."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quelle différence entre LiftX et LIFT5 ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le LIFT5 est l'eFoil le plus intuitif et le plus polyvalent de Lift Foils, idéal pour une pratique eFoil premium classique. Le LiftX adopte une approche plus surf, plus libre et plus hybride."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Quel LiftX choisir ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Le LiftX 5'2 convient mieux à la progression et à la stabilité, le LiftX 4'8 est le plus polyvalent, et le LiftX 4'3 s'adresse aux riders avancés à la recherche d'un maximum d'agilité."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "Où essayer le LiftX en France ?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Lift Foils France propose des essais et un accompagnement à l'achat selon les bases, partenaires et disponibilités."
+      }
+    }
+  ]
+}
+</script>
+</body>
+</html>
